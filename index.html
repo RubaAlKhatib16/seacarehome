@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <meta content="web_standard" name="shell-type" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <style>
+    @layer base {
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        overscroll-behavior: none;
+      }
+
+      main>:first-child {
+        margin-top: 0 !important;
+      }
+
+      main>:last-child {
+        margin-bottom: 0 !important;
+      }
+    }
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script id="tailwind-config">tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-primary-fixed": "#001f27",
+            "on-primary-fixed-variant": "#284c57",
+            "surface": "#fef9ef",
+            "on-surface": "#1d1c16",
+            "inverse-surface": "#32302a",
+            "on-tertiary": "#ffffff",
+            "secondary-container": "#8bebff",
+            "secondary-fixed-dim": "#72d4e8",
+            "on-background": "#1d1c16",
+            "surface-container": "#f2ede3",
+            "on-error-container": "#93000a",
+            "inverse-primary": "#a8ccda",
+            "tertiary": "#122324",
+            "surface-container-lowest": "#ffffff",
+            "primary-fixed": "#c3e8f7",
+            "on-secondary-fixed": "#001f25",
+            "primary": "#00242d",
+            "surface-container-highest": "#e7e2d8",
+            "error-container": "#ffdad6",
+            "surface-bright": "#fef9ef",
+            "outline": "#71787b",
+            "on-primary": "#ffffff",
+            "on-tertiary-fixed": "#0d1e1f",
+            "outline-variant": "#c1c7cb",
+            "tertiary-fixed": "#d3e6e7",
+            "error": "#ba1a1a",
+            "tertiary-fixed-dim": "#b7cacb",
+            "secondary": "#006877",
+            "on-surface-variant": "#41484a",
+            "secondary-fixed": "#a3eeff",
+            "primary-fixed-dim": "#a8ccda",
+            "surface-tint": "#40636f",
+            "background": "#fef9ef",
+            "on-secondary-container": "#006b7a",
+            "on-error": "#ffffff",
+            "surface-container-high": "#ede8de",
+            "on-tertiary-container": "#8fa1a2",
+            "on-tertiary-fixed-variant": "#394a4b",
+            "on-secondary-fixed-variant": "#004e5a",
+            "surface-variant": "#e7e2d8",
+            "primary-container": "#143a45",
+            "on-primary-container": "#80a4b1",
+            "inverse-on-surface": "#f5f0e6",
+            "tertiary-container": "#273839",
+            "surface-container-low": "#f8f3e9",
+            "on-secondary": "#ffffff",
+            "surface-dim": "#dedad0"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-md": "1rem",
+            "space-sm": "0.5rem",
+            "space-lg": "2rem",
+            "margin-mobile": "1.25rem",
+            "space-xs": "0.25rem",
+            "gutter-mobile": "1rem",
+            "gutter": "1.5rem",
+            "space-xl": "3.5rem",
+            "margin-tablet": "2.5rem",
+            "margin": "4rem"
+          },
+          "fontFamily": {
+            "display-lg": [
+              "Playfair Display"
+            ],
+            "headline-md": [
+              "Playfair Display"
+            ],
+            "label-sm": [
+              "Inter"
+            ],
+            "display-lg-mobile": [
+              "Playfair Display"
+            ],
+            "body-md": [
+              "Inter"
+            ],
+            "label-md": [
+              "Inter"
+            ],
+            "body-sm": [
+              "Inter"
+            ],
+            "headline-lg-mobile": [
+              "Playfair Display"
+            ],
+            "headline-sm": [
+              "Playfair Display"
+            ],
+            "label-lg": [
+              "Inter"
+            ],
+            "body-lg": [
+              "Inter"
+            ],
+            "headline-lg": [
+              "Playfair Display"
+            ]
+          },
+          "fontSize": {
+            "display-lg": [
+              "56px",
+              {
+                "lineHeight": "64px",
+                "letterSpacing": "-0.02em",
+                "fontWeight": "400"
+              }
+            ],
+            "headline-md": [
+              "24px",
+              {
+                "lineHeight": "32px",
+                "letterSpacing": "0em",
+                "fontWeight": "500"
+              }
+            ],
+            "label-sm": [
+              "10px",
+              {
+                "lineHeight": "12px",
+                "letterSpacing": "0.16em",
+                "fontWeight": "600"
+              }
+            ],
+            "display-lg-mobile": [
+              "38px",
+              {
+                "lineHeight": "44px",
+                "letterSpacing": "-0.01em",
+                "fontWeight": "400"
+              }
+            ],
+            "body-md": [
+              "15px",
+              {
+                "lineHeight": "24px",
+                "letterSpacing": "0.01em",
+                "fontWeight": "400"
+              }
+            ],
+            "label-md": [
+              "11px",
+              {
+                "lineHeight": "14px",
+                "letterSpacing": "0.12em",
+                "fontWeight": "500"
+              }
+            ],
+            "body-sm": [
+              "13px",
+              {
+                "lineHeight": "20px",
+                "letterSpacing": "0.02em",
+                "fontWeight": "400"
+              }
+            ],
+            "headline-lg-mobile": [
+              "28px",
+              {
+                "lineHeight": "34px",
+                "letterSpacing": "0em",
+                "fontWeight": "400"
+              }
+            ],
+            "headline-sm": [
+              "20px",
+              {
+                "lineHeight": "28px",
+                "letterSpacing": "0.01em",
+                "fontWeight": "500"
+              }
+            ],
+            "label-lg": [
+              "12px",
+              {
+                "lineHeight": "16px",
+                "letterSpacing": "0.14em",
+                "fontWeight": "500"
+              }
+            ],
+            "body-lg": [
+              "18px",
+              {
+                "lineHeight": "28px",
+                "letterSpacing": "0.01em",
+                "fontWeight": "300"
+              }
+            ],
+            "headline-lg": [
+              "36px",
+              {
+                "lineHeight": "44px",
+                "letterSpacing": "-0.01em",
+                "fontWeight": "400"
+              }
+            ]
+          }
+        },
+      },
+    }</script>
+</head>
+
+<body class="bg-surface font-body-md text-body-md text-on-surface antialiased">
+  <header class="fixed top-0 left-0 w-full z-50 bg-surface/90 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
+    <div class="h-20 w-full px-margin-mobile md:px-margin-tablet lg:px-margin flex items-center justify-between">
+      <div class="flex items-center gap-space-sm"><img alt="Brand logo. - Primary color: #143a45
+- Font: playfairDisplay
+- Mode: light
+- Roundness: rounded-lg
+" class="h-8 w-auto object-contain"
+          src="https://lh3.googleusercontent.com/aida/AEtjO1UmveHy-YHUvc1H_U0dhuvjnJfX9Gq-TVcJ5gHLMxjs5os3g-RdQ9ycl6lpm0sLeXaWyO047fYMwmR50qy6jSZ6AEOnjOv0tmpL4Vs8zgiToMd3WJ2QPXtIBq-ld9E2ZDuW4mPoCT81xiueSzz9Se7ytveGi-kyaZkAtvwN23sdmEpM3aOWYtHSCZVCLTJmWRJbgHhZUJN8ys3xVZdRiWPmhaYSDWvwdwDrY0_QxNDy79kEvadFwOZ2FimK" /><a
+          class="flex items-center gap-space-xs text-primary" data-path="home" href="#"></a></div>
+      <nav class="hidden lg:flex items-center gap-space-lg" data-active-classes="text-primary font-bold"><a
+          class="font-label-md text-label-md uppercase text-on-surface-variant hover:text-on-surface transition-colors tracking-widest"
+          data-path="facial-care" href="#">Facial Care</a><a
+          class="font-label-md text-label-md uppercase text-on-surface-variant hover:text-on-surface transition-colors tracking-widest"
+          data-path="hair-care" href="#">Hair Care</a><a
+          class="font-label-md text-label-md uppercase text-on-surface-variant hover:text-on-surface transition-colors tracking-widest"
+          data-path="bath-care" href="#">Bath Care</a><a
+          class="font-label-md text-label-md uppercase text-on-surface-variant hover:text-on-surface transition-colors tracking-widest"
+          data-path="whole-body" href="#">Whole Body</a><a
+          class="font-label-md text-label-md uppercase text-on-surface-variant hover:text-on-surface transition-colors tracking-widest"
+          data-path="our-story" href="#">Our Story</a><a
+          class="font-label-md text-label-md uppercase text-on-surface-variant hover:text-on-surface transition-colors tracking-widest"
+          data-path="the-science" href="#">The Science</a></nav>
+      <div class="flex items-center gap-space-md"><button aria-label="Search"
+          class="p-space-xs text-on-surface-variant hover:text-primary transition-colors flex items-center justify-center"><span
+            class="material-symbols-outlined text-[20px]">search</span></button><a aria-label="Account"
+          class="p-space-xs text-on-surface-variant hover:text-primary transition-colors flex items-center justify-center"
+          data-path="account" href="#"><span class="material-symbols-outlined text-[20px]">person_outline</span></a><a
+          aria-label="Wishlist"
+          class="p-space-xs text-on-surface-variant hover:text-primary transition-colors flex items-center justify-center"
+          data-path="wishlist" href="#"><span class="material-symbols-outlined text-[20px]">favorite_border</span></a><a
+          class="flex items-center gap-space-xs px-space-sm py-1.5 bg-surface-container hover:bg-surface-container-high transition-colors"
+          data-path="cart" href="#"><span
+            class="material-symbols-outlined text-[18px] text-primary">shopping_bag</span><span
+            class="font-label-sm text-label-sm uppercase text-primary font-medium tracking-wider">Cart · 0</span></a>
+        <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center ml-space-xs"><span
+            class="material-symbols-outlined text-on-primary text-[18px]">person</span></div>
+      </div>
+    </div>
+  </header>
+  <main class="w-full pt-20 bg-surface min-h-[calc(100vh-80px)]">
+    <div class="flex flex-col w-full">
+      <!-- Section 1: Hero Showcase -->
+      <section class="w-full px-margin-mobile md:px-margin-tablet lg:px-margin py-space-lg lg:py-space-xl">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter lg:gap-space-lg items-center">
+          <!-- Left Column: Editorial & Manifest -->
+          <div class="lg:col-span-7 flex flex-col justify-center">
+            <div class="flex items-center gap-space-sm mb-space-md">
+              <span class="w-8 h-[1px] bg-secondary opacity-70"></span>
+              <span class="font-label-sm text-label-sm uppercase tracking-[0.2em] text-secondary font-semibold">
+                Apothecary of the Rift Valley — 412m Below Sea Level
+              </span>
+            </div>
+            <h1 class="font-display-lg text-display-lg text-primary max-w-2xl leading-[1.08] mb-space-md">
+              Skin care, drawn from the Dead Sea floor.
+            </h1>
+            <p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl mb-space-lg leading-relaxed">
+              Formulated with pure magnesium and carnallite salts mined 400 meters below sea level — ancient
+              hyper-saline geological strata that condition, remineralize, and restore the skin mantle the way the Dead
+              Sea always has.
+            </p>
+            <!-- Actions -->
+            <div class="flex flex-wrap items-center gap-space-md mb-space-xl">
+              <a class="h-12 px-space-lg bg-primary-container text-on-primary hover:bg-secondary transition-colors font-label-md text-label-md uppercase tracking-[0.14em] flex items-center justify-center"
+                href="#">
+                Shop the Collection
+              </a>
+              <a class="h-12 px-space-lg bg-transparent text-primary hover:bg-surface-container transition-colors font-label-md text-label-md uppercase tracking-[0.14em] flex items-center gap-space-xs group"
+                href="#">
+                <span>Read Our Story</span>
+                <span
+                  class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+              </a>
+            </div>
+            <!-- Mineral Stats Ticker -->
+            <div class="pt-space-md bg-surface-container-low/70 px-space-md py-space-sm max-w-xl">
+              <div class="grid grid-cols-3 gap-space-sm text-left">
+                <div>
+                  <span class="font-headline-sm text-headline-sm text-primary block leading-none mb-1">34.2%</span>
+                  <span
+                    class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant/80 block">Solute
+                    Saline</span>
+                </div>
+                <div>
+                  <span class="font-headline-sm text-headline-sm text-primary block leading-none mb-1">100%</span>
+                  <span
+                    class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant/80 block">Bio-Halides</span>
+                </div>
+                <div>
+                  <span class="font-headline-sm text-headline-sm text-primary block leading-none mb-1">0%</span>
+                  <span
+                    class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant/80 block">Synthetics</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Right Column: Editorial Product Imagery -->
+          <div class="lg:col-span-5 relative mt-space-md lg:mt-0">
+            <div class="relative w-full aspect-[4/5] bg-surface-container overflow-hidden group">
+              <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.02]"
+                data-alt="Editorial still life of luxury deep teal glass cosmetic jar with satin gold lid and a frosted glass dropper serum bottle resting in coarse Dead Sea salt crystals and fine desert beach sand under warm natural sunlight, minimal architectural aesthetic"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTq2oCHNpO57FUFWtTA8KhQOcx7_yd61dXg9Bq8KZZNjxi9g0f6yr2mOyXoVfv2RCAN-wRulNT2IDc4wh_R22qyXrxH4BxCVdyQAZ3shovsz4kndMeWVDl_x1wa0XHGE5zjbhZVdgNA_QLjdBjVaXzohhrsG6sO8LuO9kMMtP4X34FqQhnGmS3SCwPmwZBOrlftt4JB9CjxMxd8g0cdjdAVVlelNCzQrcI68NSZWOrO-N5oBMpGg_AWA" />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent pointer-events-none">
+              </div>
+              <!-- Floating Editorial Pill -->
+              <div
+                class="absolute top-space-md right-space-md bg-surface/95 backdrop-blur-md px-space-sm py-1.5 flex items-center gap-space-xs">
+                <span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                <span class="font-label-sm text-label-sm uppercase tracking-widest text-primary font-medium">Harvest
+                  412M BSL</span>
+              </div>
+              <!-- Bottom Micro-Caption -->
+              <div class="absolute bottom-space-md left-space-md right-space-md text-on-primary">
+                <p class="font-label-sm text-label-sm uppercase tracking-widest text-secondary-fixed mb-1">Lot No. 894 /
+                  Untouched Strata</p>
+                <p class="font-body-sm text-body-sm text-surface-bright/90 font-light">Raw carnallite salt crystals
+                  crystallized on ancient brine flats.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Shoreline Wave Transition -->
+      <div class="w-full flex items-center justify-center py-space-sm overflow-hidden select-none opacity-40">
+        <svg class="w-full max-w-2xl h-3 text-secondary" fill="none" stroke="currentColor" stroke-width="1.2"
+          viewbox="0 0 400 12">
+          <path d="M0 6 C 50 1, 100 11, 150 6 C 200 1, 250 11, 300 6 C 350 1, 400 11, 450 6"></path>
+        </svg>
+      </div>
+      <!-- Section 2: Shop by Discipline -->
+      <section class="w-full px-margin-mobile md:px-margin-tablet lg:px-margin py-space-lg lg:py-space-xl">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-space-lg gap-space-sm">
+          <div>
+            <span
+              class="font-label-sm text-label-sm uppercase tracking-[0.2em] text-secondary font-semibold block mb-1">Sacred
+              Formulations</span>
+            <h2 class="font-headline-lg text-headline-lg text-primary">Shop by Discipline</h2>
+          </div>
+          <p class="font-body-md text-body-md text-on-surface-variant max-w-md">
+            Pure elemental botanicals married with raw geological extracts, calibrated for daily dermal preservation.
+          </p>
+        </div>
+        <!-- 4-Column Discipline Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+          <!-- Discipline 1: Facial Care -->
+          <a class="group flex flex-col p-space-md bg-surface-container-low hover:bg-surface-container transition-colors relative"
+            href="#">
+            <div class="w-full aspect-[4/3] bg-surface-container mb-space-md overflow-hidden relative">
+              <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                data-alt="Minimalist luxury skincare serum dropper and cream jar on clean warm travertine surface with sharp soft afternoon shadows, coastal warm sand aesthetic"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtYR9ndcBdDdejqHQI7mGkE8XcuENM4uO_ZGKUZ6dsNndQ1Bk9UX4QF1Ix9HtaC_gQvawmWPqh0RRoo7-lKNg8fDHL9swBt7iqaHyotinzj5Cv-pDGWkrvj0IHDH9-vkcWmYA3sTUD_lIzXiHbx128WXPCCNrshmsn6or-kff25_9SLpgyRz920nBXT4xgAmf35KJqn4WzR9QcDHRhaI7VjPiQzuRiLby8Ayv4w6UaENa05zHaLiP8DA" />
+              <span
+                class="absolute bottom-2 left-2 font-label-sm text-label-sm bg-surface/90 px-2 py-0.5 text-primary">01</span>
+            </div>
+            <div class="flex items-center justify-between mb-1">
+              <h3 class="font-headline-sm text-headline-sm text-primary group-hover:text-secondary transition-colors">
+                Facial Care</h3>
+              <span
+                class="material-symbols-outlined text-[18px] text-on-surface-variant group-hover:translate-x-1 group-hover:text-secondary transition-all">north_east</span>
+            </div>
+            <p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+              Cleansers, nutrient saline elixirs, active balms, and remineralizing daily emulsions.
+            </p>
+          </a>
+          <!-- Discipline 2: Hair Care -->
+          <a class="group flex flex-col p-space-md bg-surface-container-low hover:bg-surface-container transition-colors relative"
+            href="#">
+            <div class="w-full aspect-[4/3] bg-surface-container mb-space-md overflow-hidden relative">
+              <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                data-alt="Editorial bottle of Dead Sea magnesium scalp clarifying tonic and conditioner on textured ceramic stone tile, muted sea teal tones"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZ23tg_Ps8t6P8f2tuv8i8FNg2ILovLhUADYyA8Llllb_vDNYcs7f6-5hbgLxweHjt_YUWcIP_UPcKEyeH_V-_fmo3qeKR6lkEgfr-hU4PIaeE0k4qT17fsIgVxYrPU1J1UIecA9JgxPZH2Ha7MHFNEtqPtDxjxA0T5s_zudF81mapqb7WCLD9gDYcoMamLxMB_7xADPokH0P2cq0wupgSJ2d-D0DRYKFzWyCIPDxzWFhaq-DuO57aAQ" />
+              <span
+                class="absolute bottom-2 left-2 font-label-sm text-label-sm bg-surface/90 px-2 py-0.5 text-primary">02</span>
+            </div>
+            <div class="flex items-center justify-between mb-1">
+              <h3 class="font-headline-sm text-headline-sm text-primary group-hover:text-secondary transition-colors">
+                Hair &amp; Scalp</h3>
+              <span
+                class="material-symbols-outlined text-[18px] text-on-surface-variant group-hover:translate-x-1 group-hover:text-secondary transition-all">north_east</span>
+            </div>
+            <p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+              Follicle stimulation, osmotic scalp purifiers, and weightless sea-kelp peptide broths.
+            </p>
+          </a>
+          <!-- Discipline 3: Bath Care -->
+          <a class="group flex flex-col p-space-md bg-surface-container-low hover:bg-surface-container transition-colors relative"
+            href="#">
+            <div class="w-full aspect-[4/3] bg-surface-container mb-space-md overflow-hidden relative">
+              <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                data-alt="Apothecary glass jar filled with chunky white translucent Dead Sea bath salt crystals with wooden spoon on neutral stone shelf"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbfUmZiVGkaXdLl7NZfFLlaAPgsPoSRppbitMqpWTPZS0-XvWX5ar3LHanx9RTcfdHiGWL15EI6sTRPTUZKuiOpyIYUoCBIHvtaC_0rBKezijF1Ygff_G91yCrqrWXgxifnyULHteqmW7UkuHYefRq4Em57CCqpLH9jVG4_83udsFzSa06IgbqLaHFuiTm8X0tkw2Ud_SOsIyScw9MtZpyyuk_65JV7ZfzdFU8P5joL67C9rYg-9XtOg" />
+              <span
+                class="absolute bottom-2 left-2 font-label-sm text-label-sm bg-surface/90 px-2 py-0.5 text-primary">03</span>
+            </div>
+            <div class="flex items-center justify-between mb-1">
+              <h3 class="font-headline-sm text-headline-sm text-primary group-hover:text-secondary transition-colors">
+                Bath Soaks</h3>
+              <span
+                class="material-symbols-outlined text-[18px] text-on-surface-variant group-hover:translate-x-1 group-hover:text-secondary transition-all">north_east</span>
+            </div>
+            <p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+              Unrefined carnallite flakes, concentrated hyper-saline bath infusions, and botanical oils.
+            </p>
+          </a>
+          <!-- Discipline 4: Whole Body -->
+          <a class="group flex flex-col p-space-md bg-surface-container-low hover:bg-surface-container transition-colors relative"
+            href="#">
+            <div class="w-full aspect-[4/3] bg-surface-container mb-space-md overflow-hidden relative">
+              <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                data-alt="Rich dark mineral Dead Sea mud balm swiped on clean limestone with dark matte cosmetic jar beside it, editorial luxury spa aesthetic"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdPiOTRdgiybmJlyrlc-yexBMcx7ux373ADxHMdujRNmxHM-0PN8XrEsCUKMVJ2GyHo_A5yDrB7Fg0U_oiKArE0Sa3hNbxCjQdXL5NIJdbmk7oeI-qHFji1p9e7JpSsVq-b35GKaglWqllONgujuvA2Qc8ulCCwMWGVy5Fxg_BvfP4qulA05dEHjauOQQtlh0FNrRnGn29DrdEF55m0XeZnO5Mpvbm6ggklNy9hnONajPiyX4f0UTP-w" />
+              <span
+                class="absolute bottom-2 left-2 font-label-sm text-label-sm bg-surface/90 px-2 py-0.5 text-primary">04</span>
+            </div>
+            <div class="flex items-center justify-between mb-1">
+              <h3 class="font-headline-sm text-headline-sm text-primary group-hover:text-secondary transition-colors">
+                Whole Body</h3>
+              <span
+                class="material-symbols-outlined text-[18px] text-on-surface-variant group-hover:translate-x-1 group-hover:text-secondary transition-all">north_east</span>
+            </div>
+            <p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+              Subterranean black silt envelopes, rich lipid barrier creams, and exfoliating salt scrubs.
+            </p>
+          </a>
+        </div>
+      </section>
+      <!-- Section 3: The Core Formulary — Best Sellers -->
+      <section
+        class="w-full px-margin-mobile md:px-margin-tablet lg:px-margin py-space-lg lg:py-space-xl bg-surface-container-low">
+        <div
+          class="flex flex-col md:flex-row md:items-end justify-between mb-space-lg pb-space-sm border-b border-outline-variant/30 gap-space-sm">
+          <div>
+            <span
+              class="font-label-sm text-label-sm uppercase tracking-[0.2em] text-secondary font-semibold block mb-1">Curated
+              Selections</span>
+            <h2 class="font-headline-lg text-headline-lg text-primary">The Core Formulary</h2>
+          </div>
+          <!-- Filter Nav -->
+          <div class="flex items-center gap-space-md">
+            <button
+              class="font-label-md text-label-md uppercase tracking-wider text-primary border-b border-primary pb-0.5">All
+              Offerings</button>
+            <button
+              class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors pb-0.5">Facial</button>
+            <button
+              class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors pb-0.5">Bath</button>
+            <button
+              class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors pb-0.5">Body</button>
+            <a class="font-label-sm text-label-sm uppercase tracking-widest text-secondary hover:underline ml-space-sm flex items-center gap-1"
+              href="#">
+              <span>View Catalog (18)</span>
+              <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+            </a>
+          </div>
+        </div>
+        <!-- Product Grid: 4 borderless products -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter lg:gap-space-lg mb-space-xl">
+          <!-- Product 1 -->
+          <div class="group flex flex-col">
+            <div
+              class="relative aspect-square bg-surface mb-space-sm overflow-hidden flex items-center justify-center p-space-md">
+              <span
+                class="absolute top-3 left-3 bg-secondary-container text-on-secondary-container font-label-sm text-label-sm px-2 py-0.5 font-medium tracking-wider uppercase">
+                Top Rated
+              </span>
+              <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                data-alt="Luxury cosmetic jar with satin gold lid and deep teal glass jar of Dead Sea Carnallite face cream sitting directly on textured white salt bed, bright daylight"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUqPFeO40OGyVmRFmwubnXWdtfedss_Tzgb0jh3heS_baDW9i90M9GThu0jAQiltE-D_jnAKEJXrm94gF0Kdh0rBwwjoepy3dnQlxYvRrjK_p5wf8WSlYd3LA7fdvHKcKQ1vzq1Ib3E8ABEl_hHcQmVubLjxPiAfdGa7P9krbqWAxNoo2oic_6VIAS56CP1v_vhCxdvTlX5E990reMj_AbXmhCAkuxIIfcrX6z0XM8xvWJfzyoSY3Q9A" />
+              <button
+                class="absolute bottom-0 inset-x-0 h-10 bg-primary text-on-primary font-label-sm text-label-sm uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-1">
+                <span class="material-symbols-outlined text-[16px]">add</span> Add to Bag
+              </button>
+            </div>
+            <span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary mb-1">Carnallite
+              Renewal</span>
+            <h4
+              class="font-headline-sm text-headline-sm text-primary mb-1 group-hover:text-secondary transition-colors">
+              Mineral Rich Face Cream</h4>
+            <div class="flex items-center justify-between text-on-surface-variant">
+              <span class="font-body-sm text-body-sm opacity-80">50ml / 1.7 fl oz</span>
+              <span class="font-body-md text-body-md font-medium text-primary">$68</span>
+            </div>
+          </div>
+          <!-- Product 2 -->
+          <div class="group flex flex-col">
+            <div
+              class="relative aspect-square bg-surface mb-space-sm overflow-hidden flex items-center justify-center p-space-md">
+              <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                data-alt="Frosted glass dropper bottle with pale turquoise Dead Sea active saline serum resting on raw sea minerals, soft clean lighting"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQSVCf9-mc4ALJFquAd67XznfwwPwtZjZgSMyUduTZd_-sPg_vPH2DLlK6lOs2bluVxGNrkLS6EsRUZdL_Pgyg8Q7BUx1vBoaHv-c2buP97OzLjC7jjzzzK1ZpqOCBX_eGw8Z7m2Oaj3kz1zfyq5-YYcgq4PPXZgIIirbRlNsdp31BGSxl-zHbc9g6RkFSKctwES82evH2rPGe1qlT4UWLLpbAJo9tldlHDIg1sLjqL93rosT7-A9zfA" />
+              <button
+                class="absolute bottom-0 inset-x-0 h-10 bg-primary text-on-primary font-label-sm text-label-sm uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-1">
+                <span class="material-symbols-outlined text-[16px]">add</span> Add to Bag
+              </button>
+            </div>
+            <span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary mb-1">Osmotic
+              Active</span>
+            <h4
+              class="font-headline-sm text-headline-sm text-primary mb-1 group-hover:text-secondary transition-colors">
+              Magnesium Saline Serum</h4>
+            <div class="flex items-center justify-between text-on-surface-variant">
+              <span class="font-body-sm text-body-sm opacity-80">30ml / 1.0 fl oz</span>
+              <span class="font-body-md text-body-md font-medium text-primary">$74</span>
+            </div>
+          </div>
+          <!-- Product 3 -->
+          <div class="group flex flex-col">
+            <div
+              class="relative aspect-square bg-surface mb-space-sm overflow-hidden flex items-center justify-center p-space-md">
+              <span
+                class="absolute top-3 left-3 bg-surface-container-high text-primary font-label-sm text-label-sm px-2 py-0.5 font-medium tracking-wider uppercase">
+                Signature
+              </span>
+              <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                data-alt="Wide glass apothecary jar filled with unrefined chunky Dead Sea bath crystals on a warm sand background with subtle ripples"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZAENtj5t71nLH33mAEPhe0F3CGKKRY5J8pkaaRDBwPfof1uZjXxvnZY5_HTMc55nQxC9mYV5rVrPV2dQDE5e2t9BFBKaIrXX_9322G7Ar7WjjAW77WI7Cfb0yoV_6vQze5cfkMr9xN4oleOb-WTJdHSB9XpAOr_yN0cfaXP5AjvIN5EqPWY_2599IWiZ168Hn3NWcvua-Sv6z_5aRy3OeqM60rns-ulUjnW-oHlnyjnt-cG4NaePDkg" />
+              <button
+                class="absolute bottom-0 inset-x-0 h-10 bg-primary text-on-primary font-label-sm text-label-sm uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-1">
+                <span class="material-symbols-outlined text-[16px]">add</span> Add to Bag
+              </button>
+            </div>
+            <span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary mb-1">Deep Bath
+              Soak</span>
+            <h4
+              class="font-headline-sm text-headline-sm text-primary mb-1 group-hover:text-secondary transition-colors">
+              Raw Carnallite Crystals</h4>
+            <div class="flex items-center justify-between text-on-surface-variant">
+              <span class="font-body-sm text-body-sm opacity-80">500g / 17.6 oz</span>
+              <span class="font-body-md text-body-md font-medium text-primary">$42</span>
+            </div>
+          </div>
+          <!-- Product 4 -->
+          <div class="group flex flex-col">
+            <div
+              class="relative aspect-square bg-surface mb-space-sm overflow-hidden flex items-center justify-center p-space-md">
+              <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                data-alt="Matte dark apothecary jar containing velvety black Dead Sea mineral mud resting on slate mineral rock, high end spa aesthetic"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEGNKDQ_0dSQjRcsruQpdfIUnsHljLd0RlLoEF-Q4tU4nsKRRIPP3U1hPfdpyuV9lW1h9u9JaQa3l2qykAk5Ezwv81dKIY-e5IIisAd-e5uRQry9fEp0bxCeYp3gjD7B3pjc5M_k78io3-3eamT35j_A5362MKE63oSn6FYHMGRi1B7SOSd4G5_LIz6XOZtVRk49JZFSM0-Rfky_qLSFDUNwugRk7feqKakm8IzQGuwxixHz7NHsK-Eg" />
+              <button
+                class="absolute bottom-0 inset-x-0 h-10 bg-primary text-on-primary font-label-sm text-label-sm uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-1">
+                <span class="material-symbols-outlined text-[16px]">add</span> Add to Bag
+              </button>
+            </div>
+            <span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary mb-1">412M
+              Subterranean</span>
+            <h4
+              class="font-headline-sm text-headline-sm text-primary mb-1 group-hover:text-secondary transition-colors">
+              Black Mud Body Wrap</h4>
+            <div class="flex items-center justify-between text-on-surface-variant">
+              <span class="font-body-sm text-body-sm opacity-80">250ml / 8.4 fl oz</span>
+              <span class="font-body-md text-body-md font-medium text-primary">$56</span>
+            </div>
+          </div>
+        </div>
+        <!-- Editorial Pull-Quote -->
+        <div
+          class="max-w-3xl mx-auto text-center pt-space-md border-t border-outline-variant/30 flex flex-col items-center">
+          <svg class="w-6 h-3 text-secondary opacity-60 mb-space-sm" fill="none" stroke="currentColor"
+            stroke-width="1.5" viewbox="0 0 24 10">
+            <path d="M0 5C4 2 8 8 12 5C16 2 20 8 24 5"></path>
+          </svg>
+          <blockquote class="font-display-lg text-headline-lg italic text-primary leading-snug mb-space-sm">
+            “There is no ecosystem on Earth where water carries 34% solid mineral weight. Our skin naturally knows what
+            to do with it.”
+          </blockquote>
+          <cite class="font-label-md text-label-md uppercase tracking-[0.16em] text-on-surface-variant not-italic">
+            Dr. Miriam Al-Husseini — Chief Geobiologist &amp; Dermal Researcher
+          </cite>
+        </div>
+      </section>
+      <!-- Section 4: Geological Potency (Deep Dark Feature Section) -->
+      <section class="w-full bg-primary text-on-primary px-margin-mobile md:px-margin-tablet lg:px-margin py-space-xl">
+        <div class="max-w-4xl mb-space-xl">
+          <div class="flex items-center gap-space-sm mb-space-sm">
+            <span class="w-6 h-[1px] bg-secondary-fixed"></span>
+            <span
+              class="font-label-sm text-label-sm uppercase tracking-[0.2em] text-secondary-fixed font-semibold">Geological
+              Potency</span>
+          </div>
+          <h2 class="font-display-lg text-display-lg text-surface-bright leading-tight mb-space-md">
+            The elemental chemistry of Carnallite &amp; Magnesium.
+          </h2>
+          <p class="font-body-lg text-body-lg text-inverse-primary/80 max-w-2xl font-light leading-relaxed">
+            Preserved under immense subterranean pressure for over ten thousand years, Dead Sea salt is not ordinary
+            sodium chloride. It is an unadulterated crystal matrix dominated by magnesium, potassium, and calcium
+            bromide.
+          </p>
+        </div>
+        <!-- 3-Column Potency Pillars -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-gutter lg:gap-space-lg mb-space-xl">
+          <!-- Pillar 1 -->
+          <div class="p-space-lg bg-primary-container/40 flex flex-col justify-between">
+            <div>
+              <div class="font-display-lg text-display-lg text-secondary-fixed mb-space-xs font-light">-412m</div>
+              <span
+                class="font-label-sm text-label-sm uppercase tracking-widest text-surface-variant block mb-space-md">Elevation
+                / Earth's Deepest Basin</span>
+              <p class="font-body-md text-body-md text-surface-container font-light leading-relaxed">
+                Harvested exclusively from pristine subterranean brine pockets shielded from surface atmosphere,
+                guaranteeing absolute absence of microplastics, petrochemical runoff, and anthropogenic contaminants.
+              </p>
+            </div>
+            <div
+              class="w-full h-[1px] bg-outline/30 mt-space-md pt-space-xs flex items-center justify-between text-secondary-fixed font-label-sm text-label-sm uppercase tracking-widest">
+              <span>Purity Verified</span>
+              <span class="material-symbols-outlined text-[16px]">verified</span>
+            </div>
+          </div>
+          <!-- Pillar 2 -->
+          <div class="p-space-lg bg-primary-container/40 flex flex-col justify-between">
+            <div>
+              <div class="font-display-lg text-display-lg text-secondary-fixed mb-space-xs font-light">4:1</div>
+              <span
+                class="font-label-sm text-label-sm uppercase tracking-widest text-surface-variant block mb-space-md">Magnesium
+                to Sodium Ratio</span>
+              <p class="font-body-md text-body-md text-surface-container font-light leading-relaxed">
+                Unlike ocean salts dominated by drying sodium, Dead Sea carnallite features exceptionally high magnesium
+                halide counts. Magnesium actively binds moisture within the stratum corneum and downregulates dermal
+                inflammatory cytokines.
+              </p>
+            </div>
+            <div
+              class="w-full h-[1px] bg-outline/30 mt-space-md pt-space-xs flex items-center justify-between text-secondary-fixed font-label-sm text-label-sm uppercase tracking-widest">
+              <span>Barrier Reinforcement</span>
+              <span class="material-symbols-outlined text-[16px]">water_drop</span>
+            </div>
+          </div>
+          <!-- Pillar 3 -->
+          <div class="p-space-lg bg-primary-container/40 flex flex-col justify-between">
+            <div>
+              <div class="font-display-lg text-display-lg text-secondary-fixed mb-space-xs font-light">100%</div>
+              <span
+                class="font-label-sm text-label-sm uppercase tracking-widest text-surface-variant block mb-space-md">Biocompatible
+                Osmosis</span>
+              <p class="font-body-md text-body-md text-surface-container font-light leading-relaxed">
+                The unique electrolyte gradient matches human cellular interstitial fluid with extraordinary fidelity,
+                facilitating effortless transdermal nutrient uptake and cellular respiration without synthetic delivery
+                agents.
+              </p>
+            </div>
+            <div
+              class="w-full h-[1px] bg-outline/30 mt-space-md pt-space-xs flex items-center justify-between text-secondary-fixed font-label-sm text-label-sm uppercase tracking-widest">
+              <span>Cellular Harmony</span>
+              <span class="material-symbols-outlined text-[16px]">balance</span>
+            </div>
+          </div>
+        </div>
+        <!-- Saline Telemetry Comparison -->
+        <div class="p-space-lg bg-primary-container/60 max-w-4xl mx-auto flex flex-col gap-space-md">
+          <div class="flex items-center justify-between">
+            <span class="font-label-md text-label-md uppercase tracking-wider text-surface-bright">Total Dissolved
+              Mineral Solid Content</span>
+            <span class="font-label-sm text-label-sm text-secondary-fixed uppercase tracking-widest">Hydrological
+              Assay</span>
+          </div>
+          <!-- Bar 1: Dead Sea -->
+          <div class="space-y-1">
+            <div class="flex justify-between font-label-sm text-label-sm uppercase tracking-wider">
+              <span class="text-surface-variant">SEAcare Raw Dead Sea Extract</span>
+              <span class="text-secondary-fixed font-semibold">34.2% Concentration</span>
+            </div>
+            <div class="w-full h-3 bg-primary overflow-hidden">
+              <div class="h-full bg-secondary-fixed w-[98%] transition-all duration-1000"></div>
+            </div>
+          </div>
+          <!-- Bar 2: Standard Sea -->
+          <div class="space-y-1">
+            <div class="flex justify-between font-label-sm text-label-sm uppercase tracking-wider">
+              <span class="text-outline">Standard Oceanic Sea Water</span>
+              <span class="text-outline">3.5% Concentration</span>
+            </div>
+            <div class="w-full h-3 bg-primary overflow-hidden">
+              <div class="h-full bg-outline/40 w-[10%]"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Section 5: The Evening Bath Protocol (Editorial Split Banner) -->
+      <section class="w-full px-margin-mobile md:px-margin-tablet lg:px-margin py-space-xl">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter lg:gap-space-lg items-center">
+          <!-- Visual Column -->
+          <div class="lg:col-span-7 relative">
+            <div class="w-full aspect-[16/10] bg-surface-container overflow-hidden group">
+              <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                data-alt="Editorial bathroom interior with rough natural stone soaking tub filled with clear water, linen towels, handcrafted soap, warm low moody lighting, and amber glass jars with Dead Sea salts"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVv8vdnfe30xEeP8WzKbSqEGH5NnYx9NfAHZaQQmt8WlPuIhliRI9VRhhWowVAB9f1wcKb7-qXJrTXhhxGxAdX1sbssASIOnheHdApOyWrvyJ9yAIa9oJshNklz_7orVpj_b41jfRVuZj1py0G9tp-MYYZsG5FkyC3VqrIG5wmI0YLYfgCDCserE72NYA6GKrL-dY3oT0bF76EtpOXWVlwFVIni2I4dBsL5wcPqYWC1sl_itcGgV5VzA" />
+            </div>
+            <div
+              class="absolute -bottom-space-sm -right-space-sm bg-surface-container-high p-space-md max-w-xs hidden md:block">
+              <span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary block mb-1">Recommended
+                Duration</span>
+              <span class="font-headline-sm text-headline-sm text-primary">20 Minutes at 37°C</span>
+            </div>
+          </div>
+          <!-- Narrative Column -->
+          <div class="lg:col-span-5 flex flex-col justify-center lg:pl-space-md mt-space-md lg:mt-0">
+            <span
+              class="font-label-sm text-label-sm uppercase tracking-[0.2em] text-secondary font-semibold block mb-1">
+              Ritual Architecture
+            </span>
+            <h2 class="font-display-lg text-headline-lg text-primary leading-tight mb-space-md">
+              The Evening Bath Protocol.
+            </h2>
+            <p class="font-body-md text-body-md text-on-surface-variant mb-space-md leading-relaxed">
+              Dissolve two cups of unrefined carnallite crystals into thermal water. As your body submerges, transdermal
+              magnesium absorption acts directly on the neuromuscular system, calming cellular stress and accelerating
+              moisture retention.
+            </p>
+            <!-- Steps list -->
+            <ul class="flex flex-col gap-space-sm mb-space-lg text-on-surface-variant font-body-sm text-body-sm">
+              <li class="flex items-start gap-space-sm pb-space-xs border-b border-outline-variant/30">
+                <span class="font-label-sm text-label-sm text-secondary font-bold">01</span>
+                <span>Prepare unboiled thermal water precisely at body temperature (37°C / 98.6°F).</span>
+              </li>
+              <li class="flex items-start gap-space-sm pb-space-xs border-b border-outline-variant/30">
+                <span class="font-label-sm text-label-sm text-secondary font-bold">02</span>
+                <span>Whisk 200g of unrefined Dead Sea crystals until completely transparent.</span>
+              </li>
+              <li class="flex items-start gap-space-sm pb-space-xs border-b border-outline-variant/30">
+                <span class="font-label-sm text-label-sm text-secondary font-bold">03</span>
+                <span>Immerse for 20 minutes without rinsing with tap water to seal the mineral veil.</span>
+              </li>
+            </ul>
+            <div>
+              <a class="font-label-md text-label-md uppercase tracking-[0.14em] text-primary hover:text-secondary inline-flex items-center gap-space-xs pb-1 border-b border-primary hover:border-secondary transition-colors"
+                href="#">
+                <span>Explore Complete Ritual Guide</span>
+                <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Section 6: Mineral Harvest Guarantee & Verification Badges -->
+      <section
+        class="w-full bg-surface-container border-y border-outline-variant/30 px-margin-mobile md:px-margin-tablet lg:px-margin py-space-lg">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-gutter text-center">
+          <div class="flex flex-col items-center gap-space-xs">
+            <span class="material-symbols-outlined text-[28px] text-secondary">explore</span>
+            <h5 class="font-label-md text-label-md uppercase tracking-wider text-primary font-semibold">412M BSL Harvest
+            </h5>
+            <p class="font-body-sm text-body-sm text-on-surface-variant max-w-[180px]">Mined by hand at the deepest
+              continental depression.</p>
+          </div>
+          <div class="flex flex-col items-center gap-space-xs">
+            <span class="material-symbols-outlined text-[28px] text-secondary">recycling</span>
+            <h5 class="font-label-md text-label-md uppercase tracking-wider text-primary font-semibold">Inert Packaging
+            </h5>
+            <p class="font-body-sm text-body-sm text-on-surface-variant max-w-[180px]">100% heavy flint glass and
+              anodized aluminum caps.</p>
+          </div>
+          <div class="flex flex-col items-center gap-space-xs">
+            <span class="material-symbols-outlined text-[28px] text-secondary">verified_user</span>
+            <h5 class="font-label-md text-label-md uppercase tracking-wider text-primary font-semibold">Dermatologist
+              Assayed</h5>
+            <p class="font-body-sm text-body-sm text-on-surface-variant max-w-[180px]">Clinically verified
+              non-comedogenic and hypoallergenic.</p>
+          </div>
+          <div class="flex flex-col items-center gap-space-xs">
+            <span class="material-symbols-outlined text-[28px] text-secondary">eco</span>
+            <h5 class="font-label-md text-label-md uppercase tracking-wider text-primary font-semibold">Zero Synthetics
+            </h5>
+            <p class="font-body-sm text-body-sm text-on-surface-variant max-w-[180px]">Free of artificial fragrances,
+              phthalates, and sulfates.</p>
+          </div>
+        </div>
+      </section>
+      <!-- Client-side Interactive Mini Script for Simple Product Feedback -->
+      <script>
+        document.querySelectorAll('button:has(.material-symbols-outlined)').forEach(btn => {
+          btn.addEventListener('click', (e) => {
+            if (btn.innerText.includes('Add to Bag')) {
+              const original = btn.innerHTML;
+              btn.innerHTML = '<span class="material-symbols-outlined text-[16px]">check</span> Added to Bag';
+              setTimeout(() => {
+                btn.innerHTML = original;
+              }, 2000);
+            }
+          });
+        });
+      </script>
+    </div>
+  </main>
+  <footer class="w-full bg-surface-container-low text-on-surface">
+    <div class="w-full px-margin-mobile md:px-margin-tablet lg:px-margin py-space-xl">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-gutter lg:gap-space-lg mb-space-xl">
+        <div class="flex flex-col gap-space-md">
+          <div class="flex items-center gap-space-xs"><span
+              class="font-headline-sm text-headline-sm tracking-wider uppercase text-primary">SEAcare</span><svg
+              class="w-5 h-2.5 text-secondary opacity-60" fill="none" stroke="currentColor" stroke-width="1.5"
+              viewbox="0 0 24 10">
+              <path d="M0 5C4 2 8 8 12 5C16 2 20 8 24 5"></path>
+            </svg></div>
+          <p class="font-body-sm text-body-sm text-on-surface-variant max-w-xs leading-relaxed">Formulated from
+            hyper-saline depths 412 meters below sea level. Organic mineral strata balanced with modern clinical purity
+            to restore dermal vitality.</p>
+          <div class="flex items-center gap-space-sm text-on-surface-variant pt-space-xs"><a
+              class="p-space-xs hover:text-primary transition-colors" href="#"><span
+                class="material-symbols-outlined text-[18px]">public</span></a><a
+              class="p-space-xs hover:text-primary transition-colors" href="#"><span
+                class="material-symbols-outlined text-[18px]">spa</span></a><a
+              class="p-space-xs hover:text-primary transition-colors" href="#"><span
+                class="material-symbols-outlined text-[18px]">camera</span></a></div>
+        </div>
+        <div class="flex flex-col gap-space-sm"><span
+            class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-semibold">Discipline
+            Collections</span>
+          <ul class="flex flex-col gap-space-xs font-body-sm text-body-sm text-on-surface-variant pt-space-xs">
+            <li><a class="hover:text-primary transition-colors" href="#">Facial Care</a></li>
+            <li><a class="hover:text-primary transition-colors" href="#">Hair Care</a></li>
+            <li><a class="hover:text-primary transition-colors" href="#">Bath Soaks</a></li>
+            <li><a class="hover:text-primary transition-colors" href="#">Body Mud</a></li>
+            <li><a class="hover:text-primary transition-colors" href="#">Gift Sets</a></li>
+          </ul>
+        </div>
+        <div class="flex flex-col gap-space-sm"><span
+            class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-semibold">The
+            Apothecary</span>
+          <ul class="flex flex-col gap-space-xs font-body-sm text-body-sm text-on-surface-variant pt-space-xs">
+            <li><a class="hover:text-primary transition-colors" href="#">Our Story</a></li>
+            <li><a class="hover:text-primary transition-colors" href="#">Carnallite Science</a></li>
+            <li><a class="hover:text-primary transition-colors" href="#">412m BSL Harvest</a></li>
+            <li><a class="hover:text-primary transition-colors" href="#">Environmental Stewardship</a></li>
+            <li><a class="hover:text-primary transition-colors" href="#">Clinical Profiles</a></li>
+          </ul>
+        </div>
+        <div class="flex flex-col gap-space-sm"><span
+            class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-semibold">Client
+            Concierge</span>
+          <ul class="flex flex-col gap-space-xs font-body-sm text-body-sm text-on-surface-variant pt-space-xs">
+            <li><a class="hover:text-primary transition-colors" href="#">Consultation</a></li>
+            <li><a class="hover:text-primary transition-colors" href="#">Shipping &amp; Global Delivery</a></li>
+            <li><a class="hover:text-primary transition-colors" href="#">Ritual Guide</a></li>
+            <li><a class="hover:text-primary transition-colors" href="#">Order Inquiries &amp; FAQs</a></li>
+            <li><a class="hover:text-primary transition-colors" href="#">Private Contact</a></li>
+          </ul>
+        </div>
+        <div class="flex flex-col gap-space-sm"><span
+            class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-semibold">The Saline
+            Gazette</span>
+          <p class="font-body-sm text-body-sm text-on-surface-variant pt-space-xs">Receive seasonal harvest dispatches,
+            hyper-mineral studies, and private formula allocations.</p>
+          <form class="flex flex-col gap-space-sm pt-space-xs" onsubmit="return false;">
+            <div class="relative"><input
+                class="w-full bg-transparent border-0 border-b border-primary/30 focus:border-primary focus:outline-none py-2 font-label-md text-label-md tracking-wider text-on-surface placeholder:text-on-surface-variant/60"
+                placeholder="EMAIL ADDRESS" type="email" /></div><button
+              class="w-full h-12 bg-primary-container text-on-primary hover:bg-secondary font-label-md text-label-md uppercase tracking-widest transition-colors flex items-center justify-center"
+              type="submit">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      <div
+        class="pt-space-lg flex flex-col md:flex-row items-start md:items-center justify-between gap-space-md text-on-surface-variant/80">
+        <div class="flex flex-col gap-1">
+          <p class="font-body-sm text-body-sm">© 2024 SEAcare Minerals Ltd. All rights reserved.</p>
+          <p class="font-label-sm text-label-sm text-on-surface-variant/60 uppercase tracking-widest">Harvested &amp;
+            Formulated at Earth's Lowest Shoreline (-412m BSL).</p>
+        </div>
+        <div class="flex flex-wrap items-center gap-space-md font-label-sm text-label-sm uppercase tracking-widest">
+          <span>Privacy Policy</span><span>Terms of Ritual</span><span>Supply Origin</span><span>Accessibility</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

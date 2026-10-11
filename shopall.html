@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" dir="rtl" lang="ar">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>تسوق الكل | SEAcare - مستحضرات معادن البحر الميت الفاخرة</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+  <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Noto+Serif+Arabic:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            teal: {
+              950: '#022A33', 900: '#044553', 800: '#0A5A6B', 700: '#137587',
+              600: '#1E8CA0', 100: '#DDF1F4', 50: '#EFF9FA',
+            },
+            sand: {
+              50: '#FFFFFF', 100: '#F7F9F9', 200: '#EEF3F4', 300: '#DCE4E6', 400: '#B9C4C7',
+            },
+            gold: {
+              300: '#8FD0D9', 400: '#5BB8C5', 500: '#259faf', 600: '#1A7D8B', 700: '#136573',
+            },
+            charcoal: {
+              900: '#1F2629', 800: '#2F383B', 700: '#4A5155', 600: '#585A5E', 500: '#6D6E71', 400: '#9C9EA1',
+            }
+          },
+          fontFamily: {
+            serif: ['"Noto Serif Arabic"', '"Cormorant Garamond"', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+          },
+          boxShadow: {
+            'luxury': '0 20px 40px -15px rgba(4, 69, 83, 0.10)',
+            'card': '0 4px 20px -2px rgba(31, 38, 41, 0.05)',
+            'card-hover': '0 20px 30px -10px rgba(4, 69, 83, 0.15)',
+          },
+          animation: {
+            'slide-down': 'slideDown 0.5s ease-out forwards',
+            'pulse-soft': 'pulseSoft 3s ease-in-out infinite',
+            'bounce-subtle': 'bounceSubtle 2s ease-in-out infinite',
+          },
+          keyframes: {
+            slideDown: { '0%': { opacity: '0', transform: 'translateY(-20px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } },
+            pulseSoft: { '0%, 100%': { opacity: '1' }, '50%': { opacity: '0.6' } },
+            bounceSubtle: { '0%, 100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-5px)' } },
+          },
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      background-color: #F7F9F9;
+      color: #1F2629;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    h1, h2, h3, h4 { font-family: 'Noto Serif Arabic', 'Cormorant Garamond', serif; }
+    ::-webkit-scrollbar { width: 8px; height: 8px; }
+    ::-webkit-scrollbar-track { background: #EEF3F4; }
+    ::-webkit-scrollbar-thumb { background: linear-gradient(180deg, #044553, #259faf); border-radius: 10px; }
+    .btn-shimmer { position: relative; overflow: hidden; }
+    .btn-shimmer::after {
+      content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.28), transparent);
+      transition: left 0.65s ease;
+    }
+    .btn-shimmer:hover::after { left: 100%; }
+    .card-lift { transition: transform 0.35s cubic-bezier(0.22,1,0.36,1), box-shadow 0.35s ease, border-color 0.3s ease; }
+    .card-lift:hover { transform: translateY(-6px); box-shadow: 0 18px 30px -10px rgba(4,69,83,0.12); border-color: rgba(37,159,175,0.45); }
+    .img-zoom { overflow: hidden; }
+    .img-zoom img { transition: transform 0.7s cubic-bezier(0.22,1,0.36,1); }
+    .img-zoom:hover img { transform: scale(1.06); }
+    input[type=range] { -webkit-appearance: none; background: transparent; }
+    input[type=range]::-webkit-slider-thumb {
+      -webkit-appearance: none; height: 18px; width: 18px; border-radius: 50%;
+      background: #044553; cursor: pointer; border: 2px solid #259faf;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2); margin-top: -6px;
+    }
+    input[type=range]::-webkit-slider-runnable-track {
+      width: 100%; height: 6px; cursor: pointer; background: #DCE4E6; border-radius: 9999px;
+    }
+    .checkbox-custom:checked { background-color: #044553; border-color: #044553; }
+    .border-gold-subtle { border-color: rgba(37,159,175,0.35); }
+    .bg-wave-pattern {
+      background-image: radial-gradient(rgba(37,159,175,0.06) 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+    .mobile-menu { max-height: 0; overflow: hidden; transition: max-height 0.5s cubic-bezier(0.22,1,0.36,1); }
+    .mobile-menu.open { max-height: 500px; }
+  </style>
+</head>
+
+<body class="bg-sand-100 text-charcoal-900 selection:bg-teal-900 selection:text-sand-100 overflow-x-hidden min-h-screen flex flex-col">
+
+  <!-- BEGIN: AnnouncementBar -->
+  <section class="bg-teal-950 text-sand-200 text-xs py-2.5 px-4 border-b border-teal-900/60 animate-slide-down" data-purpose="announcement-bar">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+      <div class="flex items-center gap-3 font-medium text-center sm:text-right">
+        <span class="inline-flex items-center justify-center w-2 h-2 rounded-full bg-gold-500 animate-pulse-soft flex-shrink-0"></span>
+        <p class="tracking-wide text-[11px] sm:text-xs">شحن مجاني لكافة الطلبات في الأردن والخليج العربي بقيمة تزيد عن 45 دينار أردني • استكشف النقاء المعدني</p>
+      </div>
+      <div class="hidden md:flex items-center divide-x divide-x-reverse divide-teal-800 text-[11px] text-sand-300">
+        <div class="px-3.5 flex items-center gap-2">
+          <i class="fa-solid fa-phone text-gold-400 text-[10px]"></i>
+          <span class="tracking-wider" dir="ltr">+962 7 9623 4969</span>
+        </div>
+        <div class="px-3.5 flex items-center gap-1.5 cursor-pointer hover:text-white transition-colors">
+          <span>العملة:</span><strong class="font-semibold text-gold-400">JOD د.أ</strong>
+        </div>
+        <div class="px-3.5 flex items-center gap-2">
+          <button class="text-white font-semibold underline decoration-gold-400 underline-offset-4" type="button">العربية</button>
+          <span class="text-teal-700">|</span>
+          <button class="text-sand-400 hover:text-white transition-colors uppercase tracking-wider text-xs" type="button">English</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- END: AnnouncementBar -->
+
+  <!-- BEGIN: MainHeader -->
+  <header class="sticky top-0 z-50 bg-sand-100/95 backdrop-blur-md border-b border-sand-300/70 transition-all shadow-sm" data-purpose="main-header">
+    <div class="max-w-7xl mx-auto px-4 lg:px-8">
+      <div class="flex items-center justify-between h-16 md:h-20 lg:h-22">
+        <div class="w-1/4 hidden lg:flex items-center">
+          <div class="relative w-full max-w-xs group">
+            <span class="absolute inset-y-0 right-0 flex items-center pr-3.5 pointer-events-none text-charcoal-500 group-focus-within:text-teal-900 transition-colors">
+              <i class="fa-solid fa-magnifying-glass text-xs"></i>
+            </span>
+            <input class="w-full bg-sand-200/80 text-xs rounded-full py-2.5 pr-9 pl-4 border border-sand-300 text-charcoal-800 placeholder-charcoal-400 focus:outline-none focus:ring-1 focus:ring-teal-800 focus:bg-white transition-all shadow-inner"
+              id="topSearchInput" placeholder="ابحث في كل المنتجات..." type="search" />
+          </div>
+        </div>
+        <button aria-label="الفلاتر والقائمة" class="lg:hidden p-2 text-charcoal-700 hover:text-teal-900 transition-colors flex items-center gap-1.5 text-xs font-semibold" id="mobileFilterToggleBtn">
+          <i class="fa-solid fa-sliders text-base text-teal-900"></i><span>تصفية</span>
+        </button>
+        <div class="flex-1 lg:flex-initial text-center py-2">
+          <a class="inline-flex flex-col items-center group" href="index.html">
+            <div class="flex items-center gap-2">
+              <span class="w-5 h-[1px] bg-gold-500/70 hidden sm:inline-block"></span>
+              <div aria-label="SEAcare" class="inline-block font-['Alexandria'] text-2xl sm:text-3xl leading-none" dir="ltr">
+                <span class="block leading-none tracking-tight">
+                  <b class="font-bold text-[#044553]">SEA</b><span class="font-normal text-[#259faf]">care</span>
+                </span>
+                <span class="block leading-none mt-1 text-center whitespace-nowrap text-[0.235em] tracking-[0.02em] font-light text-[#6D6E71]">WITH MAGNESIUM AND CARNALLITE</span>
+              </div>
+              <span class="w-5 h-[1px] bg-gold-500/70 hidden sm:inline-block"></span>
+            </div>
+          </a>
+        </div>
+        <div class="flex items-center justify-end gap-2 sm:gap-3 lg:gap-4 text-charcoal-800">
+          <button aria-label="البحث" class="lg:hidden p-2 text-charcoal-700 hover:text-teal-900 transition-colors">
+            <i class="fa-solid fa-magnifying-glass text-lg"></i>
+          </button>
+          <a class="hidden sm:flex items-center gap-2 p-2 hover:text-teal-900 transition-colors" href="account.html" title="حسابي">
+            <i class="fa-regular fa-user text-lg"></i><span class="hidden xl:inline text-xs font-medium">تسجيل الدخول</span>
+          </a>
+          <a class="relative p-2 hover:text-teal-900 transition-colors" href="wishlist.html" title="قائمة الرغبات">
+            <i class="fa-regular fa-heart text-lg"></i>
+            <span class="absolute top-1 -right-0.5 w-4 h-4 bg-gold-500 text-teal-950 font-bold text-[9px] rounded-full flex items-center justify-center animate-bounce-subtle" id="wishlistCountBadge">2</span>
+          </a>
+          <button class="relative flex items-center gap-2 bg-teal-900 text-sand-50 hover:bg-teal-800 px-3 sm:px-4 py-2 rounded-full transition-all shadow-sm btn-shimmer" type="button">
+            <i class="fa-solid fa-bag-shopping text-sm text-gold-400"></i>
+            <span class="text-xs font-semibold hidden sm:inline">الحقيبة</span>
+            <span class="w-5 h-5 bg-teal-950 text-gold-300 font-bold text-[10px] rounded-full flex items-center justify-center border border-teal-800" id="cartCountBadge">3</span>
+          </button>
+        </div>
+      </div>
+      <!-- Desktop Navigation (updated to final 6-category structure + Soaps) -->
+      <nav class="hidden lg:block border-t border-sand-300/50 py-3">
+        <ul class="flex items-center justify-center gap-5 xl:gap-7 text-xs font-medium text-charcoal-800 tracking-wide">
+          <li><a class="hover:text-teal-900 py-1 transition-colors" href="index.html">الرئيسية</a></li>
+          <li><a class="text-teal-900 font-bold border-b-2 border-teal-900 pb-1" href="shopall.html">تسوق الكل</a></li>
+          <li><a class="hover:text-teal-900 py-1 transition-colors" href="category.html">العناية بالوجه</a></li>
+          <li><a class="hover:text-teal-900 py-1 transition-colors" href="shopall.html#body-hand-care">العناية بالجسم</a></li>
+          <li><a class="hover:text-teal-900 py-1 transition-colors" href="shopall.html#hair-care">العناية بالشعر</a></li>
+          <li><a class="hover:text-teal-900 py-1 transition-colors" href="shopall.html#mud-masks">الأقنعة وطين البحر الميت</a></li>
+          <li><a class="hover:text-teal-900 py-1 transition-colors" href="shopall.html#bath-spa">الأملاح والاستجمام</a></li>
+          <li><a class="hover:text-teal-900 py-1 transition-colors" href="soap.html">الصابون الفاخر</a></li>
+          <li><a class="text-gold-600 font-bold hover:text-gold-700 py-1 flex items-center gap-1" href="shopall.html#gifts">
+            <i class="fa-solid fa-gift text-xs"></i><span>الهدايا والمجموعات</span></a></li>
+        </ul>
+      </nav>
+      <!-- Mobile Navigation -->
+      <nav id="mobileMenu" class="mobile-menu lg:hidden border-t border-sand-300/50">
+        <ul class="py-4 space-y-1 text-sm font-medium text-charcoal-800">
+          <li><a class="block py-2.5 px-3 rounded-lg hover:bg-sand-200 hover:text-teal-900 transition-colors" href="index.html">الرئيسية</a></li>
+          <li><a class="block py-2.5 px-3 rounded-lg bg-sand-200 text-teal-900 font-bold transition-colors" href="shopall.html">تسوق الكل</a></li>
+          <li><a class="block py-2.5 px-3 rounded-lg hover:bg-sand-200 hover:text-teal-900 transition-colors" href="category.html">العناية بالوجه</a></li>
+          <li><a class="block py-2.5 px-3 rounded-lg hover:bg-sand-200 hover:text-teal-900 transition-colors" href="shopall.html#body-hand-care">العناية بالجسم</a></li>
+          <li><a class="block py-2.5 px-3 rounded-lg hover:bg-sand-200 hover:text-teal-900 transition-colors" href="shopall.html#hair-care">العناية بالشعر</a></li>
+          <li><a class="block py-2.5 px-3 rounded-lg hover:bg-sand-200 hover:text-teal-900 transition-colors" href="shopall.html#mud-masks">الأقنعة وطين البحر الميت</a></li>
+          <li><a class="block py-2.5 px-3 rounded-lg hover:bg-sand-200 hover:text-teal-900 transition-colors" href="shopall.html#bath-spa">الأملاح والاستجمام</a></li>
+          <li><a class="block py-2.5 px-3 rounded-lg hover:bg-sand-200 hover:text-teal-900 transition-colors" href="soap.html">الصابون الفاخر</a></li>
+          <li><a class="block py-2.5 px-3 rounded-lg text-gold-600 font-bold hover:bg-sand-200 transition-colors" href="shopall.html#gifts"><i class="fa-solid fa-gift text-xs ml-1"></i> الهدايا والمجموعات</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <!-- END: MainHeader -->
+
+  <!-- BEGIN: Main Category Workspace -->
+  <main class="flex-grow bg-wave-pattern">
+    <!-- Breadcrumb & Page Header -->
+    <section class="bg-gradient-to-b from-sand-200/80 to-sand-100 border-b border-sand-300/70 pt-6 pb-8 relative overflow-hidden">
+      <div class="absolute top-0 left-0 w-72 h-72 rounded-full bg-teal-600/5 blur-3xl pointer-events-none -z-0"></div>
+      <div class="max-w-7xl mx-auto px-4 lg:px-8 relative z-10">
+        <nav aria-label="مسار التنقل" class="flex items-center gap-2 text-xs text-charcoal-500 mb-4">
+          <a class="hover:text-teal-900 transition-colors flex items-center gap-1.5" href="index.html">
+            <i class="fa-solid fa-house text-[10px]"></i><span>الرئيسية</span>
+          </a>
+          <i class="fa-solid fa-angle-left text-[10px] text-charcoal-400"></i>
+          <span aria-current="page" class="text-teal-900 font-semibold">تسوق الكل</span>
+        </nav>
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+          <div>
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sand-50 border border-gold-subtle text-[11px] font-medium text-teal-900 mb-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-gold-500"></span><span>كنوز البحر الميت • -430m</span>
+            </div>
+            <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold font-serif text-teal-950 tracking-tight">تسوق كل المنتجات</h1>
+            <p class="text-xs sm:text-sm text-charcoal-600 mt-1 max-w-2xl leading-relaxed">
+              تصفحي مجموعتنا الكاملة من مستحضرات العناية المستوحاة من معادن البحر الميت الأردني النقي.
+            </p>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="bg-sand-50 px-4 py-2 rounded-2xl border border-sand-300 shadow-sm flex items-center gap-2">
+              <span class="text-xs text-charcoal-500">المنتجات المتاحة:</span>
+              <span class="text-sm font-bold text-teal-950 font-serif" id="productCountHeader">24 مستحضر</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Content Area: Sidebar + Grid -->
+    <div class="max-w-7xl mx-auto px-4 lg:px-8 py-8 md:py-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+
+        <!-- Sidebar Filters -->
+        <aside class="lg:col-span-3 bg-white rounded-2xl border border-sand-300/80 p-5 shadow-card space-y-6" id="filterSidebar">
+          <div class="flex items-center justify-between pb-4 border-b border-sand-200">
+            <div class="flex items-center gap-2">
+              <i class="fa-solid fa-filter text-teal-800 text-xs"></i>
+              <h2 class="font-serif font-bold text-base text-teal-950">تصفية النتائج</h2>
+            </div>
+            <button class="text-xs text-gold-600 hover:text-teal-900 font-semibold underline underline-offset-2 transition-colors" id="resetFiltersBtn" type="button">إعادة ضبط الفلاتر</button>
+          </div>
+
+          <!-- Category filter (final 6-category structure) -->
+          <div class="space-y-3">
+            <h3 class="font-serif font-bold text-xs text-teal-950">الفئة</h3>
+            <div class="space-y-2.5 text-xs text-charcoal-700">
+              <label class="flex items-center justify-between cursor-pointer group select-none">
+                <div class="flex items-center gap-2.5">
+                  <input class="filter-checkbox-cat w-4 h-4 rounded border-sand-300 text-teal-900 focus:ring-teal-800 checkbox-custom" type="checkbox" value="skin-care" />
+                  <span class="group-hover:text-teal-950 transition-colors">العناية بالوجه</span>
+                </div>
+                <span class="text-[10px] text-charcoal-400">(16)</span>
+              </label>
+              <label class="flex items-center justify-between cursor-pointer group select-none">
+                <div class="flex items-center gap-2.5">
+                  <input class="filter-checkbox-cat w-4 h-4 rounded border-sand-300 text-teal-900 focus:ring-teal-800 checkbox-custom" type="checkbox" value="mud-masks" />
+                  <span class="group-hover:text-teal-950 transition-colors">الأقنعة وطين البحر الميت</span>
+                </div>
+                <span class="text-[10px] text-charcoal-400">(12)</span>
+              </label>
+              <label class="flex items-center justify-between cursor-pointer group select-none">
+                <div class="flex items-center gap-2.5">
+                  <input class="filter-checkbox-cat w-4 h-4 rounded border-sand-300 text-teal-900 focus:ring-teal-800 checkbox-custom" type="checkbox" value="hair-care" />
+                  <span class="group-hover:text-teal-950 transition-colors">العناية بالشعر</span>
+                </div>
+                <span class="text-[10px] text-charcoal-400">(5)</span>
+              </label>
+              <label class="flex items-center justify-between cursor-pointer group select-none">
+                <div class="flex items-center gap-2.5">
+                  <input class="filter-checkbox-cat w-4 h-4 rounded border-sand-300 text-teal-900 focus:ring-teal-800 checkbox-custom" type="checkbox" value="body-hand-care" />
+                  <span class="group-hover:text-teal-950 transition-colors">العناية بالجسم واليدين</span>
+                </div>
+                <span class="text-[10px] text-charcoal-400">(9)</span>
+              </label>
+              <label class="flex items-center justify-between cursor-pointer group select-none">
+                <div class="flex items-center gap-2.5">
+                  <input class="filter-checkbox-cat w-4 h-4 rounded border-sand-300 text-teal-900 focus:ring-teal-800 checkbox-custom" type="checkbox" value="bath-spa" />
+                  <span class="group-hover:text-teal-950 transition-colors">الأملاح والاستجمام</span>
+                </div>
+                <span class="text-[10px] text-charcoal-400">(2)</span>
+              </label>
+              <label class="flex items-center justify-between cursor-pointer group select-none">
+                <div class="flex items-center gap-2.5">
+                  <input class="filter-checkbox-cat w-4 h-4 rounded border-sand-300 text-teal-900 focus:ring-teal-800 checkbox-custom" type="checkbox" value="soaps" />
+                  <span class="group-hover:text-teal-950 transition-colors">الصابون الفاخر</span>
+                </div>
+                <span class="text-[10px] text-charcoal-400">(21)</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Price range -->
+          <div class="space-y-3 pt-4 border-t border-sand-200/80">
+            <div class="flex items-center justify-between">
+              <label class="font-serif font-bold text-xs text-teal-950" for="priceRangeSlider">نطاق السعر (د.أ)</label>
+              <span class="text-xs font-semibold text-teal-900 bg-sand-200 px-2 py-0.5 rounded-full" id="priceDisplay">حتى 40 د.أ</span>
+            </div>
+            <input class="w-full h-2 bg-sand-300 rounded-lg appearance-none cursor-pointer" id="priceRangeSlider" max="40" min="5" step="1" type="range" value="40" />
+            <div class="flex justify-between text-[11px] text-charcoal-400">
+              <span>5 د.أ</span><span>20 د.أ</span><span>40 د.أ</span>
+            </div>
+          </div>
+
+          <!-- Skin concern -->
+          <div class="pt-4 border-t border-sand-200/80 space-y-3">
+            <h3 class="font-serif font-bold text-xs text-teal-950">الهدف / احتياج البشرة</h3>
+            <div class="space-y-2.5 text-xs text-charcoal-700">
+              <label class="flex items-center justify-between cursor-pointer group select-none">
+                <div class="flex items-center gap-2.5">
+                  <input checked class="filter-checkbox-goal w-4 h-4 rounded border-sand-300 text-teal-900 focus:ring-teal-800 checkbox-custom" type="checkbox" value="ترطيب" />
+                  <span class="group-hover:text-teal-950 transition-colors">ترطيب مكثف</span>
+                </div>
+                <span class="text-[10px] text-charcoal-400">(14)</span>
+              </label>
+              <label class="flex items-center justify-between cursor-pointer group select-none">
+                <div class="flex items-center gap-2.5">
+                  <input checked class="filter-checkbox-goal w-4 h-4 rounded border-sand-300 text-teal-900 focus:ring-teal-800 checkbox-custom" type="checkbox" value="تنقية" />
+                  <span class="group-hover:text-teal-950 transition-colors">تنقية وتنظيف المسام</span>
+                </div>
+                <span class="text-[10px] text-charcoal-400">(9)</span>
+              </label>
+              <label class="flex items-center justify-between cursor-pointer group select-none">
+                <div class="flex items-center gap-2.5">
+                  <input checked class="filter-checkbox-goal w-4 h-4 rounded border-sand-300 text-teal-900 focus:ring-teal-800 checkbox-custom" type="checkbox" value="تهدئة" />
+                  <span class="group-hover:text-teal-950 transition-colors">تهدئة وترميم الحاجز</span>
+                </div>
+                <span class="text-[10px] text-charcoal-400">(8)</span>
+              </label>
+              <label class="flex items-center justify-between cursor-pointer group select-none">
+                <div class="flex items-center gap-2.5">
+                  <input checked class="filter-checkbox-goal w-4 h-4 rounded border-sand-300 text-teal-900 focus:ring-teal-800 checkbox-custom" type="checkbox" value="مكافحة الشيخوخة" />
+                  <span class="group-hover:text-teal-950 transition-colors">مكافحة الشيخوخة والتجاعيد</span>
+                </div>
+                <span class="text-[10px] text-charcoal-400">(6)</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Product type -->
+          <div class="pt-4 border-t border-sand-200/80 space-y-3">
+            <h3 class="font-serif font-bold text-xs text-teal-950">نوع المستحضر</h3>
+            <div class="space-y-2.5 text-xs text-charcoal-700">
+              <label class="flex items-center justify-between cursor-pointer group select-none">
+                <div class="flex items-center gap-2.5">
+                  <input checked class="filter-checkbox-type w-4 h-4 rounded border-sand-300 text-teal-900 focus:ring-teal-800 checkbox-custom" type="checkbox" value="سيروم وزيوت" />
+                  <span class="group-hover:text-teal-950 transition-colors">سيروم وزيوت</span>
+                </div>
+                <span class="text-[10px] text-charcoal-400">(6)</span>
+              </label>
+              <label class="flex items-center justify-between cursor-pointer group select-none">
+                <div class="flex items-center gap-2.5">
+                  <input checked class="filter-checkbox-type w-4 h-4 rounded border-sand-300 text-teal-900 focus:ring-teal-800 checkbox-custom" type="checkbox" value="كريمات ومرطبات" />
+                  <span class="group-hover:text-teal-950 transition-colors">كريمات ومرطبات</span>
+                </div>
+                <span class="text-[10px] text-charcoal-400">(7)</span>
+              </label>
+              <label class="flex items-center justify-between cursor-pointer group select-none">
+                <div class="flex items-center gap-2.5">
+                  <input checked class="filter-checkbox-type w-4 h-4 rounded border-sand-300 text-teal-900 focus:ring-teal-800 checkbox-custom" type="checkbox" value="أقنعة وطين" />
+                  <span class="group-hover:text-teal-950 transition-colors">أقنعة وطين</span>
+                </div>
+                <span class="text-[10px] text-charcoal-400">(4)</span>
+              </label>
+              <label class="flex items-center justify-between cursor-pointer group select-none">
+                <div class="flex items-center gap-2.5">
+                  <input checked class="filter-checkbox-type w-4 h-4 rounded border-sand-300 text-teal-900 focus:ring-teal-800 checkbox-custom" type="checkbox" value="صابون" />
+                  <span class="group-hover:text-teal-950 transition-colors">صابون</span>
+                </div>
+                <span class="text-[10px] text-charcoal-400">(21)</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-sand-200/80 bg-sand-200/60 p-3.5 rounded-xl text-center">
+            <div class="w-7 h-7 mx-auto rounded-full bg-teal-900 text-gold-300 flex items-center justify-center text-xs mb-1.5">
+              <i class="fa-solid fa-leaf"></i>
+            </div>
+            <p class="text-[11px] font-semibold text-teal-950">نقاء البحر الميت 100%</p>
+            <p class="text-[10px] text-charcoal-500 mt-0.5">مستخلصات نباتية معصورة على البارد وخالية من البارابين</p>
+          </div>
+        </aside>
+
+        <!-- Main Products Area -->
+        <section class="lg:col-span-9 space-y-6">
+          <!-- Top bar: results count, active filter chips, sort -->
+          <div class="bg-white rounded-2xl border border-sand-300/80 p-4 shadow-card space-y-3">
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+              <span class="text-xs text-charcoal-600">
+                عرض <strong class="font-bold text-teal-950 font-serif" id="visibleCountText">9</strong>
+                من أصل <span class="font-semibold text-teal-900">24</span> مستحضر • جميع الأسعار تشمل ضريبة المبيعات
+              </span>
+              <div class="flex items-center gap-2 w-full sm:w-auto justify-end">
+                <label class="text-xs text-charcoal-600 whitespace-nowrap font-medium flex items-center gap-1" for="sortDropdown">
+                  <i class="fa-solid fa-arrow-down-wide-short text-gold-600"></i><span>الترتيب حسب:</span>
+                </label>
+                <select class="bg-sand-100 text-xs text-teal-950 font-semibold rounded-full border border-sand-300 py-2 pr-4 pl-8 focus:outline-none focus:ring-1 focus:ring-teal-800 cursor-pointer" id="sortDropdown">
+                  <option value="featured">الأكثر مبيعاً</option>
+                  <option value="newest">الأحدث</option>
+                  <option value="price-asc">السعر: الأقل إلى الأعلى</option>
+                  <option value="price-desc">السعر: الأعلى إلى الأقل</option>
+                </select>
+              </div>
+            </div>
+            <!-- Active filter chips -->
+            <div class="flex flex-wrap items-center gap-2 pt-3 border-t border-sand-200" id="activeChipsRow">
+              <span class="text-[11px] text-charcoal-400">الفلاتر النشطة:</span>
+              <span class="text-[11px] text-charcoal-400 italic" id="noChipsMsg">لا يوجد فلاتر فئة محددة</span>
+            </div>
+          </div>
+
+          <!-- Product Grid -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6" id="productGrid">
+
+            <article class="product-card bg-white rounded-2xl border border-sand-300/80 p-4 flex flex-col justify-between card-lift group"
+              data-category="skin-care" data-goals="ترطيب,تهدئة,مكافحة الشيخوخة" data-price="28.50" data-sales="98" data-type="سيروم وزيوت" data-date="2025-02-10">
+              <div>
+                <div class="relative rounded-xl overflow-hidden bg-sand-100 aspect-square mb-4 img-zoom">
+                  <img alt="سيروم المغنيسيوم المركز" class="w-full h-full object-cover object-center" src="https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg" />
+                  <button class="wishlist-btn absolute top-3 left-3 w-8 h-8 rounded-full bg-white/90 text-charcoal-700 hover:text-red-500 hover:bg-white flex items-center justify-center shadow-sm transition-colors" title="إضافة للمفضلة">
+                    <i class="fa-regular fa-heart text-xs"></i>
+                  </button>
+                  <span class="absolute bottom-2.5 right-2.5 bg-sand-50/90 text-teal-900 border border-sand-300/70 text-[10px] font-medium px-2.5 py-0.5 rounded-full">العناية بالوجه • سيروم</span>
+                </div>
+                <div class="space-y-1.5">
+                  <h3 class="font-serif font-bold text-sm sm:text-base text-teal-950 group-hover:text-teal-800 transition-colors">سيروم المغنيسيوم المركز النشط</h3>
+                  <p class="text-xs text-charcoal-600 truncate pt-0.5">يغذي طبقات البشرة بالأيونات النشطة ويعيد مرونة الحاجز الطبيعي.</p>
+                </div>
+              </div>
+              <div class="mt-5 pt-3 border-t border-sand-200 flex items-center justify-between">
+                <div><span class="text-[10px] text-charcoal-400 block">السعر</span><span class="text-base font-bold text-teal-900">28.50 د.أ</span></div>
+                <button class="add-to-cart-btn bg-teal-900 hover:bg-teal-950 text-sand-50 px-4 py-2 rounded-full text-xs font-semibold flex items-center gap-2 transition-all shadow-sm btn-shimmer" data-name="سيروم المغنيسيوم المركز النشط" type="button">
+                  <i class="fa-solid fa-bag-shopping text-gold-400 text-xs"></i><span>أضف للحقيبة</span>
+                </button>
+              </div>
+            </article>
+
+            <article class="product-card bg-white rounded-2xl border border-sand-300/80 p-4 flex flex-col justify-between card-lift group"
+              data-category="skin-care" data-goals="ترطيب,مكافحة الشيخوخة" data-price="34.00" data-sales="95" data-type="كريمات ومرطبات" data-date="2025-02-15">
+              <div>
+                <div class="relative rounded-xl overflow-hidden bg-sand-100 aspect-square mb-4 img-zoom">
+                  <img alt="كريم الليل المعدني" class="w-full h-full object-cover object-center" src="https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg" />
+                  <button class="wishlist-btn absolute top-3 left-3 w-8 h-8 rounded-full bg-white/90 text-charcoal-700 hover:text-red-500 hover:bg-white flex items-center justify-center shadow-sm transition-colors" title="إضافة للمفضلة">
+                    <i class="fa-regular fa-heart text-xs"></i>
+                  </button>
+                  <span class="absolute bottom-2.5 right-2.5 bg-sand-50/90 text-teal-900 border border-sand-300/70 text-[10px] font-medium px-2.5 py-0.5 rounded-full">العناية بالوجه • كريم</span>
+                </div>
+                <div class="space-y-1.5">
+                  <h3 class="font-serif font-bold text-sm sm:text-base text-teal-950 group-hover:text-teal-800 transition-colors">Mineral Night Cream</h3>
+                  <p class="text-xs text-charcoal-600 truncate pt-0.5">ترميم مكثف لترطيب البشرة الجافة وتجديد الخلايا أثناء النوم.</p>
+                </div>
+              </div>
+              <div class="mt-5 pt-3 border-t border-sand-200 flex items-center justify-between">
+                <div><span class="text-[10px] text-charcoal-400 block">السعر</span><span class="text-base font-bold text-teal-900">34.00 د.أ</span></div>
+                <button class="add-to-cart-btn bg-teal-900 hover:bg-teal-950 text-sand-50 px-4 py-2 rounded-full text-xs font-semibold flex items-center gap-2 transition-all shadow-sm btn-shimmer" data-name="Mineral Night Cream" type="button">
+                  <i class="fa-solid fa-bag-shopping text-gold-400 text-xs"></i><span>أضف للحقيبة</span>
+                </button>
+              </div>
+            </article>
+
+            <article class="product-card bg-white rounded-2xl border border-sand-300/80 p-4 flex flex-col justify-between card-lift group"
+              data-category="mud-masks" data-goals="تنقية,تهدئة" data-price="22.00" data-sales="90" data-type="أقنعة وطين" data-date="2025-01-20">
+              <div>
+                <div class="relative rounded-xl overflow-hidden bg-sand-100 aspect-square mb-4 img-zoom">
+                  <img alt="قناع طين البحر الميت" class="w-full h-full object-cover object-center" src="https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg" />
+                  <button class="wishlist-btn absolute top-3 left-3 w-8 h-8 rounded-full bg-white/90 text-charcoal-700 hover:text-red-500 hover:bg-white flex items-center justify-center shadow-sm transition-colors" title="إضافة للمفضلة">
+                    <i class="fa-regular fa-heart text-xs"></i>
+                  </button>
+                  <span class="absolute bottom-2.5 right-2.5 bg-sand-50/90 text-teal-900 border border-sand-300/70 text-[10px] font-medium px-2.5 py-0.5 rounded-full">طين وأملاح • قناع</span>
+                </div>
+                <div class="space-y-1.5">
+                  <h3 class="font-serif font-bold text-sm sm:text-base text-teal-950 group-hover:text-teal-800 transition-colors">Pure Mud Mask - Regular</h3>
+                  <p class="text-xs text-charcoal-600 truncate pt-0.5">يسحب السموم والدهون الزائدة بلطف دون إخلال برطوبة البشرة.</p>
+                </div>
+              </div>
+              <div class="mt-5 pt-3 border-t border-sand-200 flex items-center justify-between">
+                <div><span class="text-[10px] text-charcoal-400 block">السعر</span><span class="text-base font-bold text-teal-900">22.00 د.أ</span></div>
+                <button class="add-to-cart-btn bg-teal-900 hover:bg-teal-950 text-sand-50 px-4 py-2 rounded-full text-xs font-semibold flex items-center gap-2 transition-all shadow-sm btn-shimmer" data-name="Pure Mud Mask - Regular" type="button">
+                  <i class="fa-solid fa-bag-shopping text-gold-400 text-xs"></i><span>أضف للحقيبة</span>
+                </button>
+              </div>
+            </article>
+
+            <article class="product-card bg-white rounded-2xl border border-sand-300/80 p-4 flex flex-col justify-between card-lift group"
+              data-category="body-hand-care" data-goals="ترطيب" data-price="18.50" data-sales="82" data-type="كريمات ومرطبات" data-date="2025-02-01">
+              <div>
+                <div class="relative rounded-xl overflow-hidden bg-sand-100 aspect-square mb-4 img-zoom">
+                  <img alt="زبدة الشيا والكاكاو" class="w-full h-full object-cover object-center" src="https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg" />
+                  <button class="wishlist-btn absolute top-3 left-3 w-8 h-8 rounded-full bg-white/90 text-charcoal-700 hover:text-red-500 hover:bg-white flex items-center justify-center shadow-sm transition-colors" title="إضافة للمفضلة">
+                    <i class="fa-regular fa-heart text-xs"></i>
+                  </button>
+                  <span class="absolute bottom-2.5 right-2.5 bg-sand-50/90 text-teal-900 border border-sand-300/70 text-[10px] font-medium px-2.5 py-0.5 rounded-full">العناية بالجسم • زبدة</span>
+                </div>
+                <div class="space-y-1.5">
+                  <h3 class="font-serif font-bold text-sm sm:text-base text-teal-950 group-hover:text-teal-800 transition-colors">Body Butter with Cocoa</h3>
+                  <p class="text-xs text-charcoal-600 truncate pt-0.5">تغذية مخملية ترطب بعمق وتعيد مرونة ونعومة جلد الجسم.</p>
+                </div>
+              </div>
+              <div class="mt-5 pt-3 border-t border-sand-200 flex items-center justify-between">
+                <div><span class="text-[10px] text-charcoal-400 block">السعر</span><span class="text-base font-bold text-teal-900">18.50 د.أ</span></div>
+                <button class="add-to-cart-btn bg-teal-900 hover:bg-teal-950 text-sand-50 px-4 py-2 rounded-full text-xs font-semibold flex items-center gap-2 transition-all shadow-sm btn-shimmer" data-name="Body Butter with Cocoa" type="button">
+                  <i class="fa-solid fa-bag-shopping text-gold-400 text-xs"></i><span>أضف للحقيبة</span>
+                </button>
+              </div>
+            </article>
+
+            <article class="product-card bg-white rounded-2xl border border-sand-300/80 p-4 flex flex-col justify-between card-lift group"
+              data-category="bath-spa" data-goals="تهدئة" data-price="11.00" data-sales="76" data-type="أقنعة وطين" data-date="2025-01-10">
+              <div>
+                <div class="relative rounded-xl overflow-hidden bg-sand-100 aspect-square mb-4 img-zoom">
+                  <img alt="أملاح البحر الميت" class="w-full h-full object-cover object-center" src="https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg" />
+                  <button class="wishlist-btn absolute top-3 left-3 w-8 h-8 rounded-full bg-white/90 text-charcoal-700 hover:text-red-500 hover:bg-white flex items-center justify-center shadow-sm transition-colors" title="إضافة للمفضلة">
+                    <i class="fa-regular fa-heart text-xs"></i>
+                  </button>
+                  <span class="absolute bottom-2.5 right-2.5 bg-sand-50/90 text-teal-900 border border-sand-300/70 text-[10px] font-medium px-2.5 py-0.5 rounded-full">أملاح واستجمام</span>
+                </div>
+                <div class="space-y-1.5">
+                  <h3 class="font-serif font-bold text-sm sm:text-base text-teal-950 group-hover:text-teal-800 transition-colors">Dead Sea Salt - Multi Flavors</h3>
+                  <p class="text-xs text-charcoal-600 truncate pt-0.5">أملاح استرخاء نقية 100% لإزالة التوتر العضلي، بعدة نكهات.</p>
+                </div>
+              </div>
+              <div class="mt-5 pt-3 border-t border-sand-200 flex items-center justify-between">
+                <div><span class="text-[10px] text-charcoal-400 block">السعر</span><span class="text-base font-bold text-teal-900">11.00 د.أ</span></div>
+                <button class="add-to-cart-btn bg-teal-900 hover:bg-teal-950 text-sand-50 px-4 py-2 rounded-full text-xs font-semibold flex items-center gap-2 transition-all shadow-sm btn-shimmer" data-name="Dead Sea Salt - Multi Flavors" type="button">
+                  <i class="fa-solid fa-bag-shopping text-gold-400 text-xs"></i><span>أضف للحقيبة</span>
+                </button>
+              </div>
+            </article>
+
+            <article class="product-card bg-white rounded-2xl border border-sand-300/80 p-4 flex flex-col justify-between card-lift group"
+              data-category="hair-care" data-goals="تنقية,تهدئة" data-price="12.00" data-sales="89" data-type="كريمات ومرطبات" data-date="2025-02-18">
+              <div>
+                <div class="relative rounded-xl overflow-hidden bg-sand-100 aspect-square mb-4 img-zoom">
+                  <img alt="شامبو معدني" class="w-full h-full object-cover object-center" src="https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg" />
+                  <button class="wishlist-btn absolute top-3 left-3 w-8 h-8 rounded-full bg-white/90 text-charcoal-700 hover:text-red-500 hover:bg-white flex items-center justify-center shadow-sm transition-colors" title="إضافة للمفضلة">
+                    <i class="fa-regular fa-heart text-xs"></i>
+                  </button>
+                  <span class="absolute bottom-2.5 right-2.5 bg-sand-50/90 text-teal-900 border border-sand-300/70 text-[10px] font-medium px-2.5 py-0.5 rounded-full">العناية بالشعر • شامبو</span>
+                </div>
+                <div class="space-y-1.5">
+                  <h3 class="font-serif font-bold text-sm sm:text-base text-teal-950 group-hover:text-teal-800 transition-colors">Mineral Shampoo with MUD</h3>
+                  <p class="text-xs text-charcoal-600 truncate pt-0.5">يهدئ تهيج فروة الرأس ويوازن الإفرازات مع تقوية البصيلات.</p>
+                </div>
+              </div>
+              <div class="mt-5 pt-3 border-t border-sand-200 flex items-center justify-between">
+                <div><span class="text-[10px] text-charcoal-400 block">السعر</span><span class="text-base font-bold text-teal-900">12.00 د.أ</span></div>
+                <button class="add-to-cart-btn bg-teal-900 hover:bg-teal-950 text-sand-50 px-4 py-2 rounded-full text-xs font-semibold flex items-center gap-2 transition-all shadow-sm btn-shimmer" data-name="Mineral Shampoo with MUD" type="button">
+                  <i class="fa-solid fa-bag-shopping text-gold-400 text-xs"></i><span>أضف للحقيبة</span>
+                </button>
+              </div>
+            </article>
+
+            <article class="product-card bg-white rounded-2xl border border-sand-300/80 p-4 flex flex-col justify-between card-lift group"
+              data-category="soaps" data-goals="تنقية" data-price="6.50" data-sales="88" data-type="صابون" data-date="2025-01-05">
+              <div>
+                <div class="relative rounded-xl overflow-hidden bg-sand-100 aspect-square mb-4 img-zoom">
+                  <img alt="صابون زيت الزيتون" class="w-full h-full object-cover object-center" src="https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg" />
+                  <button class="wishlist-btn absolute top-3 left-3 w-8 h-8 rounded-full bg-white/90 text-charcoal-700 hover:text-red-500 hover:bg-white flex items-center justify-center shadow-sm transition-colors" title="إضافة للمفضلة">
+                    <i class="fa-regular fa-heart text-xs"></i>
+                  </button>
+                  <span class="absolute bottom-2.5 right-2.5 bg-sand-50/90 text-teal-900 border border-sand-300/70 text-[10px] font-medium px-2.5 py-0.5 rounded-full">صابون طبيعي</span>
+                </div>
+                <div class="space-y-1.5">
+                  <h3 class="font-serif font-bold text-sm sm:text-base text-teal-950 group-hover:text-teal-800 transition-colors">Olive Oil Soap</h3>
+                  <p class="text-xs text-charcoal-600 truncate pt-0.5">مصنوع بالطريقة الباردة التقليدية لترطيب فائق ونظافة يومية.</p>
+                </div>
+              </div>
+              <div class="mt-5 pt-3 border-t border-sand-200 flex items-center justify-between">
+                <div><span class="text-[10px] text-charcoal-400 block">السعر</span><span class="text-base font-bold text-teal-900">6.50 د.أ</span></div>
+                <button class="add-to-cart-btn bg-teal-900 hover:bg-teal-950 text-sand-50 px-4 py-2 rounded-full text-xs font-semibold flex items-center gap-2 transition-all shadow-sm btn-shimmer" data-name="Olive Oil Soap" type="button">
+                  <i class="fa-solid fa-bag-shopping text-gold-400 text-xs"></i><span>أضف للحقيبة</span>
+                </button>
+              </div>
+            </article>
+
+            <article class="product-card bg-white rounded-2xl border border-sand-300/80 p-4 flex flex-col justify-between card-lift group"
+              data-category="skin-care" data-goals="تنقية,ترطيب" data-price="16.50" data-sales="70" data-type="سيروم وزيوت" data-date="2025-01-15">
+              <div>
+                <div class="relative rounded-xl overflow-hidden bg-sand-100 aspect-square mb-4 img-zoom">
+                  <img alt="تونر معدني" class="w-full h-full object-cover object-center" src="https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg" />
+                  <button class="wishlist-btn absolute top-3 left-3 w-8 h-8 rounded-full bg-white/90 text-charcoal-700 hover:text-red-500 hover:bg-white flex items-center justify-center shadow-sm transition-colors" title="إضافة للمفضلة">
+                    <i class="fa-regular fa-heart text-xs"></i>
+                  </button>
+                  <span class="absolute bottom-2.5 right-2.5 bg-sand-50/90 text-teal-900 border border-sand-300/70 text-[10px] font-medium px-2.5 py-0.5 rounded-full">العناية بالوجه • تونر</span>
+                </div>
+                <div class="space-y-1.5">
+                  <h3 class="font-serif font-bold text-sm sm:text-base text-teal-950 group-hover:text-teal-800 transition-colors">Mineral Toner</h3>
+                  <p class="text-xs text-charcoal-600 truncate pt-0.5">يوازن حموضة البشرة ويهيئ المسام لامتصاص أمثل للسيروم.</p>
+                </div>
+              </div>
+              <div class="mt-5 pt-3 border-t border-sand-200 flex items-center justify-between">
+                <div><span class="text-[10px] text-charcoal-400 block">السعر</span><span class="text-base font-bold text-teal-900">16.50 د.أ</span></div>
+                <button class="add-to-cart-btn bg-teal-900 hover:bg-teal-950 text-sand-50 px-4 py-2 rounded-full text-xs font-semibold flex items-center gap-2 transition-all shadow-sm btn-shimmer" data-name="Mineral Toner" type="button">
+                  <i class="fa-solid fa-bag-shopping text-gold-400 text-xs"></i><span>أضف للحقيبة</span>
+                </button>
+              </div>
+            </article>
+
+            <article class="product-card bg-white rounded-2xl border border-sand-300/80 p-4 flex flex-col justify-between card-lift group"
+              data-category="mud-masks" data-goals="تهدئة,مكافحة الشيخوخة" data-price="31.00" data-sales="65" data-type="أقنعة وطين" data-date="2025-02-22">
+              <div>
+                <div class="relative rounded-xl overflow-hidden bg-sand-100 aspect-square mb-4 img-zoom">
+                  <img alt="قناع طين بزيت الأرغان" class="w-full h-full object-cover object-center" src="https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg" />
+                  <button class="wishlist-btn absolute top-3 left-3 w-8 h-8 rounded-full bg-white/90 text-charcoal-700 hover:text-red-500 hover:bg-white flex items-center justify-center shadow-sm transition-colors" title="إضافة للمفضلة">
+                    <i class="fa-regular fa-heart text-xs"></i>
+                  </button>
+                  <span class="absolute bottom-2.5 right-2.5 bg-sand-50/90 text-teal-900 border border-sand-300/70 text-[10px] font-medium px-2.5 py-0.5 rounded-full">طين وأملاح • قناع</span>
+                </div>
+                <div class="space-y-1.5">
+                  <h3 class="font-serif font-bold text-sm sm:text-base text-teal-950 group-hover:text-teal-800 transition-colors">Argan Oil Mud Mask</h3>
+                  <p class="text-xs text-charcoal-600 truncate pt-0.5">مزيج طين البحر الميت مع زيت الأرغان لترميم حاجز البشرة.</p>
+                </div>
+              </div>
+              <div class="mt-5 pt-3 border-t border-sand-200 flex items-center justify-between">
+                <div><span class="text-[10px] text-charcoal-400 block">السعر</span><span class="text-base font-bold text-teal-900">31.00 د.أ</span></div>
+                <button class="add-to-cart-btn bg-teal-900 hover:bg-teal-950 text-sand-50 px-4 py-2 rounded-full text-xs font-semibold flex items-center gap-2 transition-all shadow-sm btn-shimmer" data-name="Argan Oil Mud Mask" type="button">
+                  <i class="fa-solid fa-bag-shopping text-gold-400 text-xs"></i><span>أضف للحقيبة</span>
+                </button>
+              </div>
+            </article>
+
+          </div>
+
+          <!-- Empty State -->
+          <div class="hidden bg-white rounded-2xl border border-dashed border-sand-300 p-10 sm:p-14 text-center shadow-sm" id="emptyStateContainer">
+            <div class="w-16 h-16 sm:w-20 sm:h-20 mx-auto rounded-full bg-sand-200/80 text-teal-900 flex items-center justify-center text-2xl mb-4">
+              <i class="fa-solid fa-magnifying-glass-chart text-gold-600"></i>
+            </div>
+            <h3 class="font-serif font-bold text-lg sm:text-xl text-teal-950 mb-2">لم نجد منتجات تطابق بحثك</h3>
+            <p class="text-xs sm:text-sm text-charcoal-600 max-w-md mx-auto mb-6 leading-relaxed">
+              يرجى تجربة تعديل نطاق السعر أو إلغاء تحديد بعض الفئات والأهداف للوصول إلى المستحضرات المطلوبة.
+            </p>
+            <button class="bg-teal-900 hover:bg-teal-950 text-sand-50 px-6 py-2.5 rounded-full text-xs font-semibold inline-flex items-center gap-2 transition-all shadow-sm btn-shimmer" id="emptyStateResetBtn">
+              <i class="fa-solid fa-rotate-right text-gold-400 text-xs"></i><span>إعادة ضبط الفلاتر</span>
+            </button>
+          </div>
+
+          <!-- Pagination -->
+          <div class="pt-6 border-t border-sand-300/70 flex flex-col sm:flex-row items-center justify-between gap-4" id="paginationArea">
+            <p class="text-xs text-charcoal-500">
+              الصفحة <strong class="text-teal-900 font-bold">1</strong> من <strong class="text-teal-900 font-bold">3</strong> (تم عرض <span id="pagerVisible">9</span> من أصل 24 مستحضراً)
+            </p>
+            <button class="bg-sand-200 hover:bg-sand-300 text-teal-950 px-6 py-2.5 rounded-full text-xs font-semibold transition-all inline-flex items-center gap-2 btn-shimmer" id="loadMoreBtn">
+              <i class="fa-solid fa-rotate text-gold-600 text-xs"></i><span>تحميل المزيد من المستحضرات</span>
+            </button>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+  <!-- END: Main Category Workspace -->
+
+  <!-- BEGIN: MainFooter -->
+  <footer class="bg-sand-200 text-charcoal-800 pt-12 sm:pt-16 pb-8 sm:pb-12 border-t border-sand-300" data-purpose="site-footer">
+    <div class="max-w-7xl mx-auto px-4 lg:px-8">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-10 pb-10 sm:pb-12 border-b border-sand-300">
+        <div class="sm:col-span-2 space-y-4">
+          <div>
+            <span class="tracking-[0.25em] text-2xl font-bold text-teal-900 uppercase">SEAcare</span>
+            <span class="block text-xs font-serif text-gold-600 font-semibold mt-0.5">سي كير لمستحضرات البحر الميت • عمّان - الأردن</span>
+          </div>
+          <p class="text-xs text-charcoal-600 leading-relaxed max-w-sm">
+            علامة تجارية أردنية رائدة متخصصة في مستحضرات التجميل والعناية الجلدية المعتمدة على كنوز البحر الميت الطبيعية.
+          </p>
+          <div class="text-xs text-charcoal-700 space-y-1.5 pt-2">
+            <p><i class="fa-solid fa-location-dot text-gold-600 ml-2"></i> عمّان، المملكة الأردنية الهاشمية</p>
+            <p><i class="fa-solid fa-envelope text-gold-600 ml-2"></i> info@seacareshop.com</p>
+            <p class="text-right" dir="rtl"><i class="fa-solid fa-phone text-gold-600 ml-2"></i> +962 7 9623 4969</p>
+          </div>
+        </div>
+        <div class="space-y-3">
+          <h4 class="font-serif font-bold text-sm text-teal-950">تسوق حسب الفئة</h4>
+          <ul class="space-y-2 text-xs text-charcoal-600">
+            <li><a class="hover:text-teal-900 transition-colors" href="category.html">العناية بالوجه</a></li>
+            <li><a class="hover:text-teal-900 transition-colors" href="shopall.html#mud-masks">طين البحر الميت</a></li>
+            <li><a class="hover:text-teal-900 transition-colors" href="shopall.html#bath-spa">الأملاح والاستجمام</a></li>
+            <li><a class="hover:text-teal-900 transition-colors" href="shopall.html#body-hand-care">العناية بالجسم</a></li>
+            <li><a class="hover:text-teal-900 transition-colors" href="soap.html">الصابون الفاخر</a></li>
+          </ul>
+        </div>
+        <div class="space-y-3">
+          <h4 class="font-serif font-bold text-sm text-teal-950">عن الماركة</h4>
+          <ul class="space-y-2 text-xs text-charcoal-600">
+            <li><a class="hover:text-teal-900 transition-colors" href="index.html#heritage">قصة البحر الميت والأردن</a></li>
+            <li><a class="hover:text-teal-900 transition-colors" href="#">معايير الاستدامة البيئية</a></li>
+            <li><a class="hover:text-teal-900 transition-colors" href="#">فروع ونقاط البيع المعتمدة</a></li>
+          </ul>
+        </div>
+        <div class="space-y-3">
+          <h4 class="font-serif font-bold text-sm text-teal-950">خدمة العملاء</h4>
+          <ul class="space-y-2 text-xs text-charcoal-600">
+            <li><a class="hover:text-teal-900 transition-colors" href="#">سياسة الشحن والتوصيل</a></li>
+            <li><a class="hover:text-teal-900 transition-colors" href="#">الاستبدال والاسترجاع</a></li>
+            <li><a class="hover:text-teal-900 transition-colors" href="#">الأسئلة الشائعة (FAQ)</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="pt-6 sm:pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-charcoal-500">
+        <p class="text-center md:text-right">© 2026 جميع الحقوق محفوظة لـ <strong>SEAcare (سي كير)</strong>. صُنع بفخر وشغف في الأردن.</p>
+        <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-3 text-base sm:text-lg text-charcoal-600">
+          <span class="text-[10px] sm:text-xs text-charcoal-400 ml-1 sm:ml-2">وسائل الدفع المعتمدة:</span>
+          <i class="fa-brands fa-cc-visa" title="Visa"></i>
+          <i class="fa-brands fa-cc-mastercard" title="MasterCard"></i>
+          <i class="fa-brands fa-cc-apple-pay" title="Apple Pay"></i>
+          <span class="text-[10px] sm:text-[11px] font-bold border border-sand-400 px-1.5 py-0.5 rounded text-charcoal-700">CLIQ</span>
+          <span class="text-[10px] sm:text-[11px] font-bold border border-sand-400 px-1.5 py-0.5 rounded text-charcoal-700">دفع عند الاستلام</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- END: MainFooter -->
+
+  <!-- Toast -->
+  <div class="fixed bottom-6 right-6 z-50 bg-teal-950 text-sand-100 px-5 py-3 rounded-2xl shadow-luxury border border-teal-800 text-xs flex items-center gap-3 translate-y-24 opacity-0 transition-all duration-300 pointer-events-none" id="cartToast">
+    <div class="w-6 h-6 rounded-full bg-gold-500 text-teal-950 flex items-center justify-center font-bold text-xs">
+      <i class="fa-solid fa-check"></i>
+    </div>
+    <div>
+      <span class="font-bold block text-sand-50" id="toastProductTitle">تمت الإضافة بنجاح</span>
+      <span class="text-[11px] text-sand-300">أُضيف المستحضر إلى حقيبة التسوق الخاصة بك</span>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const priceSlider = document.getElementById('priceRangeSlider');
+      const priceDisplay = document.getElementById('priceDisplay');
+      const catCheckboxes = document.querySelectorAll('.filter-checkbox-cat');
+      const goalCheckboxes = document.querySelectorAll('.filter-checkbox-goal');
+      const typeCheckboxes = document.querySelectorAll('.filter-checkbox-type');
+      const sortDropdown = document.getElementById('sortDropdown');
+      const resetFiltersBtn = document.getElementById('resetFiltersBtn');
+      const emptyStateResetBtn = document.getElementById('emptyStateResetBtn');
+      const productGrid = document.getElementById('productGrid');
+      const productCards = Array.from(document.querySelectorAll('.product-card'));
+      const emptyState = document.getElementById('emptyStateContainer');
+      const visibleCountText = document.getElementById('visibleCountText');
+      const productCountHeader = document.getElementById('productCountHeader');
+      const paginationArea = document.getElementById('paginationArea');
+      const pagerVisible = document.getElementById('pagerVisible');
+      const topSearchInput = document.getElementById('topSearchInput');
+      const activeChipsRow = document.getElementById('activeChipsRow');
+      const noChipsMsg = document.getElementById('noChipsMsg');
+
+      const catLabels = {
+        'skin-care': 'العناية بالوجه', 'mud-masks': 'طين البحر الميت', 'hair-care': 'العناية بالشعر',
+        'body-hand-care': 'العناية بالجسم', 'bath-spa': 'الأملاح والاستجمام', 'soaps': 'الصابون'
+      };
+
+      function renderChips(selectedCats) {
+        activeChipsRow.querySelectorAll('.chip-btn').forEach(c => c.remove());
+        if (selectedCats.length === 0) {
+          noChipsMsg.style.display = 'inline';
+        } else {
+          noChipsMsg.style.display = 'none';
+          selectedCats.forEach(cat => {
+            const chip = document.createElement('button');
+            chip.className = 'chip-btn inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-sand-200 text-teal-900 text-[11px] font-semibold hover:bg-sand-300 transition-colors';
+            chip.innerHTML = `<span>${catLabels[cat] || cat}</span><i class="fa-solid fa-xmark text-[10px]"></i>`;
+            chip.addEventListener('click', () => {
+              const cb = document.querySelector('.filter-checkbox-cat[value="' + cat + '"]');
+              if (cb) { cb.checked = false; applyFilters(); }
+            });
+            activeChipsRow.appendChild(chip);
+          });
+        }
+      }
+
+      function applyFilters() {
+        const maxPrice = parseFloat(priceSlider.value);
+        const selectedCats = Array.from(catCheckboxes).filter(cb => cb.checked).map(cb => cb.value);
+        const selectedGoals = Array.from(goalCheckboxes).filter(cb => cb.checked).map(cb => cb.value);
+        const selectedTypes = Array.from(typeCheckboxes).filter(cb => cb.checked).map(cb => cb.value);
+        const searchQuery = topSearchInput ? topSearchInput.value.trim().toLowerCase() : '';
+
+        let visibleCount = 0, visibleCards = [];
+
+        productCards.forEach(card => {
+          const cardPrice = parseFloat(card.getAttribute('data-price'));
+          const cardCat = card.getAttribute('data-category');
+          const cardType = card.getAttribute('data-type');
+          const cardGoals = card.getAttribute('data-goals').split(',');
+          const cardTitle = card.querySelector('h3').textContent.toLowerCase();
+
+          const matchesPrice = cardPrice <= maxPrice;
+          const matchesCat = selectedCats.length === 0 || selectedCats.includes(cardCat);
+          const matchesType = selectedTypes.length === 0 || selectedTypes.includes(cardType);
+          const matchesGoal = selectedGoals.length === 0 || cardGoals.some(g => selectedGoals.includes(g));
+          const matchesSearch = searchQuery === '' || cardTitle.includes(searchQuery);
+
+          if (matchesPrice && matchesCat && matchesType && matchesGoal && matchesSearch) {
+            card.classList.remove('hidden'); visibleCount++; visibleCards.push(card);
+          } else { card.classList.add('hidden'); }
+        });
+
+        const sortValue = sortDropdown.value;
+        visibleCards.sort((a, b) => {
+          if (sortValue === 'price-asc') return parseFloat(a.dataset.price) - parseFloat(b.dataset.price);
+          if (sortValue === 'price-desc') return parseFloat(b.dataset.price) - parseFloat(a.dataset.price);
+          if (sortValue === 'newest') return new Date(b.dataset.date) - new Date(a.dataset.date);
+          return parseInt(b.dataset.sales) - parseInt(a.dataset.sales);
+        });
+        visibleCards.forEach(card => productGrid.appendChild(card));
+
+        visibleCountText.textContent = visibleCount;
+        pagerVisible.textContent = visibleCount;
+        productCountHeader.textContent = `${visibleCount} مستحضر`;
+        renderChips(selectedCats);
+
+        if (visibleCount === 0) {
+          productGrid.classList.add('hidden'); emptyState.classList.remove('hidden');
+          if (paginationArea) paginationArea.classList.add('hidden');
+        } else {
+          productGrid.classList.remove('hidden'); emptyState.classList.add('hidden');
+          if (paginationArea) paginationArea.classList.remove('hidden');
+        }
+      }
+
+      priceSlider.addEventListener('input', function () { priceDisplay.textContent = `حتى ${this.value} د.أ`; applyFilters(); });
+      catCheckboxes.forEach(cb => cb.addEventListener('change', applyFilters));
+      goalCheckboxes.forEach(cb => cb.addEventListener('change', applyFilters));
+      typeCheckboxes.forEach(cb => cb.addEventListener('change', applyFilters));
+      sortDropdown.addEventListener('change', applyFilters);
+      if (topSearchInput) topSearchInput.addEventListener('input', applyFilters);
+
+      function resetFilters() {
+        priceSlider.value = 40; priceDisplay.textContent = 'حتى 40 د.أ';
+        catCheckboxes.forEach(cb => cb.checked = false);
+        goalCheckboxes.forEach(cb => cb.checked = true);
+        typeCheckboxes.forEach(cb => cb.checked = true);
+        sortDropdown.value = 'featured';
+        if (topSearchInput) topSearchInput.value = '';
+        applyFilters();
+      }
+      resetFiltersBtn.addEventListener('click', resetFilters);
+      emptyStateResetBtn.addEventListener('click', resetFilters);
+
+      const wishlistButtons = document.querySelectorAll('.wishlist-btn');
+      const wishlistCountBadge = document.getElementById('wishlistCountBadge');
+      let wishlistCount = 2;
+      wishlistButtons.forEach(btn => {
+        btn.addEventListener('click', function (e) {
+          e.preventDefault();
+          const icon = this.querySelector('i');
+          if (icon.classList.contains('fa-regular')) {
+            icon.classList.remove('fa-regular'); icon.classList.add('fa-solid', 'text-red-500'); wishlistCount++;
+          } else {
+            icon.classList.remove('fa-solid', 'text-red-500'); icon.classList.add('fa-regular'); wishlistCount = Math.max(0, wishlistCount - 1);
+          }
+          wishlistCountBadge.textContent = wishlistCount;
+        });
+      });
+
+      const cartButtons = document.querySelectorAll('.add-to-cart-btn');
+      const cartCountBadge = document.getElementById('cartCountBadge');
+      const cartToast = document.getElementById('cartToast');
+      const toastProductTitle = document.getElementById('toastProductTitle');
+      let cartCount = 3, toastTimeout;
+      cartButtons.forEach(btn => {
+        btn.addEventListener('click', function (e) {
+          e.preventDefault();
+          cartCount++; cartCountBadge.textContent = cartCount;
+          toastProductTitle.textContent = this.getAttribute('data-name');
+          cartToast.classList.remove('translate-y-24', 'opacity-0', 'pointer-events-none');
+          cartToast.classList.add('translate-y-0', 'opacity-100');
+          clearTimeout(toastTimeout);
+          toastTimeout = setTimeout(() => {
+            cartToast.classList.add('translate-y-24', 'opacity-0', 'pointer-events-none');
+            cartToast.classList.remove('translate-y-0', 'opacity-100');
+          }, 3200);
+        });
+      });
+
+      const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+      const mobileMenu = document.getElementById('mobileMenu');
+      if (mobileMenuBtn && mobileMenu) {
+        mobileMenuBtn.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+      }
+      const mobileFilterToggleBtn = document.getElementById('mobileFilterToggleBtn');
+      const filterSidebar = document.getElementById('filterSidebar');
+      if (mobileFilterToggleBtn && filterSidebar) {
+        mobileFilterToggleBtn.addEventListener('click', function () {
+          filterSidebar.scrollIntoView({ behavior: 'smooth' });
+        });
+      }
+
+      applyFilters();
+    });
+  </script>
+<script src="site.js"></script>
+</body>
+</html>

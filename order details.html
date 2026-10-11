@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" dir="rtl" lang="ar">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>تفاصيل الطلب #SEA-10452 | SEAcare</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+  <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Noto+Serif+Arabic:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            teal: { 950: '#022A33', 900: '#044553', 800: '#0A5A6B', 700: '#137587', 600: '#1E8CA0', 100: '#DDF1F4', 50: '#EFF9FA' },
+            sand: { 50: '#FFFFFF', 100: '#F7F9F9', 200: '#EEF3F4', 300: '#DCE4E6', 400: '#B9C4C7' },
+            gold: { 300: '#8FD0D9', 400: '#5BB8C5', 500: '#259faf', 600: '#1A7D8B', 700: '#136573' },
+            charcoal: { 900: '#1F2629', 800: '#2F383B', 700: '#4A5155', 600: '#585A5E', 500: '#6D6E71', 400: '#9C9EA1' }
+          },
+          fontFamily: {
+            serif: ['"Noto Serif Arabic"', '"Cormorant Garamond"', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+            brand: ['"Cormorant Garamond"', '"Noto Serif Arabic"', 'serif'],
+          },
+          boxShadow: {
+            'luxury': '0 20px 40px -15px rgba(4, 69, 83, 0.10)',
+            'card': '0 4px 20px -2px rgba(31, 38, 41, 0.05)',
+            'card-hover': '0 20px 30px -10px rgba(4, 69, 83, 0.15)',
+          },
+          animation: {
+            'slide-down': 'slideDown 0.5s ease-out forwards',
+            'pulse-soft': 'pulseSoft 3s ease-in-out infinite',
+            'bounce-subtle': 'bounceSubtle 2s ease-in-out infinite',
+          },
+          keyframes: {
+            slideDown: { '0%': { opacity: '0', transform: 'translateY(-20px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } },
+            pulseSoft: { '0%, 100%': { opacity: '1' }, '50%': { opacity: '0.6' } },
+            bounceSubtle: { '0%, 100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-5px)' } },
+          },
+        }
+      }
+    }
+  </script>
+  <style data-purpose="typography">
+    body { font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif; background-color: #F7F9F9; color: #1F2629; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+    h1, h2, h3, h4, .font-arabic-serif { font-family: 'Noto Serif Arabic', 'Cormorant Garamond', serif; }
+    .font-latin-serif { font-family: 'Cormorant Garamond', serif; }
+    ::selection { background-color: #259faf; color: #FFFFFF; }
+    ::-webkit-scrollbar { width: 8px; height: 8px; }
+    ::-webkit-scrollbar-track { background: #EEF3F4; }
+    ::-webkit-scrollbar-thumb { background: linear-gradient(180deg, #044553, #259faf); border-radius: 10px; }
+    .reveal { opacity: 0; transform: translateY(30px); transition: opacity .8s cubic-bezier(.22,1,.36,1), transform .8s cubic-bezier(.22,1,.36,1); will-change: opacity, transform; }
+    .reveal.active { opacity: 1; transform: translateY(0); }
+    .stagger-1 { transition-delay: .05s !important; } .stagger-2 { transition-delay: .1s !important; } .stagger-3 { transition-delay: .15s !important; } .stagger-4 { transition-delay: .2s !important; }
+    .btn-shimmer { position: relative; overflow: hidden; }
+    .btn-shimmer::after { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,.25), transparent); transition: left .6s ease; }
+    .btn-shimmer:hover::after { left: 100%; }
+    .mobile-menu { max-height: 0; overflow: hidden; transition: max-height .5s cubic-bezier(.22,1,.36,1); }
+    .mobile-menu.open { max-height: 500px; }
+    .border-gold-subtle { border-color: rgba(37, 159, 175, 0.35); }
+    .bg-mineral-soft { background: radial-gradient(circle at 100% 0%, rgba(37,159,175,.08) 0%, rgba(247,249,249,0) 70%); }
+    .hero-gradient { background: linear-gradient(135deg, #EEF3F4 0%, #F7F9F9 30%, #DDF1F4 60%, #EEF3F4 100%); }
+    :focus-visible { outline: 2px solid #259faf; outline-offset: 2px; }
+    @media print { header, footer, #scrollProgress, #backToTop, .no-print { display: none !important; } body { background: #fff; } }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
+      .reveal { opacity: 1 !important; transform: none !important; }
+    }
+  </style>
+</head>
+
+<body class="bg-sand-100 text-charcoal-900 selection:bg-teal-900 selection:text-sand-100 overflow-x-hidden">
+
+  <div id="scrollProgress" class="fixed top-0 right-0 h-1 bg-gradient-to-l from-gold-500 to-teal-900 z-[100] transition-all duration-150" style="width: 0%;"></div>
+
+  <!-- BEGIN: AnnouncementBar -->
+  <section class="bg-teal-950 text-sand-200 text-xs py-2.5 px-4 border-b border-teal-900/60 animate-slide-down" data-purpose="announcement-bar">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+      <div class="flex items-center gap-3 font-medium text-center sm:text-right">
+        <span class="inline-flex items-center justify-center w-2 h-2 rounded-full bg-gold-500 animate-pulse-soft flex-shrink-0"></span>
+        <p class="tracking-wide text-[11px] sm:text-xs">شحن مجاني لكافة الطلبات في الأردن والخليج العربي بقيمة تزيد عن 45 دينار أردني • استكشف النقاء المعدني</p>
+      </div>
+      <div class="hidden md:flex items-center divide-x divide-x-reverse divide-teal-800 text-[11px] text-sand-300">
+        <div class="px-3.5 flex items-center gap-2"><i class="fa-solid fa-phone text-gold-400 text-[10px]"></i><span class="tracking-wider" dir="ltr">+962 7 9623 4969</span></div>
+        <div class="px-3.5 flex items-center gap-1.5"><span>العملة:</span><strong class="font-semibold text-gold-400">JOD د.أ</strong></div>
+        <div class="px-3.5 flex items-center gap-2">
+          <button class="text-white font-semibold underline decoration-gold-400 underline-offset-4" type="button">العربية</button>
+          <span class="text-teal-700">|</span>
+          <button class="text-sand-400 hover:text-white transition-colors font-latin-serif uppercase tracking-wider text-xs" type="button">English</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BEGIN: MainHeader -->
+  <header class="sticky top-0 z-50 bg-sand-100/95 backdrop-blur-md border-b border-sand-300/70 transition-all shadow-sm" data-purpose="main-header">
+    <div class="max-w-7xl mx-auto px-4 lg:px-8">
+      <div class="flex items-center justify-between h-16 md:h-20 lg:h-24">
+        <div class="w-1/4 hidden lg:flex items-center">
+          <div class="relative w-full max-w-xs group">
+            <span class="absolute inset-y-0 right-0 flex items-center pr-3.5 pointer-events-none text-charcoal-500 group-focus-within:text-teal-900 transition-colors"><i class="fa-solid fa-magnifying-glass text-xs"></i></span>
+            <input class="w-full bg-sand-200/80 text-xs rounded-full py-2.5 pr-9 pl-4 border border-sand-300 text-charcoal-800 placeholder-charcoal-400 focus:outline-none focus:ring-1 focus:ring-teal-800 focus:bg-white transition-all shadow-inner" placeholder="ابحث عن معادن، سيروم، طين..." type="search" />
+          </div>
+        </div>
+        <button id="mobileMenuBtn" aria-label="القائمة" class="lg:hidden p-2 text-charcoal-700 hover:text-teal-900 transition-colors"><i class="fa-solid fa-bars text-xl"></i></button>
+        <div class="flex-1 lg:flex-initial text-center py-2">
+          <div class="flex items-center justify-center gap-2">
+            <span class="w-5 h-[1px] bg-gold-500/70 hidden sm:inline-block"></span>
+            <a href="index.html" dir="ltr" aria-label="SEAcare" class="inline-block font-['Alexandria'] text-2xl sm:text-3xl md:text-4xl leading-none">
+              <span class="block leading-none tracking-tight"><b class="font-bold text-[#044553]">SEA</b><span class="font-normal text-[#259faf]">care</span></span>
+              <span class="block leading-none mt-1 text-center whitespace-nowrap text-[0.235em] tracking-[0.02em] font-light text-[#6D6E71]">WITH MAGNESIUM AND CARNALLITE</span>
+            </a>
+            <span class="w-5 h-[1px] bg-gold-500/70 hidden sm:inline-block"></span>
+          </div>
+        </div>
+        <div class="flex items-center justify-end gap-2 sm:gap-3 lg:gap-5 text-charcoal-800">
+          <button aria-label="البحث" class="lg:hidden p-2 text-charcoal-700 hover:text-teal-900 transition-colors"><i class="fa-solid fa-magnifying-glass text-lg"></i></button>
+          <a class="hidden sm:flex items-center gap-2 p-2 text-teal-900 transition-colors" href="account.html" title="حسابي"><i class="fa-regular fa-user text-lg"></i><span class="hidden xl:inline text-xs font-bold">حسابي</span></a>
+          <a class="relative p-2 hover:text-teal-900 transition-colors" href="wishlist.html" title="قائمة الرغبات"><i class="fa-regular fa-heart text-lg"></i>
+            <span class="absolute top-1 -right-0.5 w-4 h-4 bg-gold-500 text-teal-950 font-bold text-[9px] rounded-full flex items-center justify-center animate-bounce-subtle">2</span></a>
+          <button class="relative flex items-center gap-2 bg-teal-900 text-sand-50 hover:bg-teal-800 px-3 sm:px-4 py-2 rounded-full transition-all shadow-sm btn-shimmer" type="button">
+            <i class="fa-solid fa-bag-shopping text-sm text-gold-400"></i><span class="text-xs font-semibold hidden sm:inline">الحقيبة</span>
+            <span class="w-5 h-5 bg-teal-950 text-gold-300 font-bold text-[10px] rounded-full flex items-center justify-center border border-teal-800">3</span>
+          </button>
+        </div>
+      </div>
+      <nav class="hidden lg:block border-t border-sand-300/50 py-3.5">
+        <ul class="flex items-center justify-center gap-5 xl:gap-8 text-xs font-medium text-charcoal-800 tracking-wide">
+          <li><a class="hover:text-teal-900 py-1 transition-colors" href="index.html">الرئيسية</a></li>
+          <li><a class="hover:text-teal-900 py-1 transition-colors" href="index.html#shop">تسوق الكل</a></li>
+          <li><a class="hover:text-teal-900 py-1 transition-colors" href="index.html#face">العناية بالوجه</a></li>
+          <li><a class="hover:text-teal-900 py-1 transition-colors" href="index.html#body">العناية بالجسم</a></li>
+          <li><a class="hover:text-teal-900 py-1 transition-colors" href="index.html#hair">العناية بالشعر</a></li>
+          <li><a class="hover:text-teal-900 py-1 transition-colors font-semibold text-teal-900" href="index.html#mud-salts">أملاح وطين البحر الميت</a></li>
+          <li><a class="hover:text-teal-900 py-1 transition-colors" href="index.html#rituals">طقوس العناية اليومية</a></li>
+          <li><a class="hover:text-teal-900 py-1 transition-colors" href="index.html#science">علوم المعادن</a></li>
+          <li><a class="hover:text-teal-900 py-1 transition-colors" href="index.html#heritage">قصة الماركة الأردنية</a></li>
+          <li><a class="text-gold-600 font-bold hover:text-gold-700 py-1 flex items-center gap-1" href="index.html#offers"><i class="fa-solid fa-gift text-xs"></i><span>الهدايا والمجموعات</span></a></li>
+        </ul>
+      </nav>
+      <nav id="mobileMenu" class="mobile-menu lg:hidden border-t border-sand-300/50">
+        <ul class="py-4 space-y-1 text-sm font-medium text-charcoal-800">
+          <li><a class="block py-2.5 px-3 rounded-lg hover:bg-sand-200 hover:text-teal-900 transition-colors" href="index.html">الرئيسية</a></li>
+          <li><a class="block py-2.5 px-3 rounded-lg hover:bg-sand-200 hover:text-teal-900 transition-colors" href="index.html#shop">تسوق الكل</a></li>
+          <li><a class="block py-2.5 px-3 rounded-lg hover:bg-sand-200 hover:text-teal-900 transition-colors" href="index.html#face">العناية بالوجه</a></li>
+          <li><a class="block py-2.5 px-3 rounded-lg hover:bg-sand-200 hover:text-teal-900 transition-colors" href="index.html#body">العناية بالجسم</a></li>
+          <li><a class="block py-2.5 px-3 rounded-lg hover:bg-sand-200 hover:text-teal-900 transition-colors" href="index.html#hair">العناية بالشعر</a></li>
+          <li><a class="block py-2.5 px-3 rounded-lg hover:bg-sand-200 hover:text-teal-900 transition-colors" href="index.html#mud-salts">أملاح وطين البحر الميت</a></li>
+          <li><a class="block py-2.5 px-3 rounded-lg hover:bg-sand-200 hover:text-teal-900 transition-colors" href="index.html#rituals">طقوس العناية</a></li>
+          <li><a class="block py-2.5 px-3 rounded-lg hover:bg-sand-200 hover:text-teal-900 transition-colors" href="index.html#science">علوم المعادن</a></li>
+          <li><a class="block py-2.5 px-3 rounded-lg hover:bg-sand-200 hover:text-teal-900 transition-colors" href="index.html#heritage">قصة الماركة</a></li>
+          <li><a class="block py-2.5 px-3 rounded-lg text-gold-600 font-bold hover:bg-sand-200 transition-colors" href="index.html#offers"><i class="fa-solid fa-gift text-xs ml-1"></i> الهدايا والمجموعات</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- BEGIN: OrderDetails -->
+  <main>
+    <section class="relative overflow-hidden hero-gradient border-b border-sand-300/80" data-purpose="order-hero">
+      <div class="absolute inset-0 bg-mineral-soft pointer-events-none"></div>
+      <div class="max-w-7xl mx-auto px-4 lg:px-8 py-8 sm:py-10 relative z-10 space-y-6">
+        <!-- Breadcrumb & Back -->
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <nav aria-label="مسار التنقل" class="flex flex-wrap items-center gap-2 text-[11px] text-charcoal-500">
+            <a class="hover:text-teal-900 transition-colors" href="index.html">الرئيسية</a>
+            <i class="fa-solid fa-angle-left text-[9px] text-charcoal-400"></i>
+            <a class="hover:text-teal-900 transition-colors" href="#">حسابي</a>
+            <i class="fa-solid fa-angle-left text-[9px] text-charcoal-400"></i>
+            <a class="hover:text-teal-900 transition-colors" href="#">طلباتي</a>
+            <i class="fa-solid fa-angle-left text-[9px] text-charcoal-400"></i>
+            <span class="text-teal-900 font-semibold">تفاصيل الطلب <span dir="ltr">#SEA-10452</span></span>
+          </nav>
+          <a class="inline-flex items-center gap-2 text-xs font-bold text-teal-900 hover:text-gold-600 transition-colors w-fit" href="#">
+            <i class="fa-solid fa-arrow-right text-[10px]"></i><span>العودة إلى طلباتي</span>
+          </a>
+        </div>
+
+        <!-- Order Header Card -->
+        <div class="bg-white rounded-3xl p-6 md:p-8 border border-sand-300 shadow-card reveal">
+          <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+            <div class="space-y-3">
+              <div class="flex flex-wrap items-center gap-3">
+                <h1 class="text-xl sm:text-2xl md:text-3xl font-bold text-teal-950">طلب رقم <span dir="ltr">#SEA-10452</span></h1>
+                <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sand-100 border border-gold-subtle text-[11px] font-semibold text-teal-900">
+                  <span class="w-2 h-2 rounded-full bg-gold-500 animate-pulse-soft"></span>قيد التجهيز والشحن
+                </span>
+              </div>
+              <div class="flex flex-wrap items-center gap-y-2 gap-x-4 text-xs text-charcoal-600">
+                <span class="flex items-center gap-1.5"><i class="fa-regular fa-calendar text-gold-600"></i>تاريخ الطلب: 28 فبراير 2026 - 10:30 صباحاً</span>
+                <span class="hidden sm:inline text-sand-400">•</span>
+                <span class="flex items-center gap-1.5"><i class="fa-solid fa-hand-holding-dollar text-gold-600"></i>طريقة الدفع: الدفع عند الاستلام</span>
+              </div>
+            </div>
+            <div class="flex flex-wrap sm:flex-nowrap items-center gap-4">
+              <div class="bg-sand-100 border border-sand-300 px-5 py-3 rounded-2xl min-w-36">
+                <span class="block text-[11px] text-charcoal-500">الإجمالي الكلي</span>
+                <span class="text-lg font-bold text-teal-900" dir="ltr">52.00 JOD</span>
+              </div>
+              <button class="no-print w-full sm:w-auto bg-teal-900 hover:bg-teal-950 text-white px-6 py-3.5 rounded-full text-xs sm:text-sm font-semibold transition-all shadow-md flex items-center justify-center gap-2.5 btn-shimmer" type="button" onclick="window.print()">
+                <i class="fa-solid fa-file-arrow-down text-gold-300"></i><span>تحميل الفاتورة (PDF)</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tracking Timeline -->
+    <section class="bg-sand-50 border-b border-sand-300/60 py-10 sm:py-12" data-purpose="order-tracking">
+      <div class="max-w-7xl mx-auto px-4 lg:px-8">
+        <div class="flex items-center justify-between mb-8">
+          <div>
+            <span class="text-xs font-bold text-gold-600 tracking-widest">تتبع الشحنة</span>
+            <h2 class="text-xl sm:text-2xl font-bold font-serif text-teal-950 mt-1">مسار طلبك</h2>
+          </div>
+          <span class="hidden md:inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-sand-100 border border-gold-subtle text-[11px] font-semibold text-teal-900"><i class="fa-solid fa-truck-ramp-box text-gold-600"></i>المرحلة 2 من 4</span>
+        </div>
+        <div class="relative">
+          <div class="hidden md:block absolute top-6 right-[12.5%] left-[12.5%] h-1 bg-sand-300 rounded-full"></div>
+          <div class="hidden md:block absolute top-6 right-[12.5%] h-1 bg-gradient-to-l from-teal-900 to-gold-500 rounded-full w-[25%]"></div>
+          <ol class="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-4 relative z-10">
+            <li class="flex md:flex-col items-start md:items-center text-right md:text-center gap-4 md:gap-3 reveal stagger-1">
+              <span class="w-12 h-12 rounded-full bg-teal-900 text-gold-300 flex items-center justify-center shadow-md shrink-0 ring-4 ring-sand-50"><i class="fa-solid fa-check"></i></span>
+              <div class="space-y-1">
+                <h3 class="font-serif font-bold text-sm text-teal-950">تم تأكيد الطلب</h3>
+                <p class="text-[11px] font-semibold text-gold-600">28 فبراير 2026، 10:30 ص</p>
+                <p class="text-xs text-charcoal-500">تم استلام تفاصيل الطلب وتأكيده آلياً</p>
+              </div>
+            </li>
+            <li class="flex md:flex-col items-start md:items-center text-right md:text-center gap-4 md:gap-3 reveal stagger-2">
+              <span class="w-12 h-12 rounded-full bg-gold-500 text-white flex items-center justify-center shadow-md shrink-0 ring-4 ring-gold-500/20"><i class="fa-solid fa-boxes-packing"></i></span>
+              <div class="space-y-1">
+                <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-teal-50 text-teal-800 text-[10px] font-bold"><span class="w-1.5 h-1.5 rounded-full bg-gold-500 animate-pulse-soft"></span>الآن</span>
+                <h3 class="font-serif font-bold text-sm text-teal-950">تجهيز المستحضرات</h3>
+                <p class="text-[11px] font-semibold text-gold-600">28 فبراير 2026، 02:15 م</p>
+                <p class="text-xs text-charcoal-500">جاري إعداد وتغليف الطرد</p>
+              </div>
+            </li>
+            <li class="flex md:flex-col items-start md:items-center text-right md:text-center gap-4 md:gap-3 opacity-60 reveal stagger-3">
+              <span class="w-12 h-12 rounded-full bg-sand-200 border border-sand-300 text-charcoal-500 flex items-center justify-center shrink-0 ring-4 ring-sand-50"><i class="fa-solid fa-truck-fast"></i></span>
+              <div class="space-y-1">
+                <h3 class="font-serif font-bold text-sm text-charcoal-800">تم الشحن</h3>
+                <p class="text-[11px] text-charcoal-400">المرحلة القادمة</p>
+                <p class="text-xs text-charcoal-500">متوقع خروج الشحنة مع المندوب غداً صباحاً</p>
+              </div>
+            </li>
+            <li class="flex md:flex-col items-start md:items-center text-right md:text-center gap-4 md:gap-3 opacity-60 reveal stagger-4">
+              <span class="w-12 h-12 rounded-full bg-sand-200 border border-sand-300 text-charcoal-500 flex items-center justify-center shrink-0 ring-4 ring-sand-50"><i class="fa-solid fa-house-chimney"></i></span>
+              <div class="space-y-1">
+                <h3 class="font-serif font-bold text-sm text-charcoal-800">تم التوصيل</h3>
+                <p class="text-[11px] text-charcoal-400">التسليم المتوقع</p>
+                <p class="text-xs text-charcoal-500">1 - 2 مارس 2026 إلى عنوانك</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main two-column -->
+    <section class="py-10 sm:py-14 bg-sand-100" data-purpose="order-body">
+      <div class="max-w-7xl mx-auto px-4 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start">
+
+        <!-- Wide column -->
+        <div class="lg:col-span-8 space-y-6 lg:space-y-8">
+          <!-- Items -->
+          <div class="bg-white rounded-3xl p-6 md:p-8 border border-sand-300 shadow-card reveal">
+            <div class="flex items-center gap-3 pb-5 border-b border-sand-200">
+              <span class="w-10 h-10 rounded-xl bg-sand-100 flex items-center justify-center text-teal-900"><i class="fa-solid fa-bag-shopping"></i></span>
+              <div>
+                <h2 class="font-serif font-bold text-base sm:text-lg text-teal-950">المستحضرات في هذا الطلب</h2>
+                <span class="text-xs text-charcoal-500">4 قطع • 3 منتجات</span>
+              </div>
+            </div>
+            <div class="divide-y divide-sand-200">
+              <div class="flex items-center justify-between gap-4 py-5">
+                <div class="flex items-center gap-4 min-w-0">
+                  <div class="w-20 h-20 rounded-xl overflow-hidden bg-sand-100 shrink-0 border border-sand-300"><img alt="بلورات الملح العطري" class="w-full h-full object-cover" src="IMG_2256.PNG" /></div>
+                  <div class="space-y-1 min-w-0">
+                    <h3 class="font-serif font-bold text-sm sm:text-base text-teal-950">بلورات الملح العطري مع اللافندر</h3>
+                    <p class="text-[11px] sm:text-xs text-charcoal-500 font-latin-serif" dir="ltr">Aromatic Dead Sea Bath Crystals • 500g</p>
+                    <p class="text-xs text-gold-600 font-semibold pt-0.5">الكمية: 1 • 11.00 د.أ للوحدة</p>
+                  </div>
+                </div>
+                <span class="text-sm sm:text-base font-bold text-teal-900 shrink-0" dir="ltr">11.00 JOD</span>
+              </div>
+              <div class="flex items-center justify-between gap-4 py-5">
+                <div class="flex items-center gap-4 min-w-0">
+                  <div class="w-20 h-20 rounded-xl overflow-hidden bg-sand-100 shrink-0 border border-sand-300"><img alt="كريم زبدة الشيا والكاكاو" class="w-full h-full object-cover" src="SEAcare Cocoa Butter by the Dead Sea.png" /></div>
+                  <div class="space-y-1 min-w-0">
+                    <h3 class="font-serif font-bold text-sm sm:text-base text-teal-950">كريم زبدة الشيا والكاكاو المعدني</h3>
+                    <p class="text-[11px] sm:text-xs text-charcoal-500 font-latin-serif" dir="ltr">Shea &amp; Cocoa Mineral Body Cream • 250ml</p>
+                    <p class="text-xs text-gold-600 font-semibold pt-0.5">الكمية: 1 • 28.00 د.أ للوحدة</p>
+                  </div>
+                </div>
+                <span class="text-sm sm:text-base font-bold text-teal-900 shrink-0" dir="ltr">28.00 JOD</span>
+              </div>
+              <div class="flex items-center justify-between gap-4 py-5 pb-0">
+                <div class="flex items-center gap-4 min-w-0">
+                  <div class="w-20 h-20 rounded-xl overflow-hidden bg-sand-100 shrink-0 border border-sand-300"><img alt="صابون زيت الزيتون" class="w-full h-full object-cover" src="Seaside Olive Oil Soap Display.png" /></div>
+                  <div class="space-y-1 min-w-0">
+                    <h3 class="font-serif font-bold text-sm sm:text-base text-teal-950">صابون زيت الزيتون البكر والطين الملحي</h3>
+                    <p class="text-[11px] sm:text-xs text-charcoal-500 font-latin-serif" dir="ltr">Olive &amp; Mud Artisan Bar Soap • 120g</p>
+                    <p class="text-xs text-gold-600 font-semibold pt-0.5">الكمية: 2 • 6.50 د.أ للوحدة</p>
+                  </div>
+                </div>
+                <span class="text-sm sm:text-base font-bold text-teal-900 shrink-0" dir="ltr">13.00 JOD</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Delivery -->
+          <div class="bg-white rounded-3xl p-6 md:p-8 border border-sand-300 shadow-card reveal">
+            <div class="flex items-center gap-3 pb-5 border-b border-sand-200">
+              <span class="w-10 h-10 rounded-xl bg-sand-100 flex items-center justify-center text-teal-900"><i class="fa-solid fa-map-location-dot"></i></span>
+              <div>
+                <h2 class="font-serif font-bold text-base sm:text-lg text-teal-950">تفاصيل الشحن والتسليم</h2>
+                <span class="text-xs text-charcoal-500">معلومات المستلم والعنوان</span>
+              </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-5">
+              <div class="p-4 rounded-2xl bg-sand-100 border border-sand-300 space-y-1.5">
+                <span class="text-[11px] font-bold text-gold-600 block">المستلم</span>
+                <p class="font-serif font-bold text-sm text-teal-950">ربى الخطيب</p>
+                <p class="text-xs text-charcoal-600 flex items-center gap-2" dir="ltr"><i class="fa-solid fa-phone text-gold-600 text-[10px]"></i>+962 7 9123 4567</p>
+              </div>
+              <div class="p-4 rounded-2xl bg-sand-100 border border-sand-300 space-y-1.5">
+                <span class="text-[11px] font-bold text-gold-600 block">طريقة الشحن</span>
+                <p class="font-serif font-bold text-sm text-teal-950">توصيل عادي</p>
+                <p class="text-xs text-charcoal-600 flex items-center gap-2"><i class="fa-regular fa-clock text-gold-600 text-[10px]"></i>خلال 24-48 ساعة عمل</p>
+              </div>
+            </div>
+            <div class="p-4 rounded-2xl bg-sand-100 border border-sand-300 space-y-1.5 mt-4">
+              <span class="text-[11px] font-bold text-gold-600 block">العنوان</span>
+              <p class="text-sm text-charcoal-800 leading-relaxed">الأردن، عمّان، عبدون الشمالي، شارع ميسلون، تقاطع شارع زهران، عمارة النخيل (رقم 12)، الطابق الثاني، شقة 4.</p>
+            </div>
+            <div class="flex items-start gap-3 p-4 rounded-2xl bg-teal-50 border border-gold-subtle mt-4">
+              <i class="fa-solid fa-circle-info text-gold-600 mt-0.5"></i>
+              <div><span class="text-[11px] font-bold text-teal-900 block">ملاحظات للمندوب</span>
+                <p class="text-xs text-charcoal-700 mt-0.5">الاتصال هاتفياً قبل الوصول بنصف ساعة والتأكد من تواجد المستلم.</p></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Narrow column -->
+        <aside class="lg:col-span-4 space-y-6 lg:space-y-8 lg:sticky lg:top-32">
+          <!-- Summary -->
+          <div class="bg-white rounded-3xl p-6 md:p-8 border border-sand-300 shadow-card space-y-5 reveal">
+            <div class="flex items-center gap-3 pb-4 border-b border-sand-200">
+              <span class="w-9 h-9 rounded-xl bg-sand-100 flex items-center justify-center text-teal-900"><i class="fa-solid fa-receipt"></i></span>
+              <h2 class="font-serif font-bold text-base text-teal-950">ملخص الحساب</h2>
+            </div>
+            <dl class="space-y-3 text-sm">
+              <div class="flex justify-between text-charcoal-600"><dt>المجموع الفرعي (4 قطع)</dt><dd class="font-semibold text-charcoal-900" dir="ltr">52.00 JOD</dd></div>
+              <div class="flex justify-between items-center text-charcoal-600">
+                <dt class="flex items-center gap-2">الشحن <span class="bg-teal-50 text-teal-800 px-2 py-0.5 rounded text-[10px] font-bold">مجاني</span></dt>
+                <dd class="font-semibold text-gold-600">0.00 د.أ</dd>
+              </div>
+              <div class="flex justify-between text-charcoal-600"><dt>ضريبة المبيعات (16%)</dt><dd class="text-xs">مشمولة بالأسعار</dd></div>
+              <div class="pt-4 border-t border-sand-200 flex justify-between items-baseline">
+                <dt class="font-bold text-teal-950">الإجمالي المستحق</dt>
+                <dd class="text-left"><span class="text-lg font-bold text-teal-900" dir="ltr">52.00 JOD</span><span class="block text-[11px] text-charcoal-400">شامل الضريبة والشحن</span></dd>
+              </div>
+            </dl>
+            <div class="p-3.5 rounded-2xl bg-sand-100 border border-sand-300 space-y-1">
+              <div class="flex items-center gap-2 text-teal-900 font-bold text-xs"><i class="fa-solid fa-hand-holding-dollar text-gold-600"></i>حالة الدفع</div>
+              <p class="text-xs text-charcoal-600 leading-relaxed">غير مدفوع — يُدفع نقداً للمندوب عند استلام الطرد ومعاينته.</p>
+            </div>
+          </div>
+
+          <!-- Help -->
+          <div class="bg-teal-950 text-sand-100 rounded-3xl p-6 md:p-8 border border-teal-900 shadow-luxury space-y-5 reveal">
+            <div class="flex items-center gap-3">
+              <span class="w-9 h-9 rounded-xl bg-teal-900 flex items-center justify-center text-gold-400"><i class="fa-solid fa-headset"></i></span>
+              <h2 class="font-serif font-bold text-base text-sand-50">عندك استفسار عن طلبك؟</h2>
+            </div>
+            <p class="text-xs text-sand-300 leading-relaxed">فريق خدمة العملاء جاهز لمساعدتك وتعديل بيانات التوصيل خلال ساعات العمل اليومية (من 9:00 ص حتى 8:00 م).</p>
+            <a class="flex items-center justify-center gap-2.5 w-full py-3.5 px-4 rounded-full bg-gold-500 hover:bg-gold-600 text-teal-950 text-xs sm:text-sm font-bold transition-colors shadow-sm btn-shimmer" href="https://wa.me/962796234969" rel="noopener noreferrer" target="_blank">
+              <i class="fa-brands fa-whatsapp text-lg"></i><span>تواصل معنا عبر واتساب</span>
+            </a>
+            <div class="space-y-2 pt-4 border-t border-teal-800 text-xs text-sand-300">
+              <a class="flex items-center gap-2 hover:text-white transition-colors" href="mailto:info@seacareshop.com"><i class="fa-regular fa-envelope text-gold-400"></i><span dir="ltr">info@seacareshop.com</span></a>
+              <p class="flex items-center gap-2"><i class="fa-solid fa-shield-halved text-gold-400"></i>الاستبدال والمعاينة متاحان خلال 7 أيام من الاستلام.</p>
+            </div>
+          </div>
+
+          <!-- Quality badge -->
+          <div class="p-5 rounded-3xl bg-sand-200/70 border border-sand-300 flex items-start gap-3.5 reveal">
+            <span class="w-10 h-10 rounded-full bg-teal-50 text-teal-800 flex items-center justify-center shrink-0"><i class="fa-solid fa-certificate"></i></span>
+            <div class="space-y-1">
+              <h3 class="font-serif font-bold text-sm text-teal-950">معايير جودة SEAcare</h3>
+              <p class="text-xs text-charcoal-600 leading-relaxed">تُعبّأ مستحضراتنا في عبوات محكمة الإغلاق للحفاظ على فاعلية معادن البحر الميت الطبيعية.</p>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <!-- BEGIN: MainFooter -->
+  <footer class="bg-sand-200 text-charcoal-800 pt-12 sm:pt-16 pb-8 sm:pb-12 border-t border-sand-300" data-purpose="site-footer">
+    <div class="max-w-7xl mx-auto px-4 lg:px-8">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-10 pb-10 sm:pb-12 border-b border-sand-300">
+        <div class="sm:col-span-2 space-y-4">
+          <div>
+            <span class="font-latin-serif tracking-[0.25em] text-2xl font-bold text-teal-900 uppercase">SEAcare</span>
+            <span class="block text-xs font-serif text-gold-600 font-semibold mt-0.5">سي كير لمستحضرات البحر الميت • عمّان - الأردن</span>
+          </div>
+          <p class="text-xs text-charcoal-600 leading-relaxed max-w-sm">علامة تجارية أردنية رائدة متخصصة في مستحضرات التجميل والعناية الجلدية الفاخرة المعتمدة على كنوز البحر الميت الطبيعية المستخلصة بوعي بيئي ونقاء تام.</p>
+          <div class="text-xs text-charcoal-700 space-y-1.5 pt-2">
+            <p><i class="fa-solid fa-location-dot text-gold-600 ml-2"></i> عمّان، المملكة الأردنية الهاشمية</p>
+            <p><i class="fa-solid fa-envelope text-gold-600 ml-2"></i> info@seacareshop.com</p>
+            <p class="text-right" dir="rtl"><i class="fa-solid fa-phone text-gold-600 ml-2"></i> +962 7 9623 4969</p>
+          </div>
+        </div>
+        <div class="space-y-3">
+          <h4 class="font-serif font-bold text-sm text-teal-950">تسوق حسب الفئة</h4>
+          <ul class="space-y-2 text-xs text-charcoal-600">
+            <li><a class="hover:text-teal-900 transition-colors" href="#">العناية بالوجه والسيرومات</a></li>
+            <li><a class="hover:text-teal-900 transition-colors" href="#">طين البحر الميت النقي</a></li>
+            <li><a class="hover:text-teal-900 transition-colors" href="#">أملاح الاستحمام والاسترخاء</a></li>
+            <li><a class="hover:text-teal-900 transition-colors" href="#">مرطبات وزبدة الجسم</a></li>
+            <li><a class="hover:text-teal-900 transition-colors" href="#">الصابون الحرفي الطبيعي</a></li>
+            <li><a class="hover:text-teal-900 transition-colors" href="#">صناديق الهدايا الفاخرة</a></li>
+          </ul>
+        </div>
+        <div class="space-y-3">
+          <h4 class="font-serif font-bold text-sm text-teal-950">عن الماركة والعلوم</h4>
+          <ul class="space-y-2 text-xs text-charcoal-600">
+            <li><a class="hover:text-teal-900 transition-colors" href="#">قصة البحر الميت والأردن</a></li>
+            <li><a class="hover:text-teal-900 transition-colors" href="#">دليل المعادن الـ 26</a></li>
+            <li><a class="hover:text-teal-900 transition-colors" href="#">معايير الاستدامة البيئية</a></li>
+            <li><a class="hover:text-teal-900 transition-colors" href="#">فروع ونقاط البيع المعتمدة</a></li>
+            <li><a class="hover:text-teal-900 transition-colors" href="#">المبيعات المؤسسية والسبا</a></li>
+          </ul>
+        </div>
+        <div class="space-y-3">
+          <h4 class="font-serif font-bold text-sm text-teal-950">خدمة العملاء</h4>
+          <ul class="space-y-2 text-xs text-charcoal-600">
+            <li><a class="hover:text-teal-900 transition-colors" href="#">سياسة الشحن والتوصيل</a></li>
+            <li><a class="hover:text-teal-900 transition-colors" href="#">الاستبدال والاسترجاع</a></li>
+            <li><a class="hover:text-teal-900 transition-colors" href="#">تتبع مسار شحنتك</a></li>
+            <li><a class="hover:text-teal-900 transition-colors" href="#">الأسئلة الشائعة (FAQ)</a></li>
+            <li><a class="hover:text-teal-900 transition-colors" href="#">تواصل مع المستشار الجلدي</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="pt-6 sm:pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-charcoal-500">
+        <p class="text-center md:text-right">© 2026 جميع الحقوق محفوظة لـ <strong>SEAcare (سي كير)</strong>. صُنع بفخر وشغف في الأردن.</p>
+        <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-3 text-base sm:text-lg text-charcoal-600">
+          <span class="text-[10px] sm:text-xs text-charcoal-400 font-sans ml-1 sm:ml-2">وسائل الدفع المعتمدة:</span>
+          <i class="fa-brands fa-cc-visa" title="Visa"></i>
+          <i class="fa-brands fa-cc-mastercard" title="MasterCard"></i>
+          <i class="fa-brands fa-cc-apple-pay" title="Apple Pay"></i>
+          <span class="text-[10px] sm:text-[11px] font-bold border border-sand-400 px-1.5 py-0.5 rounded text-charcoal-700 font-sans">CLIQ</span>
+          <span class="text-[10px] sm:text-[11px] font-bold border border-sand-400 px-1.5 py-0.5 rounded text-charcoal-700">دفع عند الاستلام</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button id="backToTop" class="fixed bottom-6 left-6 z-50 w-11 h-11 rounded-full bg-teal-900 text-gold-300 shadow-lg flex items-center justify-center opacity-0 pointer-events-none transition-all duration-300 hover:bg-teal-950 hover:scale-110" aria-label="العودة للأعلى">
+    <i class="fa-solid fa-arrow-up text-sm"></i>
+  </button>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const progressBar = document.getElementById('scrollProgress');
+      const backToTop = document.getElementById('backToTop');
+      const header = document.querySelector('header[data-purpose="main-header"]');
+
+      function onScroll() {
+        const h = document.documentElement.scrollHeight - window.innerHeight;
+        progressBar.style.width = (h > 0 ? (window.scrollY / h) * 100 : 0) + '%';
+        const show = window.scrollY > 500;
+        backToTop.classList.toggle('opacity-0', !show);
+        backToTop.classList.toggle('pointer-events-none', !show);
+        backToTop.classList.toggle('opacity-100', show);
+        header.classList.toggle('shadow-md', window.scrollY > 20);
+      }
+      let ticking = false;
+      window.addEventListener('scroll', () => {
+        if (!ticking) { requestAnimationFrame(() => { onScroll(); ticking = false; }); ticking = true; }
+      }, { passive: true });
+      onScroll();
+      backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('active'); io.unobserve(e.target); } });
+      }, { threshold: 0.12, rootMargin: '0px 0px -50px 0px' });
+      document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+      const btn = document.getElementById('mobileMenuBtn'), menu = document.getElementById('mobileMenu');
+      if (btn && menu) {
+        btn.addEventListener('click', () => menu.classList.toggle('open'));
+        menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => menu.classList.remove('open')));
+      }
+    });
+  </script>
+</body>
+
+</html>

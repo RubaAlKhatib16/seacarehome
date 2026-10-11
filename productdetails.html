@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" dir="rtl" lang="ar">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>زبدة الجسم بالكاكاو | SEAcare - مستحضرات معادن البحر الميت الفاخرة</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Noto+Serif+Arabic:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        teal: { 950: '#022A33', 900: '#044553', 800: '#0A5A6B', 700: '#137587', 600: '#1E8CA0', 100: '#DDF1F4', 50: '#EFF9FA' },
+                        sand: { 50: '#FFFFFF', 100: '#F7F9F9', 200: '#EEF3F4', 300: '#DCE4E6', 400: '#B9C4C7' },
+                        gold: { 300: '#8FD0D9', 400: '#5BB8C5', 500: '#259faf', 600: '#1A7D8B', 700: '#136573' },
+                        charcoal: { 900: '#1F2629', 800: '#2F383B', 700: '#4A5155', 600: '#585A5E', 500: '#6D6E71', 400: '#9C9EA1' }
+                    },
+                    fontFamily: {
+                        serif: ['"Noto Serif Arabic"', '"Cormorant Garamond"', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'luxury': '0 20px 40px -15px rgba(4, 69, 83, 0.10)',
+                        'card': '0 4px 20px -2px rgba(31, 38, 41, 0.05)',
+                        'card-hover': '0 20px 30px -10px rgba(4, 69, 83, 0.15)',
+                    },
+                    animation: {
+                        'slide-down': 'slideDown 0.5s ease-out forwards',
+                        'pulse-soft': 'pulseSoft 3s ease-in-out infinite',
+                        'bounce-subtle': 'bounceSubtle 2s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        slideDown: { '0%': { opacity: '0', transform: 'translateY(-20px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } },
+                        pulseSoft: { '0%, 100%': { opacity: '1' }, '50%': { opacity: '0.6' } },
+                        bounceSubtle: { '0%, 100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-5px)' } },
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+            background-color: #F7F9F9;
+            color: #1F2629;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Noto Serif Arabic', 'Cormorant Garamond', serif;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #EEF3F4;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, #044553, #259faf);
+            border-radius: 10px;
+        }
+
+        .btn-shimmer {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-shimmer::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.28), transparent);
+            transition: left 0.65s ease;
+        }
+
+        .btn-shimmer:hover::after {
+            left: 100%;
+        }
+
+        .card-lift {
+            transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s ease, border-color 0.3s ease;
+        }
+
+        .card-lift:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 18px 30px -10px rgba(4, 69, 83, 0.12);
+            border-color: rgba(37, 159, 175, 0.45);
+        }
+
+        .img-zoom {
+            overflow: hidden;
+        }
+
+        .img-zoom img {
+            transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .img-zoom:hover img {
+            transform: scale(1.06);
+        }
+
+        .border-gold-subtle {
+            border-color: rgba(37, 159, 175, 0.35);
+        }
+
+        .mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .mobile-menu.open {
+            max-height: 500px;
+        }
+
+        .tab-pill.active {
+            background-color: #044553;
+            color: #EFF9FA;
+        }
+
+        .tab-pill:not(.active) {
+            background-color: #FFFFFF;
+            color: #585A5E;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-sand-100 text-charcoal-900 selection:bg-teal-900 selection:text-sand-100 overflow-x-hidden min-h-screen flex flex-col">
+
+    <!-- BEGIN: AnnouncementBar -->
+    <section class="bg-teal-950 text-sand-200 text-xs py-2.5 px-4 border-b border-teal-900/60 animate-slide-down"
+        data-purpose="announcement-bar">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+            <div class="flex items-center gap-3 font-medium text-center sm:text-right">
+                <span
+                    class="inline-flex items-center justify-center w-2 h-2 rounded-full bg-gold-500 animate-pulse-soft flex-shrink-0"></span>
+                <p class="tracking-wide text-[11px] sm:text-xs">شحن مجاني لكافة الطلبات في الأردن والخليج العربي بقيمة
+                    تزيد عن 45 دينار أردني • استكشف النقاء المعدني</p>
+            </div>
+            <div
+                class="hidden md:flex items-center divide-x divide-x-reverse divide-teal-800 text-[11px] text-sand-300">
+                <div class="px-3.5 flex items-center gap-2"><i
+                        class="fa-solid fa-phone text-gold-400 text-[10px]"></i><span class="tracking-wider"
+                        dir="ltr">+962 7 9623 4969</span></div>
+                <div class="px-3.5 flex items-center gap-1.5 cursor-pointer hover:text-white transition-colors">
+                    <span>العملة:</span><strong class="font-semibold text-gold-400">JOD د.أ</strong></div>
+                <div class="px-3.5 flex items-center gap-2">
+                    <button class="text-white font-semibold underline decoration-gold-400 underline-offset-4"
+                        type="button">العربية</button>
+                    <span class="text-teal-700">|</span>
+                    <button class="text-sand-400 hover:text-white transition-colors uppercase tracking-wider text-xs"
+                        type="button">English</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- END: AnnouncementBar -->
+
+    <!-- BEGIN: MainHeader -->
+    <header
+        class="sticky top-0 z-50 bg-sand-100/95 backdrop-blur-md border-b border-sand-300/70 transition-all shadow-sm"
+        data-purpose="main-header">
+        <div class="max-w-7xl mx-auto px-4 lg:px-8">
+            <div class="flex items-center justify-between h-16 md:h-20 lg:h-22">
+                <div class="w-1/4 hidden lg:flex items-center">
+                    <div class="relative w-full max-w-xs group">
+                        <span
+                            class="absolute inset-y-0 right-0 flex items-center pr-3.5 pointer-events-none text-charcoal-500 group-focus-within:text-teal-900 transition-colors"><i
+                                class="fa-solid fa-magnifying-glass text-xs"></i></span>
+                        <input
+                            class="w-full bg-sand-200/80 text-xs rounded-full py-2.5 pr-9 pl-4 border border-sand-300 text-charcoal-800 placeholder-charcoal-400 focus:outline-none focus:ring-1 focus:ring-teal-800 focus:bg-white transition-all shadow-inner"
+                            placeholder="ابحث عن مستحضرات، معادن، طين..." type="search" />
+                    </div>
+                </div>
+                <button aria-label="القائمة"
+                    class="lg:hidden p-2 text-charcoal-700 hover:text-teal-900 transition-colors" id="mobileMenuBtn"><i
+                        class="fa-solid fa-bars text-xl"></i></button>
+                <div class="flex-1 lg:flex-initial text-center py-2">
+                    <a class="inline-flex flex-col items-center group" href="index.html">
+                        <div class="flex items-center gap-2">
+                            <span class="w-5 h-[1px] bg-gold-500/70 hidden sm:inline-block"></span>
+                            <div aria-label="SEAcare"
+                                class="inline-block font-['Alexandria'] text-2xl sm:text-3xl leading-none" dir="ltr">
+                                <span class="block leading-none tracking-tight"><b
+                                        class="font-bold text-[#044553]">SEA</b><span
+                                        class="font-normal text-[#259faf]">care</span></span>
+                                <span
+                                    class="block leading-none mt-1 text-center whitespace-nowrap text-[0.235em] tracking-[0.02em] font-light text-[#6D6E71]">WITH
+                                    MAGNESIUM AND CARNALLITE</span>
+                            </div>
+                            <span class="w-5 h-[1px] bg-gold-500/70 hidden sm:inline-block"></span>
+                        </div>
+                    </a>
+                </div>
+                <div class="flex items-center justify-end gap-2 sm:gap-3 lg:gap-4 text-charcoal-800">
+                    <button aria-label="البحث"
+                        class="lg:hidden p-2 text-charcoal-700 hover:text-teal-900 transition-colors"><i
+                            class="fa-solid fa-magnifying-glass text-lg"></i></button>
+                    <a class="hidden sm:flex items-center gap-2 p-2 hover:text-teal-900 transition-colors" href="account.html"
+                        title="حسابي"><i class="fa-regular fa-user text-lg"></i><span
+                            class="hidden xl:inline text-xs font-medium">تسجيل الدخول</span></a>
+                    <a class="relative p-2 hover:text-teal-900 transition-colors" href="wishlist.html" title="قائمة الرغبات">
+                        <i class="fa-regular fa-heart text-lg"></i>
+                        <span
+                            class="absolute top-1 -right-0.5 w-4 h-4 bg-gold-500 text-teal-950 font-bold text-[9px] rounded-full flex items-center justify-center animate-bounce-subtle">2</span>
+                    </a>
+                    <button
+                        class="relative flex items-center gap-2 bg-teal-900 text-sand-50 hover:bg-teal-800 px-3 sm:px-4 py-2 rounded-full transition-all shadow-sm btn-shimmer"
+                        type="button">
+                        <i class="fa-solid fa-bag-shopping text-sm text-gold-400"></i>
+                        <span class="text-xs font-semibold hidden sm:inline">الحقيبة</span>
+                        <span
+                            class="w-5 h-5 bg-teal-950 text-gold-300 font-bold text-[10px] rounded-full flex items-center justify-center border border-teal-800">3</span>
+                    </button>
+                </div>
+            </div>
+            <nav class="hidden lg:block border-t border-sand-300/50 py-3">
+                <ul
+                    class="flex items-center justify-center gap-5 xl:gap-7 text-xs font-medium text-charcoal-800 tracking-wide">
+                    <li><a class="hover:text-teal-900 py-1 transition-colors" href="index.html">الرئيسية</a></li>
+                    <li><a class="hover:text-teal-900 py-1 transition-colors" href="shopall.html">تسوق الكل</a></li>
+                    <li><a class="hover:text-teal-900 py-1 transition-colors" href="category.html">العناية بالوجه</a></li>
+                    <li><a class="text-teal-900 font-bold border-b-2 border-teal-900 pb-1"
+                            href="shopall.html#body-hand-care">العناية بالجسم واليدين</a></li>
+                    <li><a class="hover:text-teal-900 py-1 transition-colors" href="shopall.html#hair-care">العناية بالشعر</a></li>
+                    <li><a class="hover:text-teal-900 py-1 transition-colors" href="shopall.html#mud-masks">الأقنعة وطين البحر
+                            الميت</a></li>
+                    <li><a class="hover:text-teal-900 py-1 transition-colors" href="shopall.html#bath-spa">الأملاح والاستجمام</a>
+                    </li>
+                    <li><a class="hover:text-teal-900 py-1 transition-colors" href="soap.html">الصابون الفاخر</a></li>
+                    <li><a class="text-gold-600 font-bold hover:text-gold-700 py-1 flex items-center gap-1"
+                            href="shopall.html#gifts"><i class="fa-solid fa-gift text-xs"></i><span>الهدايا والمجموعات</span></a>
+                    </li>
+                </ul>
+            </nav>
+            <nav id="mobileMenu" class="mobile-menu lg:hidden border-t border-sand-300/50">
+                <ul class="py-4 space-y-1 text-sm font-medium text-charcoal-800">
+                    <li><a class="block py-2.5 px-3 rounded-lg hover:bg-sand-200 hover:text-teal-900 transition-colors"
+                            href="index.html">الرئيسية</a></li>
+                    <li><a class="block py-2.5 px-3 rounded-lg hover:bg-sand-200 hover:text-teal-900 transition-colors"
+                            href="shopall.html">تسوق الكل</a></li>
+                    <li><a class="block py-2.5 px-3 rounded-lg hover:bg-sand-200 hover:text-teal-900 transition-colors"
+                            href="category.html">العناية بالوجه</a></li>
+                    <li><a class="block py-2.5 px-3 rounded-lg bg-sand-200 text-teal-900 font-bold transition-colors"
+                            href="shopall.html#body-hand-care">العناية بالجسم واليدين</a></li>
+                    <li><a class="block py-2.5 px-3 rounded-lg hover:bg-sand-200 hover:text-teal-900 transition-colors"
+                            href="shopall.html#hair-care">العناية بالشعر</a></li>
+                    <li><a class="block py-2.5 px-3 rounded-lg hover:bg-sand-200 hover:text-teal-900 transition-colors"
+                            href="shopall.html#mud-masks">الأقنعة وطين البحر الميت</a></li>
+                    <li><a class="block py-2.5 px-3 rounded-lg hover:bg-sand-200 hover:text-teal-900 transition-colors"
+                            href="shopall.html#bath-spa">الأملاح والاستجمام</a></li>
+                    <li><a class="block py-2.5 px-3 rounded-lg hover:bg-sand-200 hover:text-teal-900 transition-colors"
+                            href="soap.html">الصابون الفاخر</a></li>
+                    <li><a class="block py-2.5 px-3 rounded-lg text-gold-600 font-bold hover:bg-sand-200 transition-colors"
+                            href="shopall.html#gifts"><i class="fa-solid fa-gift text-xs ml-1"></i> الهدايا والمجموعات</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!-- END: MainHeader -->
+
+    <main class="flex-grow">
+        <!-- BEGIN: Product Detail -->
+        <section class="max-w-7xl mx-auto px-4 lg:px-8 py-8 md:py-12">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+
+                <!-- Image Gallery (left) -->
+                <div class="lg:col-span-6 flex flex-col gap-4 order-2 lg:order-1">
+                    <div
+                        class="relative w-full aspect-square bg-sand-100 rounded-2xl overflow-hidden shadow-luxury group img-zoom">
+                        <img alt="زبدة الجسم بالكاكاو من سي كير" class="w-full h-full object-cover object-center"
+                            id="mainProductImage"
+                            src="https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg" />
+                        <div
+                            class="absolute top-4 right-4 flex items-center gap-1.5 bg-sand-50/90 backdrop-blur-md px-3 py-1.5 rounded-full shadow-sm">
+                            <span class="w-2 h-2 rounded-full bg-gold-500 animate-pulse-soft"></span>
+                            <span class="text-[11px] font-bold text-teal-900">متوفر بالمخزون</span>
+                        </div>
+                        <button aria-label="أضف إلى المفضلة"
+                            class="absolute top-4 left-4 w-9 h-9 rounded-full bg-sand-50/90 backdrop-blur-md text-charcoal-700 hover:text-red-500 flex items-center justify-center shadow-sm transition-colors"
+                            id="galleryWishlistBtn">
+                            <i class="fa-regular fa-heart text-sm"></i>
+                        </button>
+                        <button aria-label="الصورة السابقة"
+                            class="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-sand-50/85 backdrop-blur-sm text-teal-900 flex items-center justify-center shadow-md opacity-0 group-hover:opacity-100 transition-all"
+                            id="galleryPrev"><i class="fa-solid fa-chevron-right text-xs"></i></button>
+                        <button aria-label="الصورة التالية"
+                            class="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-sand-50/85 backdrop-blur-sm text-teal-900 flex items-center justify-center shadow-md opacity-0 group-hover:opacity-100 transition-all"
+                            id="galleryNext"><i class="fa-solid fa-chevron-left text-xs"></i></button>
+                        <div
+                            class="absolute bottom-4 right-4 bg-teal-950/85 backdrop-blur-md px-3 py-1 rounded-full text-sand-50 text-[11px] font-semibold tracking-wide">
+                            250g • عبوة مستدامة</div>
+                    </div>
+                    <div class="flex items-center justify-center gap-1.5" id="dotsRow">
+                        <span class="dot w-6 h-1.5 rounded-full bg-teal-900 transition-all"></span>
+                        <span class="dot w-2 h-1.5 rounded-full bg-sand-300 transition-all"></span>
+                        <span class="dot w-2 h-1.5 rounded-full bg-sand-300 transition-all"></span>
+                        <span class="dot w-2 h-1.5 rounded-full bg-sand-300 transition-all"></span>
+                    </div>
+                    <div class="grid grid-cols-4 gap-3">
+                        <button
+                            class="thumb-btn relative aspect-square rounded-xl overflow-hidden ring-2 ring-teal-800 transition-all"
+                            data-index="0">
+                            <img class="w-full h-full object-cover"
+                                src="https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg" />
+                        </button>
+                        <button
+                            class="thumb-btn relative aspect-square rounded-xl overflow-hidden ring-1 ring-sand-300 hover:ring-teal-700 transition-all"
+                            data-index="1">
+                            <img class="w-full h-full object-cover"
+                                src="https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg" />
+                        </button>
+                        <button
+                            class="thumb-btn relative aspect-square rounded-xl overflow-hidden ring-1 ring-sand-300 hover:ring-teal-700 transition-all"
+                            data-index="2">
+                            <img class="w-full h-full object-cover"
+                                src="https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg" />
+                        </button>
+                        <button
+                            class="thumb-btn relative aspect-square rounded-xl overflow-hidden ring-1 ring-sand-300 hover:ring-teal-700 transition-all"
+                            data-index="3">
+                            <img class="w-full h-full object-cover"
+                                src="https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg" />
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product Info (right) -->
+                <div class="lg:col-span-6 flex flex-col gap-4 order-1 lg:order-2">
+                    <nav aria-label="مسار التنقل" class="flex items-center gap-2 text-xs text-charcoal-500">
+                        <a class="hover:text-teal-900 transition-colors" href="index.html">الرئيسية</a>
+                        <i class="fa-solid fa-angle-left text-[10px] text-charcoal-400"></i>
+                        <a class="hover:text-teal-900 transition-colors" href="shopall.html#body-hand-care">العناية بالجسم</a>
+                        <i class="fa-solid fa-angle-left text-[10px] text-charcoal-400"></i>
+                        <span class="text-teal-900 font-semibold">زبدة الجسم بالكاكاو</span>
+                    </nav>
+
+                    <div class="flex flex-wrap items-center justify-between gap-2">
+                        <span
+                            class="bg-sand-200 text-teal-900 text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">العناية
+                            بالجسم واليدين</span>
+                        <span class="text-xs text-charcoal-400 tracking-wider" dir="ltr">SKU: SC-BB-COCOA-250</span>
+                    </div>
+
+                    <div>
+                        <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold font-serif text-teal-950 leading-tight">
+                            زبدة الجسم بالكاكاو</h1>
+                        <p class="text-sm text-gold-600 font-medium mt-1">SEAcare Body Butter With Cocoa</p>
+                    </div>
+
+                    <p class="text-sm md:text-base text-charcoal-700 leading-relaxed">
+                        تركيبة غنية ومخملية تجمع بين زبدة الكاكاو النقية ومستخلصات معادن البحر الميت لتمنح الجسم ترطيباً
+                        عميقاً ونعومة فائقة تدوم طوال اليوم.
+                    </p>
+
+                    <div class="flex items-baseline gap-2 py-1">
+                        <span class="text-2xl sm:text-3xl font-bold text-teal-900">28.00 <span
+                                class="text-base font-normal">د.أ</span></span>
+                        <span class="text-xs text-charcoal-400">(شامل ضريبة المبيعات)</span>
+                    </div>
+
+                    <!-- Trust Icons -->
+                    <div class="grid grid-cols-3 gap-3 py-2">
+                        <div class="bg-sand-100 rounded-xl p-3 flex flex-col items-center text-center shadow-sm">
+                            <i class="fa-solid fa-spa text-teal-800 text-lg mb-1.5"></i>
+                            <span class="text-[11px] font-bold text-teal-950">ترطيب عميق وتغذية</span>
+                            <span class="text-[10px] text-charcoal-500 mt-0.5">غنية بالأحماض الدهنية</span>
+                        </div>
+                        <div class="bg-sand-100 rounded-xl p-3 flex flex-col items-center text-center shadow-sm">
+                            <i class="fa-solid fa-shield-halved text-teal-800 text-lg mb-1.5"></i>
+                            <span class="text-[11px] font-bold text-teal-950">يحمي البشرة</span>
+                            <span class="text-[10px] text-charcoal-500 mt-0.5">دعم الحاجز الطبيعي</span>
+                        </div>
+                        <div class="bg-sand-100 rounded-xl p-3 flex flex-col items-center text-center shadow-sm">
+                            <i class="fa-solid fa-leaf text-teal-800 text-lg mb-1.5"></i>
+                            <span class="text-[11px] font-bold text-teal-950">بخلاصة طبيعية</span>
+                            <span class="text-[10px] text-charcoal-500 mt-0.5">كاكاو ومغنيسيوم نقي</span>
+                        </div>
+                    </div>
+
+                    <!-- Variant selector placeholder (hidden for this product, reusable for products with sizes/scents) -->
+                    <div class="hidden" id="variantSelectorBlock">
+                        <h3 class="text-xs font-bold text-teal-950 mb-2">الحجم</h3>
+                        <div class="flex flex-wrap gap-2" id="variantPillRow"></div>
+                    </div>
+
+                    <!-- Purchasing actions -->
+                    <div class="flex flex-col sm:flex-row items-stretch gap-3 pt-1">
+                        <div
+                            class="inline-flex items-center justify-between bg-sand-200 rounded-full px-3 py-2 w-full sm:w-32 h-12">
+                            <button aria-label="تقليل الكمية"
+                                class="w-8 h-8 rounded-full flex items-center justify-center text-teal-900 hover:bg-sand-300 transition-colors"
+                                id="qtyMinus"><i class="fa-solid fa-minus text-xs"></i></button>
+                            <span class="text-base font-bold text-teal-900 px-2" id="qtyCount">1</span>
+                            <button aria-label="زيادة الكمية"
+                                class="w-8 h-8 rounded-full flex items-center justify-center text-teal-900 hover:bg-sand-300 transition-colors"
+                                id="qtyPlus"><i class="fa-solid fa-plus text-xs"></i></button>
+                        </div>
+                        <button
+                            class="relative overflow-hidden flex-1 h-12 bg-teal-900 hover:bg-teal-950 text-sand-50 font-semibold rounded-full flex items-center justify-center gap-2 shadow-sm transition-all btn-shimmer"
+                            id="addToCartBtn">
+                            <i class="fa-solid fa-bag-shopping text-gold-400"></i><span>أضف للحقيبة</span>
+                        </button>
+                    </div>
+
+                    <div class="flex items-center justify-between pt-1 text-xs text-charcoal-700">
+                        <button class="inline-flex items-center gap-1.5 hover:text-teal-900 transition-colors"
+                            id="wishlistTextBtn"><i class="fa-regular fa-heart text-sm"
+                                id="wishlistTextIcon"></i><span>أضف للمفضلة</span></button>
+                        <button class="inline-flex items-center gap-1.5 hover:text-teal-900 transition-colors"><i
+                                class="fa-solid fa-share-nodes text-sm"></i><span>مشاركة المنتج</span></button>
+                    </div>
+
+                    <div class="mt-2 p-4 bg-sand-100 rounded-xl flex items-start gap-3 shadow-sm">
+                        <div
+                            class="w-10 h-10 rounded-full bg-sand-200 flex items-center justify-center shrink-0 text-teal-800">
+                            <i class="fa-solid fa-truck-fast text-base"></i></div>
+                        <div>
+                            <p class="text-sm font-bold text-teal-950">شحن سريع ومباشر داخل المملكة</p>
+                            <p class="text-xs text-charcoal-600 leading-relaxed mt-0.5">التوصيل متوفر لجميع مناطق الأردن
+                                — توصيل سريع وآمن خلال 24-48 ساعة، مع خيار الدفع عند الاستلام أو عبر كليك (CLIQ).</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tabs: Description / Ingredients / Usage -->
+        <section class="bg-sand-50 border-y border-sand-300/60 py-10 md:py-14">
+            <div class="max-w-7xl mx-auto px-4 lg:px-8">
+                <div class="flex items-center gap-3 mb-6 overflow-x-auto pb-1">
+                    <button
+                        class="tab-pill active px-5 py-2.5 rounded-full text-sm font-semibold shadow-sm transition-all"
+                        id="tabBtnDesc" onclick="switchTab('desc')">الوصف</button>
+                    <button class="tab-pill px-5 py-2.5 rounded-full text-sm font-semibold shadow-sm transition-all"
+                        id="tabBtnIngr" onclick="switchTab('ingr')">المكونات</button>
+                    <button class="tab-pill px-5 py-2.5 rounded-full text-sm font-semibold shadow-sm transition-all"
+                        id="tabBtnUsage" onclick="switchTab('usage')">طريقة الاستخدام</button>
+                </div>
+
+                <!-- Description -->
+                <div class="tab-panel bg-white p-6 md:p-8 rounded-2xl shadow-card" id="tabDesc">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                        <div class="lg:col-span-8 space-y-4">
+                            <h3 class="text-lg font-bold font-serif text-teal-950">تغذية مخملية نقية من قلب الطبيعة
+                                الأردنية</h3>
+                            <p class="text-sm text-charcoal-700 leading-relaxed">صُممت زبدة الجسم بالكاكاو من SEAcare
+                                لتوفير عناية فائقة للبشرة الجافة والعادية التي تحتاج إلى جرعة إضافية من الترطيب
+                                والمرونة. تعتمد هذه التركيبة على زبدة بذور الكاكاو النقية (Theobroma Cacao) المعصورة
+                                طبيعياً للحفاظ على الأحماض الدهنية الأساسية التي تقوي الحاجز الواقي للجلد.</p>
+                            <p class="text-sm text-charcoal-700 leading-relaxed">تندمج المعادن المستخرجة من البحر الميت،
+                                كالمغنيسيوم والكالسيوم والبوتاسيوم، مع الزبدة لتنعيم الأنسجة وتحسين قدرة الجلد على
+                                الاحتفاظ بالرطوبة الطبيعية. تمتاز التركيبة بسرعة الامتصاص بدون ملمس دهني مزعج.</p>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                                <div class="flex items-start gap-2.5">
+                                    <i class="fa-solid fa-circle-check text-teal-800 text-sm mt-1"></i>
+                                    <div>
+                                        <h4 class="text-sm font-bold text-teal-950">حماية من الجفاف والتشققات</h4>
+                                        <p class="text-xs text-charcoal-500">تحبس الرطوبة بفعالية في مناطق الكوعين
+                                            والركبتين.</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-2.5">
+                                    <i class="fa-solid fa-circle-check text-teal-800 text-sm mt-1"></i>
+                                    <div>
+                                        <h4 class="text-sm font-bold text-teal-950">خالية من البارابين والزيوت المعدنية
+                                        </h4>
+                                        <p class="text-xs text-charcoal-500">مكونات آمنة للاستخدام اليومي المستمر.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lg:col-span-4 bg-sand-100 rounded-xl p-5 flex flex-col justify-between">
+                            <div>
+                                <span
+                                    class="text-[11px] text-gold-600 font-bold uppercase tracking-wider block mb-1">تفاصيل
+                                    التركيبة</span>
+                                <h4 class="text-base font-bold font-serif text-teal-950 mb-2">معادن البحر الميت</h4>
+                                <p class="text-xs text-charcoal-600 leading-relaxed mb-4">تركيز متوازن من ملح الكارناليت
+                                    الغني بالمغنيسيوم، يساعد على تهدئة الإجهاد اليومي للبشرة.</p>
+                            </div>
+                            <div class="space-y-1.5 text-xs pt-2 border-t border-sand-300">
+                                <div class="flex justify-between py-1"><span class="text-charcoal-500">الحجم
+                                        الصافي:</span><span class="font-semibold text-teal-950">250 مل</span></div>
+                                <div class="flex justify-between py-1"><span class="text-charcoal-500">نوع
+                                        البشرة:</span><span class="font-semibold text-teal-950">الجافة والعادية</span>
+                                </div>
+                                <div class="flex justify-between py-1"><span class="text-charcoal-500">بلد
+                                        المنشأ:</span><span class="font-semibold text-teal-950">الأردن</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ingredients -->
+                <div class="tab-panel hidden bg-white p-6 md:p-8 rounded-2xl shadow-card" id="tabIngr">
+                    <h3 class="text-lg font-bold font-serif text-teal-950 mb-1">قائمة المكونات الكاملة</h3>
+                    <p class="text-xs text-charcoal-500 mb-5">نلتزم بالشفافية الكاملة في اختيار مصادر المواد الفعالة
+                        والمستخلصات.</p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 mb-5">
+                        <div class="p-3 bg-sand-100 rounded-xl"><span
+                                class="text-[11px] text-gold-600 font-bold block mb-1">زبدة الكاكاو النقية</span><span
+                                class="text-xs text-charcoal-700">Theobroma Cacao Seed Butter</span></div>
+                        <div class="p-3 bg-sand-100 rounded-xl"><span
+                                class="text-[11px] text-gold-600 font-bold block mb-1">أملاح البحر الميت</span><span
+                                class="text-xs text-charcoal-700">Dead Sea Salts الغنية بالمغنيسيوم</span></div>
+                        <div class="p-3 bg-sand-100 rounded-xl"><span
+                                class="text-[11px] text-gold-600 font-bold block mb-1">زبدة الشيا العضوية</span><span
+                                class="text-xs text-charcoal-700">Butyrospermum Parkii</span></div>
+                        <div class="p-3 bg-sand-100 rounded-xl"><span
+                                class="text-[11px] text-gold-600 font-bold block mb-1">فيتامين E النقي</span><span
+                                class="text-xs text-charcoal-700">Tocopherol</span></div>
+                    </div>
+                    <div class="p-4 bg-sand-200/60 rounded-xl">
+                        <span class="text-xs font-bold text-teal-950 block mb-2">قائمة المكونات (INCI):</span>
+                        <p class="text-xs text-charcoal-600 leading-relaxed" dir="ltr">Aqua (Water), Theobroma Cacao
+                            (Cocoa) Seed Butter, Butyrospermum Parkii (Shea) Butter, Maris Sal (Dead Sea Mineral Salts),
+                            Prunus Amygdalus Dulcis (Sweet Almond) Oil, Aloe Barbadensis Leaf Juice, Vegetable Glycerin,
+                            Cetearyl Alcohol, Caprylic/Capric Triglyceride, Tocopherol (Vitamin E), Allantoin,
+                            Ethylhexylglycerin, Natural Aroma.</p>
+                    </div>
+                </div>
+
+                <!-- Usage -->
+                <div class="tab-panel hidden bg-white p-6 md:p-8 rounded-2xl shadow-card" id="tabUsage">
+                    <h3 class="text-lg font-bold font-serif text-teal-950 mb-2">طقوس الاستخدام اليومي</h3>
+                    <p class="text-sm text-charcoal-700 leading-relaxed mb-5">للحصول على أقصى فائدة، ننصح باتباع الخطوات
+                        التالية كجزء من روتين العناية المنتظم بجسدك:</p>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="p-4 bg-sand-100 rounded-xl space-y-1.5">
+                            <span
+                                class="w-7 h-7 rounded-full bg-teal-900 text-sand-50 font-bold text-sm flex items-center justify-center">1</span>
+                            <h4 class="text-sm font-bold text-teal-950 pt-1">التطبيق بعد الاستحمام</h4>
+                            <p class="text-xs text-charcoal-600">ضعي كمية مناسبة على بشرة نظيفة ورطبة قليلاً مباشرة بعد
+                                الاستحمام.</p>
+                        </div>
+                        <div class="p-4 bg-sand-100 rounded-xl space-y-1.5">
+                            <span
+                                class="w-7 h-7 rounded-full bg-teal-900 text-sand-50 font-bold text-sm flex items-center justify-center">2</span>
+                            <h4 class="text-sm font-bold text-teal-950 pt-1">التدليك الدائري</h4>
+                            <p class="text-xs text-charcoal-600">دلكي بلطف وحركات دائرية مع التركيز على المرفقين
+                                والركبتين.</p>
+                        </div>
+                        <div class="p-4 bg-sand-100 rounded-xl space-y-1.5">
+                            <span
+                                class="w-7 h-7 rounded-full bg-teal-900 text-sand-50 font-bold text-sm flex items-center justify-center">3</span>
+                            <h4 class="text-sm font-bold text-teal-950 pt-1">الامتصاص والاسترخاء</h4>
+                            <p class="text-xs text-charcoal-600">انتظري دقيقة حتى تمتص البشرة الزبدة قبل ارتداء الملابس.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Related Products -->
+        <section class="max-w-7xl mx-auto px-4 lg:px-8 py-10 md:py-16">
+            <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-3 mb-8">
+                <div>
+                    <span class="text-xs font-bold text-gold-600 uppercase tracking-widest block mb-1">مجموعة العناية
+                        المكتملة</span>
+                    <h2 class="text-xl sm:text-2xl md:text-3xl font-bold font-serif text-teal-950">منتجات ذات صلة</h2>
+                </div>
+                <a class="inline-flex items-center gap-1.5 text-teal-900 hover:text-gold-600 font-semibold text-sm transition-colors"
+                    href="shopall.html#body-hand-care">
+                    <span>عرض كامل المجموعة</span><i class="fa-solid fa-arrow-left text-xs"></i>
+                </a>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+                <article
+                    class="bg-white rounded-2xl border border-sand-300/80 p-4 flex flex-col justify-between card-lift group">
+                    <div>
+                        <div class="relative rounded-xl overflow-hidden bg-sand-100 aspect-square mb-4 img-zoom">
+                            <img class="w-full h-full object-cover"
+                                src="https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg"
+                                alt="كريم زبدة الشيا والكاكاو المعدني" />
+                            <span
+                                class="absolute top-3 right-3 bg-sand-50/90 text-teal-900 border border-sand-300/70 text-[10px] font-medium px-2.5 py-0.5 rounded-full">ترطيب
+                                مكثف</span>
+                        </div>
+                        <span class="text-[11px] text-charcoal-400 block mb-1">العناية بالجسم</span>
+                        <h3
+                            class="font-serif font-bold text-sm text-teal-950 group-hover:text-teal-800 transition-colors">
+                            كريم زبدة الشيا والكاكاو المعدني</h3>
+                        <p class="text-xs text-charcoal-600 line-clamp-2 mt-1">كريم مغذٍ سريع الامتصاص غني بزبدة الشيا
+                            ومعادن البحر الميت.</p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-sand-200 flex items-center justify-between">
+                        <span class="text-base font-bold text-teal-900">18.50 د.أ</span>
+                        <button
+                            class="bg-sand-200 hover:bg-teal-900 hover:text-sand-50 text-teal-900 px-3.5 py-2 rounded-full text-xs font-semibold transition-all"><i
+                                class="fa-solid fa-cart-plus"></i> أضف</button>
+                    </div>
+                </article>
+                <article
+                    class="bg-white rounded-2xl border border-sand-300/80 p-4 flex flex-col justify-between card-lift group">
+                    <div>
+                        <div class="relative rounded-xl overflow-hidden bg-sand-100 aspect-square mb-4 img-zoom">
+                            <img class="w-full h-full object-cover"
+                                src="https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg"
+                                alt="صابون زبدة الشيا والكاكاو" />
+                            <span
+                                class="absolute top-3 right-3 bg-sand-50/90 text-teal-900 border border-sand-300/70 text-[10px] font-medium px-2.5 py-0.5 rounded-full">صابون
+                                طبيعي</span>
+                        </div>
+                        <span class="text-[11px] text-charcoal-400 block mb-1">الصابون الفاخر</span>
+                        <h3
+                            class="font-serif font-bold text-sm text-teal-950 group-hover:text-teal-800 transition-colors">
+                            صابون زبدة الشيا والكاكاو المرطب</h3>
+                        <p class="text-xs text-charcoal-600 line-clamp-2 mt-1">لوح صابون زيتي نقي ينظف البشرة بلطف دون
+                            جفاف.</p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-sand-200 flex items-center justify-between">
+                        <span class="text-base font-bold text-teal-900">7.00 د.أ</span>
+                        <button
+                            class="bg-sand-200 hover:bg-teal-900 hover:text-sand-50 text-teal-900 px-3.5 py-2 rounded-full text-xs font-semibold transition-all"><i
+                                class="fa-solid fa-cart-plus"></i> أضف</button>
+                    </div>
+                </article>
+                <article
+                    class="bg-white rounded-2xl border border-sand-300/80 p-4 flex flex-col justify-between card-lift group">
+                    <div>
+                        <div class="relative rounded-xl overflow-hidden bg-sand-100 aspect-square mb-4 img-zoom">
+                            <img class="w-full h-full object-cover"
+                                src="https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg"
+                                alt="بلورات الملح العطري" />
+                            <span
+                                class="absolute top-3 right-3 bg-sand-50/90 text-teal-900 border border-sand-300/70 text-[10px] font-medium px-2.5 py-0.5 rounded-full">استرخاء
+                                واستجمام</span>
+                        </div>
+                        <span class="text-[11px] text-charcoal-400 block mb-1">أملاح الاستحمام</span>
+                        <h3
+                            class="font-serif font-bold text-sm text-teal-950 group-hover:text-teal-800 transition-colors">
+                            بلورات الملح العطري مع اللافندر</h3>
+                        <p class="text-xs text-charcoal-600 line-clamp-2 mt-1">أملاح مغنيسيوم نقية مع اللافندر لتخفيف
+                            الإجهاد العضلي.</p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-sand-200 flex items-center justify-between">
+                        <span class="text-base font-bold text-teal-900">11.00 د.أ</span>
+                        <button
+                            class="bg-sand-200 hover:bg-teal-900 hover:text-sand-50 text-teal-900 px-3.5 py-2 rounded-full text-xs font-semibold transition-all"><i
+                                class="fa-solid fa-cart-plus"></i> أضف</button>
+                    </div>
+                </article>
+                <article
+                    class="bg-white rounded-2xl border border-sand-300/80 p-4 flex flex-col justify-between card-lift group">
+                    <div>
+                        <div class="relative rounded-xl overflow-hidden bg-sand-100 aspect-square mb-4 img-zoom">
+                            <img class="w-full h-full object-cover"
+                                src="https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg"
+                                alt="مقشر الملح المعدني" />
+                            <span
+                                class="absolute top-3 right-3 bg-sand-50/90 text-teal-900 border border-sand-300/70 text-[10px] font-medium px-2.5 py-0.5 rounded-full">تقشير
+                                وتجديد</span>
+                        </div>
+                        <span class="text-[11px] text-charcoal-400 block mb-1">العناية بالجسم</span>
+                        <h3
+                            class="font-serif font-bold text-sm text-teal-950 group-hover:text-teal-800 transition-colors">
+                            مقشر الملح المعدني للجسم</h3>
+                        <p class="text-xs text-charcoal-600 line-clamp-2 mt-1">يزيل خلايا الجلد الميتة بلطف ويجدد نعومة
+                            البشرة.</p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-sand-200 flex items-center justify-between">
+                        <span class="text-base font-bold text-teal-900">16.00 د.أ</span>
+                        <button
+                            class="bg-sand-200 hover:bg-teal-900 hover:text-sand-50 text-teal-900 px-3.5 py-2 rounded-full text-xs font-semibold transition-all"><i
+                                class="fa-solid fa-cart-plus"></i> أضف</button>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <!-- BEGIN: MainFooter -->
+    <footer class="bg-sand-200 text-charcoal-800 pt-12 pb-8 border-t border-sand-300" data-purpose="site-footer">
+        <div class="max-w-7xl mx-auto px-4 lg:px-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 pb-10 border-b border-sand-300">
+                <div class="sm:col-span-2 space-y-4">
+                    <div>
+                        <span class="tracking-[0.25em] text-2xl font-bold text-teal-900 uppercase">SEAcare</span>
+                        <span class="block text-xs font-serif text-gold-600 font-semibold mt-0.5">سي كير لمستحضرات البحر
+                            الميت • عمّان - الأردن</span>
+                    </div>
+                    <p class="text-xs text-charcoal-600 leading-relaxed max-w-sm">علامة تجارية أردنية رائدة متخصصة في
+                        مستحضرات التجميل والعناية الجلدية المعتمدة على كنوز البحر الميت الطبيعية.</p>
+                    <div class="text-xs text-charcoal-700 space-y-1.5 pt-2">
+                        <p><i class="fa-solid fa-location-dot text-gold-600 ml-2"></i> عمّان، المملكة الأردنية الهاشمية
+                        </p>
+                        <p><i class="fa-solid fa-envelope text-gold-600 ml-2"></i> info@seacareshop.com</p>
+                        <p class="text-right" dir="ltr"><i class="fa-solid fa-phone text-gold-600 ml-2"></i> +962 7 9623
+                            4969</p>
+                    </div>
+                </div>
+                <div class="space-y-3">
+                    <h4 class="font-serif font-bold text-sm text-teal-950">تسوق حسب الفئة</h4>
+                    <ul class="space-y-2 text-xs text-charcoal-600">
+                        <li><a class="hover:text-teal-900 transition-colors" href="category.html">العناية بالوجه</a></li>
+                        <li><a class="hover:text-teal-900 transition-colors" href="shopall.html#mud-masks">طين البحر الميت</a></li>
+                        <li><a class="hover:text-teal-900 transition-colors" href="shopall.html#bath-spa">الأملاح والاستجمام</a>
+                        </li>
+                        <li><a class="hover:text-teal-900 transition-colors" href="shopall.html#body-hand-care">العناية بالجسم</a>
+                        </li>
+                        <li><a class="hover:text-teal-900 transition-colors" href="soap.html">الصابون الفاخر</a></li>
+                    </ul>
+                </div>
+                <div class="space-y-3">
+                    <h4 class="font-serif font-bold text-sm text-teal-950">عن الماركة</h4>
+                    <ul class="space-y-2 text-xs text-charcoal-600">
+                        <li><a class="hover:text-teal-900 transition-colors" href="index.html#heritage">قصة البحر الميت والأردن</a></li>
+                        <li><a class="hover:text-teal-900 transition-colors" href="#">معايير الاستدامة البيئية</a></li>
+                    </ul>
+                </div>
+                <div class="space-y-3">
+                    <h4 class="font-serif font-bold text-sm text-teal-950">خدمة العملاء</h4>
+                    <ul class="space-y-2 text-xs text-charcoal-600">
+                        <li><a class="hover:text-teal-900 transition-colors" href="#">سياسة الشحن والتوصيل</a></li>
+                        <li><a class="hover:text-teal-900 transition-colors" href="#">الاستبدال والاسترجاع</a></li>
+                        <li><a class="hover:text-teal-900 transition-colors" href="#">الأسئلة الشائعة (FAQ)</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-6 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-charcoal-500">
+                <p class="text-center md:text-right">© 2026 جميع الحقوق محفوظة لـ <strong>SEAcare (سي كير)</strong>.
+                    صُنع بفخر وشغف في الأردن.</p>
+                <div class="flex flex-wrap items-center justify-center gap-2 text-base text-charcoal-600">
+                    <span class="text-[10px] text-charcoal-400 ml-1">وسائل الدفع المعتمدة:</span>
+                    <i class="fa-brands fa-cc-visa" title="Visa"></i><i class="fa-brands fa-cc-mastercard"
+                        title="MasterCard"></i><i class="fa-brands fa-cc-apple-pay" title="Apple Pay"></i>
+                    <span class="text-[10px] font-bold border border-sand-400 px-1.5 py-0.5 rounded">CLIQ</span>
+                    <span class="text-[10px] font-bold border border-sand-400 px-1.5 py-0.5 rounded">دفع عند
+                        الاستلام</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- END: MainFooter -->
+
+    <!-- Toast -->
+    <div class="fixed bottom-6 right-6 z-50 bg-teal-950 text-sand-100 px-5 py-3 rounded-2xl shadow-luxury border border-teal-800 text-xs flex items-center gap-3 translate-y-24 opacity-0 transition-all duration-300 pointer-events-none"
+        id="cartToast">
+        <div class="w-6 h-6 rounded-full bg-gold-500 text-teal-950 flex items-center justify-center font-bold text-xs">
+            <i class="fa-solid fa-check"></i></div>
+        <div><span class="font-bold block text-sand-50">تمت الإضافة بنجاح</span><span
+                class="text-[11px] text-sand-300">أُضيف المستحضر إلى حقيبة التسوق الخاصة بك</span></div>
+    </div>
+
+    <script>
+        function switchTab(id) {
+            ['desc', 'ingr', 'usage'].forEach(t => {
+                document.getElementById('tab' + t.charAt(0).toUpperCase() + t.slice(1)).classList.toggle('hidden', t !== id);
+                document.getElementById('tabBtn' + t.charAt(0).toUpperCase() + t.slice(1)).classList.toggle('active', t === id);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            // Gallery
+            const thumbs = document.querySelectorAll('.thumb-btn');
+            const dots = document.querySelectorAll('.dot');
+            thumbs.forEach((btn, i) => {
+                btn.addEventListener('click', () => {
+                    thumbs.forEach(t => t.classList.remove('ring-2', 'ring-teal-800'));
+                    thumbs.forEach(t => t.classList.add('ring-1', 'ring-sand-300'));
+                    btn.classList.add('ring-2', 'ring-teal-800');
+                    btn.classList.remove('ring-1', 'ring-sand-300');
+                    dots.forEach((d, j) => {
+                        d.classList.toggle('w-6', j === i);
+                        d.classList.toggle('bg-teal-900', j === i);
+                        d.classList.toggle('w-2', j !== i);
+                        d.classList.toggle('bg-sand-300', j !== i);
+                    });
+                });
+            });
+
+            // Quantity stepper
+            const qtyCount = document.getElementById('qtyCount');
+            let qty = 1;
+            document.getElementById('qtyMinus').addEventListener('click', () => { qty = Math.max(1, qty - 1); qtyCount.textContent = qty; });
+            document.getElementById('qtyPlus').addEventListener('click', () => { qty++; qtyCount.textContent = qty; });
+
+            // Wishlist toggles
+            function toggleHeart(icon) {
+                if (icon.classList.contains('fa-regular')) { icon.classList.remove('fa-regular'); icon.classList.add('fa-solid', 'text-red-500'); }
+                else { icon.classList.remove('fa-solid', 'text-red-500'); icon.classList.add('fa-regular'); }
+            }
+            document.getElementById('galleryWishlistBtn').addEventListener('click', function () { toggleHeart(this.querySelector('i')); });
+            document.getElementById('wishlistTextBtn').addEventListener('click', function () { toggleHeart(document.getElementById('wishlistTextIcon')); });
+
+            // Add to cart toast
+            const cartToast = document.getElementById('cartToast');
+            document.getElementById('addToCartBtn').addEventListener('click', () => {
+                cartToast.classList.remove('translate-y-24', 'opacity-0', 'pointer-events-none');
+                cartToast.classList.add('translate-y-0', 'opacity-100');
+                setTimeout(() => {
+                    cartToast.classList.add('translate-y-24', 'opacity-0', 'pointer-events-none');
+                    cartToast.classList.remove('translate-y-0', 'opacity-100');
+                }, 3200);
+            });
+
+            // Mobile menu
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            if (mobileMenuBtn && mobileMenu) mobileMenuBtn.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+        });
+    </script>
+<script src="site.js"></script>
+</body>
+
+</html>

@@ -61,5 +61,18 @@
       applyHash();
       window.addEventListener('hashchange', applyHash);
     }
+
+    /* 6) Mobile filter panel toggle (shopall / category) */
+    var fBtn = document.getElementById('mobileFilterToggleBtn');
+    var fBox = document.getElementById('filterSidebar');
+    if (fBtn && fBox) {
+      fBtn.setAttribute('aria-expanded', 'false');
+      fBtn.addEventListener('click', function (e) {
+        e.stopImmediatePropagation();
+        var open = fBox.classList.toggle('open');
+        fBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        if (open) fBox.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, true);
+    }
   });
 })();

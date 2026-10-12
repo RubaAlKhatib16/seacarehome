@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" dir="rtl" lang="ar">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>قائمة الرغبات | SEAcare</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Noto+Serif+Arabic:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        teal: { 950: '#022A33', 900: '#044553', 800: '#0A5A6B', 700: '#137587', 600: '#1E8CA0', 100: '#DDF1F4', 50: '#EFF9FA' },
+                        sand: { 50: '#FFFFFF', 100: '#F7F9F9', 200: '#EEF3F4', 300: '#DCE4E6', 400: '#B9C4C7' },
+                        gold: { 300: '#8FD0D9', 400: '#5BB8C5', 500: '#259faf', 600: '#1A7D8B', 700: '#136573' },
+                        charcoal: { 900: '#1F2629', 800: '#2F383B', 700: '#4A5155', 600: '#585A5E', 500: '#6D6E71', 400: '#9C9EA1' }
+                    },
+                    fontFamily: {
+                        serif: ['"Noto Serif Arabic"', '"Cormorant Garamond"', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+                        brand: ['"Cormorant Garamond"', '"Noto Serif Arabic"', 'serif'],
+                    },
+                    boxShadow: {
+                        'luxury': '0 20px 40px -15px rgba(4, 69, 83, 0.10)',
+                        'card': '0 4px 20px -2px rgba(31, 38, 41, 0.05)',
+                        'card-hover': '0 20px 30px -10px rgba(4, 69, 83, 0.15)',
+                    },
+                    animation: {
+                        'slide-down': 'slideDown 0.5s ease-out forwards',
+                        'pulse-soft': 'pulseSoft 3s ease-in-out infinite',
+                        'bounce-subtle': 'bounceSubtle 2s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        slideDown: { '0%': { opacity: '0', transform: 'translateY(-20px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } },
+                        pulseSoft: { '0%, 100%': { opacity: '1' }, '50%': { opacity: '0.6' } },
+                        bounceSubtle: { '0%, 100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-5px)' } },
+                    },
+                }
+            }
+        }
+    </script>
+    <style data-purpose="typography">
+        body {
+            font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+            background-color: #F7F9F9;
+            color: #1F2629;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        .font-arabic-serif {
+            font-family: 'Noto Serif Arabic', 'Cormorant Garamond', serif;
+        }
+
+        .font-latin-serif {
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        ::selection {
+            background-color: #259faf;
+            color: #FFFFFF;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #EEF3F4;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, #044553, #259faf);
+            border-radius: 10px;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity .8s cubic-bezier(.22, 1, .36, 1), transform .8s cubic-bezier(.22, 1, .36, 1);
+            will-change: opacity, transform;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .stagger-1 {
+            transition-delay: .05s !important;
+        }
+
+        .stagger-2 {
+            transition-delay: .1s !important;
+        }
+
+        .stagger-3 {
+            transition-delay: .15s !important;
+        }
+
+        .stagger-4 {
+            transition-delay: .2s !important;
+        }
+
+        .btn-shimmer {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-shimmer::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .25), transparent);
+            transition: left .6s ease;
+        }
+
+        .btn-shimmer:hover::after {
+            left: 100%;
+        }
+
+        .mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height .5s cubic-bezier(.22, 1, .36, 1);
+        }
+
+        .mobile-menu.open {
+            max-height: 500px;
+        }
+
+        .border-gold-subtle {
+            border-color: rgba(37, 159, 175, 0.35);
+        }
+
+        .bg-mineral-soft {
+            background: radial-gradient(circle at 100% 0%, rgba(37, 159, 175, .08) 0%, rgba(247, 249, 249, 0) 70%);
+        }
+
+        .hero-gradient {
+            background: linear-gradient(135deg, #EEF3F4 0%, #F7F9F9 30%, #DDF1F4 60%, #EEF3F4 100%);
+        }
+
+        :focus-visible {
+            outline: 2px solid #259faf;
+            outline-offset: 2px;
+        }
+
+        @media print {
+
+            header,
+            footer,
+            #scrollProgress,
+            #backToTop,
+            .no-print {
+                display: none !important;
+            }
+
+            body {
+                background: #fff;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: .01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: .01ms !important;
+                scroll-behavior: auto !important;
+            }
+
+            .reveal {
+                opacity: 1 !important;
+                transform: none !important;
+            }
+        }
+
+        html {
+            color-scheme: light;
+        }
+
+        .line-clamp-1 {
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .toast {
+            position: fixed;
+            bottom: 5.5rem;
+            right: 50%;
+            transform: translate(50%, 20px);
+            opacity: 0;
+            pointer-events: none;
+            z-index: 120;
+            transition: all .35s ease;
+        }
+
+        @media (min-width: 1024px) {
+            .toast {
+                bottom: 1.5rem;
+            }
+        }
+
+        .toast.show {
+            opacity: 1;
+            transform: translate(50%, 0);
+        }
+
+        .card-lift {
+            transition: transform .4s cubic-bezier(.22, 1, .36, 1), box-shadow .4s ease;
+        }
+
+        .card-lift:hover {
+            transform: translateY(-6px);
+        }
+
+        .img-zoom {
+            overflow: hidden;
+        }
+
+        .img-zoom img {
+            transition: transform .8s cubic-bezier(.22, 1, .36, 1);
+        }
+
+        .img-zoom:hover img {
+            transform: scale(1.07);
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .no-scrollbar {
+            scrollbar-width: none;
+        }
+    </style>
+<link rel="stylesheet" href="responsive.css" />
+</head>
+
+<body class="bg-sand-100 text-charcoal-900 selection:bg-teal-900 selection:text-sand-100 overflow-x-hidden">
+
+    <div id="scrollProgress"
+        class="fixed top-0 right-0 h-1 bg-gradient-to-l from-gold-500 to-teal-900 z-[100] transition-all duration-150"
+        style="width: 0%;"></div>
+
+    <!-- BEGIN: AnnouncementBar -->
+    <section class="bg-teal-950 text-sand-200 text-xs py-2.5 px-4 border-b border-teal-900/60 animate-slide-down"
+        data-purpose="announcement-bar">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+            <div class="flex items-center gap-3 font-medium text-center sm:text-right">
+                <span
+                    class="inline-flex items-center justify-center w-2 h-2 rounded-full bg-gold-500 animate-pulse-soft flex-shrink-0"></span>
+                <p class="tracking-wide text-[11px] sm:text-xs">شحن مجاني لكافة الطلبات في الأردن والخليج العربي بقيمة
+                    تزيد عن 45 دينار أردني • استكشف النقاء المعدني</p>
+            </div>
+            <div
+                class="hidden md:flex items-center divide-x divide-x-reverse divide-teal-800 text-[11px] text-sand-300">
+                <div class="px-3.5 flex items-center gap-2"><i
+                        class="fa-solid fa-phone text-gold-400 text-[10px]"></i><span class="tracking-wider"
+                        dir="ltr">+962 7 9623 4969</span></div>
+                <div class="px-3.5 flex items-center gap-1.5"><span>العملة:</span><strong
+                        class="font-semibold text-gold-400">JOD د.أ</strong></div>
+                <div class="px-3.5 flex items-center gap-2">
+                    <button class="text-white font-semibold underline decoration-gold-400 underline-offset-4"
+                        type="button">العربية</button>
+                    <span class="text-teal-700">|</span>
+                    <button
+                        class="text-sand-400 hover:text-white transition-colors font-latin-serif uppercase tracking-wider text-xs"
+                        type="button">English</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BEGIN: MainHeader -->
+    <header
+        class="sticky top-0 z-50 bg-sand-100/95 backdrop-blur-md border-b border-sand-300/70 transition-all shadow-sm"
+        data-purpose="main-header">
+        <div class="max-w-7xl mx-auto px-4 lg:px-8">
+            <div class="flex items-center justify-between h-16 md:h-20 lg:h-24">
+                <div class="w-1/4 hidden lg:flex items-center">
+                    <div class="relative w-full max-w-xs group">
+                        <span
+                            class="absolute inset-y-0 right-0 flex items-center pr-3.5 pointer-events-none text-charcoal-500 group-focus-within:text-teal-900 transition-colors"><i
+                                class="fa-solid fa-magnifying-glass text-xs"></i></span>
+                        <input
+                            class="w-full bg-sand-200/80 text-xs rounded-full py-2.5 pr-9 pl-4 border border-sand-300 text-charcoal-800 placeholder-charcoal-400 focus:outline-none focus:ring-1 focus:ring-teal-800 focus:bg-white transition-all shadow-inner"
+                            placeholder="ابحث عن معادن، سيروم، طين..." type="search" />
+                    </div>
+                </div>
+                <button id="mobileMenuBtn" aria-label="القائمة"
+                    class="lg:hidden p-2 text-charcoal-700 hover:text-teal-900 transition-colors"><i
+                        class="fa-solid fa-bars text-xl"></i></button>
+                <div class="flex-1 lg:flex-initial text-center py-2">
+                    <div class="flex items-center justify-center gap-2">
+                        <span class="w-5 h-[1px] bg-gold-500/70 hidden sm:inline-block"></span>
+                        <a href="index.html" dir="ltr" aria-label="SEAcare"
+                            class="inline-block font-['Alexandria'] text-2xl sm:text-3xl md:text-4xl leading-none">
+                            <span class="block leading-none tracking-tight"><b
+                                    class="font-bold text-[#044553]">SEA</b><span
+                                    class="font-normal text-[#259faf]">care</span></span>
+                            <span
+                                class="block leading-none mt-1 text-center whitespace-nowrap text-[0.235em] tracking-[0.02em] font-light text-[#6D6E71]">WITH
+                                MAGNESIUM AND CARNALLITE</span>
+                        </a>
+                        <span class="w-5 h-[1px] bg-gold-500/70 hidden sm:inline-block"></span>
+                    </div>
+                </div>
+                <div class="flex items-center justify-end gap-2 sm:gap-3 lg:gap-5 text-charcoal-800">
+                    <button aria-label="البحث"
+                        class="lg:hidden p-2 text-charcoal-700 hover:text-teal-900 transition-colors"><i
+                            class="fa-solid fa-magnifying-glass text-lg"></i></button>
+                    <a class="hidden sm:flex items-center gap-2 p-2 text-teal-900 transition-colors" href="account.html"
+                        title="حسابي"><i class="fa-regular fa-user text-lg"></i><span
+                            class="hidden xl:inline text-xs font-bold">حسابي</span></a>
+                    <a class="relative p-2 text-teal-900 transition-colors" href="wishlist.html" title="قائمة الرغبات"><i
+                            class="fa-solid fa-heart text-lg"></i>
+                        <span data-wl-count
+                            class="absolute top-1 -right-0.5 w-4 h-4 bg-gold-500 text-teal-950 font-bold text-[9px] rounded-full flex items-center justify-center">5</span></a>
+                    <button
+                        class="relative flex items-center gap-2 bg-teal-900 text-sand-50 hover:bg-teal-800 px-3 sm:px-4 py-2 rounded-full transition-all shadow-sm btn-shimmer"
+                        type="button">
+                        <i class="fa-solid fa-bag-shopping text-sm text-gold-400"></i><span
+                            class="text-xs font-semibold hidden sm:inline">الحقيبة</span>
+                        <span id="cartCount"
+                            class="w-5 h-5 bg-teal-950 text-gold-300 font-bold text-[10px] rounded-full flex items-center justify-center border border-teal-800">3</span>
+                    </button>
+                </div>
+            </div>
+            <nav class="hidden lg:block border-t border-sand-300/50 py-3.5">
+                <ul
+                    class="flex items-center justify-center gap-5 xl:gap-8 text-xs font-medium text-charcoal-800 tracking-wide">
+                    <li><a class="hover:text-teal-900 py-1 transition-colors" href="index.html">الرئيسية</a></li>
+                    <li><a class="hover:text-teal-900 py-1 transition-colors" href="shopall.html">تسوق الكل</a></li>
+                    <li><a class="hover:text-teal-900 py-1 transition-colors" href="category.html">العناية بالوجه</a>
+                    </li>
+                    <li><a class="hover:text-teal-900 py-1 transition-colors" href="shopall.html#body-hand-care">العناية بالجسم</a>
+                    </li>
+                    <li><a class="hover:text-teal-900 py-1 transition-colors" href="shopall.html#hair-care">العناية بالشعر</a>
+                    </li>
+                    <li><a class="hover:text-teal-900 py-1 transition-colors font-semibold text-teal-900"
+                            href="shopall.html#mud-masks">أملاح وطين البحر الميت</a></li>
+                    <li><a class="hover:text-teal-900 py-1 transition-colors" href="index.html#rituals">طقوس العناية
+                            اليومية</a></li>
+                    <li><a class="hover:text-teal-900 py-1 transition-colors" href="index.html#science">علوم المعادن</a>
+                    </li>
+                    <li><a class="hover:text-teal-900 py-1 transition-colors" href="index.html#heritage">قصة الماركة
+                            الأردنية</a></li>
+                    <li><a class="text-gold-600 font-bold hover:text-gold-700 py-1 flex items-center gap-1"
+                            href="shopall.html#gifts"><i class="fa-solid fa-gift text-xs"></i><span>الهدايا
+                                والمجموعات</span></a></li>
+                </ul>
+            </nav>
+            <nav id="mobileMenu" class="mobile-menu lg:hidden border-t border-sand-300/50">
+                <ul class="py-4 space-y-1 text-sm font-medium text-charcoal-800">
+                    <li><a class="block py-2.5 px-3 rounded-lg hover:bg-sand-200 hover:text-teal-900 transition-colors"
+                            href="index.html">الرئيسية</a></li>
+                    <li><a class="block py-2.5 px-3 rounded-lg hover:bg-sand-200 hover:text-teal-900 transition-colors"
+                            href="shopall.html">تسوق الكل</a></li>
+                    <li><a class="block py-2.5 px-3 rounded-lg hover:bg-sand-200 hover:text-teal-900 transition-colors"
+                            href="category.html">العناية بالوجه</a></li>
+                    <li><a class="block py-2.5 px-3 rounded-lg hover:bg-sand-200 hover:text-teal-900 transition-colors"
+                            href="shopall.html#body-hand-care">العناية بالجسم</a></li>
+                    <li><a class="block py-2.5 px-3 rounded-lg hover:bg-sand-200 hover:text-teal-900 transition-colors"
+                            href="shopall.html#hair-care">العناية بالشعر</a></li>
+                    <li><a class="block py-2.5 px-3 rounded-lg hover:bg-sand-200 hover:text-teal-900 transition-colors"
+                            href="shopall.html#mud-masks">أملاح وطين البحر الميت</a></li>
+                    <li><a class="block py-2.5 px-3 rounded-lg hover:bg-sand-200 hover:text-teal-900 transition-colors"
+                            href="index.html#rituals">طقوس العناية</a></li>
+                    <li><a class="block py-2.5 px-3 rounded-lg hover:bg-sand-200 hover:text-teal-900 transition-colors"
+                            href="index.html#science">علوم المعادن</a></li>
+                    <li><a class="block py-2.5 px-3 rounded-lg hover:bg-sand-200 hover:text-teal-900 transition-colors"
+                            href="index.html#heritage">قصة الماركة</a></li>
+                    <li><a class="block py-2.5 px-3 rounded-lg text-gold-600 font-bold hover:bg-sand-200 transition-colors"
+                            href="shopall.html#gifts"><i class="fa-solid fa-gift text-xs ml-1"></i> الهدايا
+                            والمجموعات</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- BEGIN: Wishlist -->
+    <main>
+        <!-- Breadcrumb -->
+        <div class="bg-sand-100 border-b border-sand-300/60">
+            <div class="max-w-7xl mx-auto px-4 lg:px-8 py-3.5">
+                <nav aria-label="مسار التنقل" class="flex items-center gap-2 text-[11px] text-charcoal-500">
+                    <a class="hover:text-teal-900 transition-colors" href="index.html">الرئيسية</a>
+                    <i class="fa-solid fa-angle-left text-[9px] text-charcoal-400"></i>
+                    <a class="hover:text-teal-900 transition-colors" href="account.html">حسابي</a>
+                    <i class="fa-solid fa-angle-left text-[9px] text-charcoal-400"></i>
+                    <span class="text-teal-900 font-semibold">قائمة الرغبات</span>
+                </nav>
+            </div>
+        </div>
+
+        <div
+            class="max-w-7xl mx-auto px-4 lg:px-8 py-8 lg:py-12 pb-28 lg:pb-12 flex flex-col lg:flex-row gap-6 lg:gap-8 items-start">
+
+            <!-- Sidebar -->
+            <aside class="w-full lg:w-[300px] shrink-0 space-y-6">
+                <div class="bg-white rounded-3xl p-5 lg:p-6 border border-sand-300 shadow-card">
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="w-14 h-14 rounded-full bg-teal-900 text-gold-300 flex items-center justify-center font-bold text-base shrink-0 shadow-inner">
+                            ر ا</div>
+                        <div class="min-w-0">
+                            <h2 class="font-serif font-bold text-base text-teal-950 truncate">ربى الخطيب</h2>
+                            <span class="block text-xs text-charcoal-500 mt-0.5">عضو منذ أكتوبر 2025</span>
+                            <span class="block text-[11px] text-teal-700 font-semibold mt-1" dir="ltr">#SC-9824</span>
+                        </div>
+                    </div>
+                    <div class="h-px bg-sand-200 my-4 lg:my-5"></div>
+                    <nav aria-label="قائمة الحساب"
+                        class="flex lg:flex-col gap-1.5 overflow-x-auto no-scrollbar -mx-1 px-1 text-xs sm:text-sm">
+                        <a class="shrink-0 flex items-center justify-between gap-3 p-3 rounded-xl text-charcoal-700 hover:bg-teal-50 hover:text-teal-900 transition-colors group"
+                            href="account.html">
+                            <span class="flex items-center gap-3"><i
+                                    class="fa-solid fa-table-cells-large w-4 text-center text-charcoal-500 group-hover:text-teal-900"></i><span
+                                    class="whitespace-nowrap">نظرة عامة</span></span></a>
+                        <a class="shrink-0 flex items-center justify-between gap-3 p-3 rounded-xl text-charcoal-700 hover:bg-teal-50 hover:text-teal-900 transition-colors group"
+                            href="account.html">
+                            <span class="flex items-center gap-3"><i
+                                    class="fa-solid fa-box-archive w-4 text-center text-charcoal-500 group-hover:text-teal-900"></i><span
+                                    class="whitespace-nowrap">طلباتي</span></span>
+                            <span
+                                class="bg-teal-50 text-teal-900 text-[11px] font-semibold px-2 py-0.5 rounded-full">3</span></a>
+                        <a class="shrink-0 flex items-center justify-between gap-3 p-3 rounded-xl text-charcoal-700 hover:bg-teal-50 hover:text-teal-900 transition-colors group"
+                            href="#">
+                            <span class="flex items-center gap-3"><i
+                                    class="fa-solid fa-location-dot w-4 text-center text-charcoal-500 group-hover:text-teal-900"></i><span
+                                    class="whitespace-nowrap">العناوين المحفوظة</span></span></a>
+                        <a class="shrink-0 flex items-center justify-between gap-3 p-3 rounded-xl bg-teal-50 text-teal-900 font-bold border-r-4 border-teal-900"
+                            href="wishlist.html" aria-current="page">
+                            <span class="flex items-center gap-3"><i class="fa-solid fa-heart w-4 text-center"></i><span
+                                    class="whitespace-nowrap">قائمة الرغبات</span></span>
+                            <span data-wl-count
+                                class="bg-teal-900 text-white text-[11px] font-medium px-2.5 py-0.5 rounded-full">5</span></a>
+                        <a class="shrink-0 flex items-center justify-between gap-3 p-3 rounded-xl text-charcoal-700 hover:bg-teal-50 hover:text-teal-900 transition-colors group"
+                            href="#">
+                            <span class="flex items-center gap-3"><i
+                                    class="fa-solid fa-user-gear w-4 text-center text-charcoal-500 group-hover:text-teal-900"></i><span
+                                    class="whitespace-nowrap">معلومات الحساب</span></span></a>
+                        <a class="shrink-0 flex items-center gap-3 p-3 rounded-xl text-red-600/80 hover:text-red-700 hover:bg-red-50/60 transition-colors lg:mt-2"
+                            href="index.html">
+                            <i class="fa-solid fa-arrow-right-from-bracket w-4 text-center"></i><span
+                                class="whitespace-nowrap">تسجيل الخروج</span></a>
+                    </nav>
+                </div>
+
+                <div
+                    class="hidden lg:block bg-teal-950 text-sand-100 rounded-3xl p-6 border border-teal-900 shadow-luxury space-y-4">
+                    <div class="flex items-center gap-3">
+                        <span class="w-9 h-9 rounded-xl bg-teal-900 flex items-center justify-center text-gold-400"><i
+                                class="fa-solid fa-headset"></i></span>
+                        <h3 class="font-serif font-bold text-sm text-sand-50">تحتاج مساعدة؟</h3>
+                    </div>
+                    <p class="text-xs text-sand-300 leading-relaxed">فريق خدمة العملاء بعمّان جاهز للإجابة عن أسئلتك
+                        ومتابعة طلباتك.</p>
+                    <a class="flex items-center justify-center gap-2 w-full py-3 rounded-full bg-gold-500 hover:bg-gold-600 text-teal-950 text-xs font-bold transition-colors btn-shimmer"
+                        href="https://wa.me/962796234969" rel="noopener noreferrer" target="_blank"><i
+                            class="fa-brands fa-whatsapp text-base"></i><span>تواصل عبر واتساب</span></a>
+                    <a class="flex items-center justify-center gap-2 text-xs text-sand-300 hover:text-white transition-colors"
+                        href="mailto:info@seacareshop.com"><i class="fa-regular fa-envelope text-gold-400"></i><span
+                            dir="ltr">info@seacareshop.com</span></a>
+                </div>
+            </aside>
+
+            <!-- Content -->
+            <section class="flex-1 w-full min-w-0 space-y-6">
+                <div
+                    class="bg-white rounded-3xl p-6 lg:p-7 border border-sand-300 shadow-card flex flex-col md:flex-row md:items-center justify-between gap-4">
+                    <div>
+                        <h1 class="text-xl sm:text-2xl lg:text-3xl font-bold text-teal-950">قائمة الرغبات</h1>
+                        <p id="wlSub" class="text-xs sm:text-sm text-charcoal-500 mt-1"></p>
+                    </div>
+                    <div id="sortWrap" class="flex items-center gap-3 self-end md:self-auto">
+                        <label class="text-xs font-semibold text-charcoal-500 shrink-0" for="sortWishlist">ترتيب
+                            بحسب:</label>
+                        <div class="relative">
+                            <select id="sortWishlist"
+                                class="appearance-none bg-sand-100 border border-sand-300 text-teal-950 text-xs font-medium rounded-full py-2.5 ps-4 pe-9 cursor-pointer hover:border-teal-700 transition-colors focus:outline-none focus:bg-white focus:ring-1 focus:ring-teal-800">
+                                <option value="recent">الأحدث إضافة</option>
+                                <option value="asc">السعر: من الأقل</option>
+                                <option value="desc">السعر: من الأعلى</option>
+                            </select>
+                            <i
+                                class="fa-solid fa-chevron-down absolute left-3.5 top-1/2 -translate-y-1/2 text-[10px] text-charcoal-500 pointer-events-none"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="actionBar" class="hidden lg:flex flex-wrap items-center justify-between gap-4 px-1">
+                    <div class="flex items-center gap-4">
+                        <button id="addAllBtn" type="button"
+                            class="bg-teal-900 hover:bg-teal-950 text-white px-7 py-3 rounded-full text-sm font-semibold shadow-md transition-all flex items-center gap-2.5 btn-shimmer"><i
+                                class="fa-solid fa-bag-shopping text-gold-400 text-xs"></i><span>أضف الكل
+                                للحقيبة</span></button>
+                        <button id="clearBtn" type="button"
+                            class="text-charcoal-500 hover:text-red-600 text-sm flex items-center gap-1.5 transition-colors py-2"><i
+                                class="fa-regular fa-trash-can text-xs"></i><span>إفراغ القائمة</span></button>
+                    </div>
+                    <span
+                        class="text-[11px] text-charcoal-600 flex items-center gap-2 bg-teal-50 px-3.5 py-1.5 rounded-full border border-gold-subtle"><i
+                            class="fa-solid fa-shield-halved text-teal-700"></i>الأسعار تشمل ضريبة المبيعات</span>
+                </div>
+
+                <div id="grid" class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6"></div>
+
+                <!-- Empty state -->
+                <div id="empty"
+                    class="hidden bg-white rounded-3xl border border-sand-300 shadow-card text-center py-14 px-6">
+                    <div class="max-w-md mx-auto flex flex-col items-center">
+                        <div class="w-20 h-20 rounded-full bg-teal-50 flex items-center justify-center mb-5"><i
+                                class="fa-regular fa-heart text-3xl text-teal-700"></i></div>
+                        <h2 class="font-serif font-bold text-xl text-teal-950">قائمة رغباتك فاضية</h2>
+                        <p class="text-sm text-charcoal-600 mt-2 leading-relaxed">احفظ المنتجات اللي تعجبك بالضغط على
+                            أيقونة القلب وارجع لها وقت ما تحب.</p>
+                        <a class="mt-6 bg-teal-900 hover:bg-teal-950 text-white px-8 py-3 rounded-full text-sm font-semibold transition-colors shadow-md inline-flex items-center gap-2 btn-shimmer"
+                            href="shopall.html"><i class="fa-solid fa-compass text-gold-300 text-xs"></i><span>تصفح
+                                المنتجات</span></a>
+                    </div>
+                </div>
+
+                <!-- Recommendations -->
+                <section class="bg-white rounded-3xl p-6 lg:p-8 border border-sand-300 shadow-card">
+                    <div
+                        class="flex flex-col sm:flex-row sm:items-center justify-between pb-5 border-b border-sand-200 gap-2">
+                        <h2 class="font-serif font-bold text-lg text-teal-950">قد يعجبك أيضاً</h2>
+                        <a class="text-xs font-bold text-teal-900 hover:text-gold-600 flex items-center gap-1.5 transition-colors"
+                            href="shopall.html"><span>تصفح كامل المنتجات</span><i
+                                class="fa-solid fa-arrow-left text-[10px]"></i></a>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-5">
+                        <div
+                            class="flex items-center gap-4 p-3 rounded-2xl bg-sand-100 hover:bg-teal-50 transition-colors border border-sand-300/60">
+                            <div class="w-16 h-16 rounded-xl overflow-hidden bg-white shrink-0 border border-sand-300">
+                                <img class="w-full h-full object-cover" alt="شامبو الأعشاب المعدني" src="IMG_2252.PNG" /></div>
+                            <div class="flex-1 min-w-0">
+                                <h3 class="font-serif font-bold text-xs text-teal-950 truncate">  شامبو الأعشاب المعدني </h3>
+                                <span class="text-xs font-bold text-teal-900 block mt-1">12.00 د.أ</span>
+                                <button type="button" data-add
+                                    class="mt-1.5 text-[11px] text-teal-900 hover:text-gold-600 font-semibold flex items-center gap-1"><i
+                                        class="fa-solid fa-plus text-[9px]"></i><span>أضف للحقيبة</span></button>
+                            </div>
+                        </div>
+                        <div
+                            class="flex items-center gap-4 p-3 rounded-2xl bg-sand-100 hover:bg-teal-50 transition-colors border border-sand-300/60">
+                            <div
+                                class="w-16 h-16 rounded-xl bg-white shrink-0 border border-sand-300 flex items-center justify-center text-sand-400 text-xl">
+                                <img class="w-full h-full object-cover" alt="بلورات الملح العطري مع اللافندر" src="IMG_2256.PNG" /></div>
+                            <div class="flex-1 min-w-0">
+                                <h3 class="font-serif font-bold text-xs text-teal-950 truncate">  بلورات الملح العطري مع اللافندر </h3>
+                                <span class="text-xs font-bold text-teal-900 block mt-1">24.00 د.أ</span>
+                                <button type="button" data-add
+                                    class="mt-1.5 text-[11px] text-teal-900 hover:text-gold-600 font-semibold flex items-center gap-1"><i
+                                        class="fa-solid fa-plus text-[9px]"></i><span>أضف للحقيبة</span></button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </section>
+        </div>
+
+        <!-- Mobile sticky bar -->
+        <div id="mobileBar"
+            class="lg:hidden fixed bottom-0 inset-x-0 z-40 bg-white/95 backdrop-blur-md border-t border-sand-300 p-3 flex items-center gap-3">
+            <button id="addAllBtnM" type="button"
+                class="flex-1 bg-teal-900 hover:bg-teal-950 text-white py-3.5 rounded-full text-sm font-semibold flex items-center justify-center gap-2 btn-shimmer"><i
+                    class="fa-solid fa-bag-shopping text-gold-400 text-xs"></i><span>أضف الكل للحقيبة</span></button>
+            <button id="clearBtnM" type="button"
+                class="w-12 h-12 rounded-full border border-sand-300 text-charcoal-500 hover:text-red-600 flex items-center justify-center"
+                aria-label="إفراغ القائمة"><i class="fa-regular fa-trash-can"></i></button>
+        </div>
+    </main>
+
+    <div id="toast"
+        class="toast bg-teal-950 text-sand-50 text-xs font-semibold px-5 py-3 rounded-full shadow-luxury flex items-center gap-2"
+        role="status"></div>
+
+    <!-- BEGIN: MainFooter -->
+    <footer class="bg-sand-200 text-charcoal-800 pt-12 sm:pt-16 pb-8 sm:pb-12 border-t border-sand-300"
+        data-purpose="site-footer">
+        <div class="max-w-7xl mx-auto px-4 lg:px-8">
+            <div
+                class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-10 pb-10 sm:pb-12 border-b border-sand-300">
+                <div class="sm:col-span-2 space-y-4">
+                    <div>
+                        <span
+                            class="font-latin-serif tracking-[0.25em] text-2xl font-bold text-teal-900 uppercase">SEAcare</span>
+                        <span class="block text-xs font-serif text-gold-600 font-semibold mt-0.5">سي كير لمستحضرات البحر
+                            الميت • عمّان - الأردن</span>
+                    </div>
+                    <p class="text-xs text-charcoal-600 leading-relaxed max-w-sm">علامة تجارية أردنية رائدة متخصصة في
+                        مستحضرات التجميل والعناية الجلدية الفاخرة المعتمدة على كنوز البحر الميت الطبيعية المستخلصة بوعي
+                        بيئي ونقاء تام.</p>
+                    <div class="text-xs text-charcoal-700 space-y-1.5 pt-2">
+                        <p><i class="fa-solid fa-location-dot text-gold-600 ml-2"></i> عمّان، المملكة الأردنية الهاشمية
+                        </p>
+                        <p><i class="fa-solid fa-envelope text-gold-600 ml-2"></i> info@seacareshop.com</p>
+                        <p class="text-right" dir="ltr"><i class="fa-solid fa-phone text-gold-600 ml-2"></i> +962 7 9623
+                            4969</p>
+                    </div>
+                </div>
+                <div class="space-y-3">
+                    <h4 class="font-serif font-bold text-sm text-teal-950">تسوق حسب الفئة</h4>
+                    <ul class="space-y-2 text-xs text-charcoal-600">
+                        <li><a class="hover:text-teal-900 transition-colors" href="category.html">العناية بالوجه والسيرومات</a></li>
+                        <li><a class="hover:text-teal-900 transition-colors" href="shopall.html#mud-masks">طين البحر الميت النقي</a></li>
+                        <li><a class="hover:text-teal-900 transition-colors" href="shopall.html#bath-spa">أملاح الاستحمام والاسترخاء</a>
+                        </li>
+                        <li><a class="hover:text-teal-900 transition-colors" href="shopall.html#body-hand-care">مرطبات وزبدة الجسم</a></li>
+                        <li><a class="hover:text-teal-900 transition-colors" href="soap.html">الصابون الحرفي الطبيعي</a></li>
+                        <li><a class="hover:text-teal-900 transition-colors" href="shopall.html#gifts">صناديق الهدايا الفاخرة</a></li>
+                    </ul>
+                </div>
+                <div class="space-y-3">
+                    <h4 class="font-serif font-bold text-sm text-teal-950">عن الماركة والعلوم</h4>
+                    <ul class="space-y-2 text-xs text-charcoal-600">
+                        <li><a class="hover:text-teal-900 transition-colors" href="index.html#heritage">قصة البحر الميت والأردن</a></li>
+                        <li><a class="hover:text-teal-900 transition-colors" href="index.html#science">دليل المعادن الـ 26</a></li>
+                        <li><a class="hover:text-teal-900 transition-colors" href="#">معايير الاستدامة البيئية</a></li>
+                        <li><a class="hover:text-teal-900 transition-colors" href="#">فروع ونقاط البيع المعتمدة</a></li>
+                        <li><a class="hover:text-teal-900 transition-colors" href="#">المبيعات المؤسسية والسبا</a></li>
+                    </ul>
+                </div>
+                <div class="space-y-3">
+                    <h4 class="font-serif font-bold text-sm text-teal-950">خدمة العملاء</h4>
+                    <ul class="space-y-2 text-xs text-charcoal-600">
+                        <li><a class="hover:text-teal-900 transition-colors" href="#">سياسة الشحن والتوصيل</a></li>
+                        <li><a class="hover:text-teal-900 transition-colors" href="#">الاستبدال والاسترجاع</a></li>
+                        <li><a class="hover:text-teal-900 transition-colors" href="#">تتبع مسار شحنتك</a></li>
+                        <li><a class="hover:text-teal-900 transition-colors" href="#">الأسئلة الشائعة (FAQ)</a></li>
+                        <li><a class="hover:text-teal-900 transition-colors" href="#">تواصل مع المستشار الجلدي</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div
+                class="pt-6 sm:pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-charcoal-500">
+                <p class="text-center md:text-right">© 2026 جميع الحقوق محفوظة لـ <strong>SEAcare (سي كير)</strong>.
+                    صُنع بفخر وشغف في الأردن.</p>
+                <div
+                    class="flex flex-wrap items-center justify-center gap-2 sm:gap-3 text-base sm:text-lg text-charcoal-600">
+                    <span class="text-[10px] sm:text-xs text-charcoal-400 font-sans ml-1 sm:ml-2">وسائل الدفع
+                        المعتمدة:</span>
+                    <i class="fa-brands fa-cc-visa" title="Visa"></i>
+                    <i class="fa-brands fa-cc-mastercard" title="MasterCard"></i>
+                    <i class="fa-brands fa-cc-apple-pay" title="Apple Pay"></i>
+                    <span
+                        class="text-[10px] sm:text-[11px] font-bold border border-sand-400 px-1.5 py-0.5 rounded text-charcoal-700 font-sans">CLIQ</span>
+                    <span
+                        class="text-[10px] sm:text-[11px] font-bold border border-sand-400 px-1.5 py-0.5 rounded text-charcoal-700">دفع
+                        عند الاستلام</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // ===== بيانات تجريبية: بدّلها ببيانات المستخدم الحقيقية =====
+            let items = [
+                { id: 'night-cream', name: 'كريم الليل المعدني', en: 'Mineral Night Cream • 75ml', price: 28.00, img: 'SEAcare Mineral Night Cream by the Sea.png', added: '24 فبراير 2026', ok: true },
+                { id: 'shea-cocoa', name: 'كريم زبدة الشيا والكاكاو المعدني', en: 'Shea & Cocoa Mineral Body Cream • 250ml', price: 18.50, img: 'SEAcare Cocoa Butter by the Dead Sea.png', added: '20 فبراير 2026', ok: true },
+                { id: 'mud-mask', name: 'قناع طين البحر الميت للتنقية الشاملة', en: 'Purifying Dead Sea Mud Mask • 300g', price: 15.00, img: 'SEAcare Dead Sea Mud Mask by the Sea.png', added: '15 يناير 2026', ok: false },
+                { id: 'bath-crystals', name: 'بلورات الملح العطري مع اللافندر', en: 'Aromatic Dead Sea Bath Crystals • 500g', price: 11.00, img: 'IMG_2256.PNG', added: '10 يناير 2026', ok: true },
+                { id: 'olive-soap', name: 'صابون زيت الزيتون البكر والطين الملحي', en: 'Olive & Mud Artisan Bar Soap • 120g', price: 6.50, img: 'Seaside Olive Oil Soap Display.png', added: '2 يناير 2026', ok: true }
+            ].map((p, i) => ({ ...p, order: i }));
+            let cart = 3;
+            const fmt = n => n.toFixed(2) + ' د.أ';
+            const $ = id => document.getElementById(id);
+            const grid = $('grid');
+
+            function toast(msg) {
+                const t = $('toast');
+                t.innerHTML = '<i class="fa-solid fa-circle-check text-gold-400"></i><span>' + msg + '</span>';
+                t.classList.add('show'); clearTimeout(t._h); t._h = setTimeout(() => t.classList.remove('show'), 2400);
+            }
+            function addToCart(n) { cart += n; $('cartCount').textContent = cart; }
+
+            function card(p) {
+                const off = !p.ok;
+                return `<article class="bg-white rounded-2xl border border-sand-300/80 p-4 flex flex-col justify-between hover:shadow-card-hover transition-shadow duration-300 group card-lift">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="${off ? 'bg-sand-200 text-charcoal-600 border-sand-300' : 'bg-teal-900 text-gold-300 border-teal-900'} border text-[10px] font-bold px-2.5 py-1 rounded-full">${off ? 'غير متوفر حالياً' : 'متوفر'}</span>
+              <button type="button" data-remove="${p.id}" class="w-8 h-8 rounded-full bg-white border border-sand-300 text-gold-500 hover:text-red-500 hover:border-red-200 flex items-center justify-center shadow-sm transition-colors" title="إزالة من قائمة الرغبات" aria-label="إزالة ${p.name} من قائمة الرغبات"><i class="fa-solid fa-heart text-sm"></i></button>
+            </div>
+            <div class="relative rounded-xl overflow-hidden bg-sand-100 aspect-square mb-4 img-zoom">
+              <img alt="${p.name}" class="w-full h-full object-cover object-center ${off ? 'grayscale opacity-70' : ''}" src="${p.img}" />
+            </div>
+            <div class="space-y-1.5">
+              <h3 class="font-serif font-bold text-sm sm:text-base text-teal-950 group-hover:text-teal-800 transition-colors">${p.name}</h3>
+              <p class="text-[11px] sm:text-xs text-charcoal-500 font-latin-serif" dir="ltr">${p.en}</p>
+              <p class="text-[11px] text-charcoal-400">أُضيف في ${p.added}</p>
+            </div>
+          </div>
+          <div class="mt-5 pt-3 border-t border-sand-200">
+            <div class="flex items-center justify-between mb-3"><span class="text-xs text-charcoal-400">السعر</span><span class="text-base sm:text-lg font-bold ${off ? 'text-charcoal-500' : 'text-teal-900'}">${fmt(p.price)}</span></div>
+            ${off
+                        ? `<button type="button" data-notify="${p.id}" class="w-full border border-sand-400 text-charcoal-800 bg-sand-100 hover:bg-white py-2.5 rounded-full text-xs font-semibold flex items-center justify-center gap-2 transition-colors"><i class="fa-regular fa-bell text-xs"></i><span>أعلمني عند التوفر</span></button>`
+                        : `<button type="button" data-add="${p.id}" class="w-full bg-teal-900 hover:bg-teal-950 text-sand-50 py-2.5 rounded-full text-xs font-semibold flex items-center justify-center gap-2 transition-colors shadow-sm btn-shimmer"><i class="fa-solid fa-bag-shopping text-gold-400"></i><span>أضف للحقيبة</span></button>`}
+          </div>
+        </article>`;
+            }
+
+            function render() {
+                const s = $('sortWishlist').value, list = [...items];
+                if (s === 'asc') list.sort((a, b) => a.price - b.price);
+                else if (s === 'desc') list.sort((a, b) => b.price - a.price);
+                else list.sort((a, b) => a.order - b.order);
+                grid.innerHTML = list.map(card).join('');
+                const n = items.length, empty = n === 0;
+                $('wlSub').textContent = empty ? 'ما في منتجات محفوظة' : n + (n === 1 ? ' منتج محفوظ' : ' منتجات محفوظة');
+                document.querySelectorAll('[data-wl-count]').forEach(e => { e.textContent = n; e.classList.toggle('hidden', empty); });
+                $('empty').classList.toggle('hidden', !empty);
+                grid.classList.toggle('hidden', empty);
+                $('sortWrap').classList.toggle('hidden', empty);
+                $('actionBar').classList.toggle('lg:flex', !empty);
+                $('mobileBar').classList.toggle('hidden', empty);
+            }
+
+            function addAll() {
+                const avail = items.filter(p => p.ok);
+                if (!avail.length) return toast('ما في منتجات متوفرة للإضافة');
+                addToCart(avail.length);
+                toast('أُضيفت ' + avail.length + ' منتجات للحقيبة');
+            }
+            function clearAll() { if (items.length && confirm('بدك تفرّغ قائمة الرغبات؟')) { items = []; render(); } }
+
+            grid.addEventListener('click', e => {
+                const r = e.target.closest('[data-remove]'), a = e.target.closest('[data-add]'), n = e.target.closest('[data-notify]');
+                if (r) { items = items.filter(p => p.id !== r.dataset.remove); render(); toast('أُزيل من قائمة الرغبات'); }
+                else if (a) { addToCart(1); toast('أُضيف للحقيبة'); }
+                else if (n) { n.disabled = true; n.innerHTML = '<i class="fa-solid fa-check text-xs"></i><span>سنخبرك عند التوفر</span>'; toast('سنعلمك عند توفر المنتج'); }
+            });
+            document.querySelectorAll('[data-add]:not([data-add=""])').forEach(b => { if (!grid.contains(b)) b.addEventListener('click', () => { addToCart(1); toast('أُضيف للحقيبة'); }); });
+            $('sortWishlist').addEventListener('change', render);
+            ['addAllBtn', 'addAllBtnM'].forEach(id => $(id).addEventListener('click', addAll));
+            ['clearBtn', 'clearBtnM'].forEach(id => $(id).addEventListener('click', clearAll));
+            render();
+
+            // ===== الهيدر: قائمة الموبايل + شريط التقدم + ظل =====
+            const progressBar = $('scrollProgress'), header = document.querySelector('header[data-purpose="main-header"]');
+            let ticking = false;
+            function onScroll() {
+                const h = document.documentElement.scrollHeight - window.innerHeight;
+                progressBar.style.width = (h > 0 ? (window.scrollY / h) * 100 : 0) + '%';
+                header.classList.toggle('shadow-md', window.scrollY > 20);
+            }
+            window.addEventListener('scroll', () => { if (!ticking) { requestAnimationFrame(() => { onScroll(); ticking = false; }); ticking = true; } }, { passive: true });
+            onScroll();
+            const btn = $('mobileMenuBtn'), menu = $('mobileMenu');
+            if (btn && menu) {
+                btn.addEventListener('click', () => menu.classList.toggle('open'));
+                menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => menu.classList.remove('open')));
+            }
+        });
+    </script>
+<script src="site.js"></script>
+</body>
+
+</html>

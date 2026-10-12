@@ -1,0 +1,47 @@
+/* SEAcare – shared responsive safety rules (loaded after each page's own CSS) */
+
+/* 1) Never allow sideways page scroll (scroll-reveal animations start 50px off to the side) */
+html, body { max-width: 100%; overflow-x: clip; }
+@supports not (overflow: clip) { html, body { overflow-x: hidden; } }
+
+/* 2) Media never wider than its container */
+img, video, svg, canvas, iframe { max-width: 100%; }
+img { height: auto; }
+img[class*="object-"], .aspect-square img { height: 100%; }
+
+/* 3) Long words / emails / URLs wrap instead of pushing the layout */
+h1, h2, h3, h4, p, a, li, td, th, label, span { overflow-wrap: break-word; }
+a[href^="mailto:"], a[href^="tel:"] { word-break: break-all; }
+
+/* 4) Sort bar: wrap on very narrow phones */
+div:has(> label[for="sortDropdown"]) { flex-wrap: wrap; }
+label[for="sortDropdown"] { white-space: normal !important; }
+#sortDropdown { max-width: 100%; }
+
+/* 5) Tables / wide blocks scroll inside themselves */
+.table-scroll, table { max-width: 100%; }
+@media (max-width: 640px) {
+  table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+}
+
+/* 6) Comfortable tap targets and no iOS zoom-on-focus */
+@media (max-width: 768px) {
+  input, select, textarea { font-size: 16px !important; }
+  button, [role="button"], a.btn { min-height: 36px; }
+}
+
+/* 7) Respect notches / home indicator on phones */
+@supports (padding: max(0px)) {
+  body { padding-left: env(safe-area-inset-left); padding-right: env(safe-area-inset-right); }
+}
+
+/* 8) Mobile/tablet: filter sidebar is a collapsible panel (opened by the "تصفية" button)
+      so shoppers see products first instead of scrolling past every filter */
+@media (max-width: 1023px) {
+  #filterSidebar { display: none; }
+  #filterSidebar.open { display: block; }
+}
+
+/* 9) Top announcement bar: keep phone / currency / language group on one line */
+[data-purpose="announcement-bar"] .divide-x { flex-shrink: 0; white-space: nowrap; }
+[data-purpose="announcement-bar"] p { min-width: 0; }
